@@ -12,7 +12,7 @@
     </linearGradient>
   </defs>
 
-  <rect width="1500" height="8" fill="url(#rainbow)"/>
+  <rect width="1500" height="30" fill="url(#rainbow)"/>
 
-  <text x="1440" y="278" text-anchor="end" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="96" font-weight="700" fill="#0a0a0a">Cultural Extremity Index</text>
+  <text x="1440" y="460" text-anchor="end" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="96" font-weight="700" fill="#0a0a0a">Assessing extremism.</text>
 </svg>
