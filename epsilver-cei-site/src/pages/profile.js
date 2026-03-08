@@ -240,7 +240,7 @@ export async function ProfilePage(root, { slug }) {
   right.className = "card";
   right.innerHTML = `
     <div class="h1">Signal Wheel</div>
-    <div class="small">Hover sectors for axis detail. Polygon stretches into place.</div>
+    <div class="small">Hover sectors for axis detail.</div>
     <div class="hr"></div>
   `;
 
