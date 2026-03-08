@@ -37,11 +37,11 @@ export async function HomePage(root) {
     <div class="hr"></div>
     <div class="h1" style="font-size:13px;margin-bottom:8px">Five-Axis Signal Wheel</div>
     <div class="list" style="margin-top:0;gap:0">
-      <div class="item" style="flex-direction:column;gap:2px"><b>Establishment</b><div class="meta">Alignment with institutional power, governance, and mainstream systems.</div></div>
-      <div class="item" style="flex-direction:column;gap:2px"><b>Justice</b><div class="meta">Emphasis on rights, equity, and anti-discrimination framing.</div></div>
-      <div class="item" style="flex-direction:column;gap:2px"><b>Tradition</b><div class="meta">Preference for continuity, nationalism, and heritage narratives.</div></div>
-      <div class="item" style="flex-direction:column;gap:2px"><b>Conflict</b><div class="meta">Tolerance for confrontation, controversy, and culture-war engagement.</div></div>
-      <div class="item" style="flex-direction:column;gap:2px"><b>Rigidity</b><div class="meta">Tendency toward absolutism, purity politics, and rejection of compromise.</div></div>
+      <div class="item" style="flex-direction:column;gap:2px"><div class="section-title">Establishment</div><div class="meta">Alignment with institutional power, governance, and mainstream systems.</div></div>
+      <div class="item" style="flex-direction:column;gap:2px"><div class="section-title">Justice</div><div class="meta">Emphasis on rights, equity, and anti-discrimination framing.</div></div>
+      <div class="item" style="flex-direction:column;gap:2px"><div class="section-title">Tradition</div><div class="meta">Preference for continuity, nationalism, and heritage narratives.</div></div>
+      <div class="item" style="flex-direction:column;gap:2px"><div class="section-title">Conflict</div><div class="meta">Tolerance for confrontation, controversy, and culture-war engagement.</div></div>
+      <div class="item" style="flex-direction:column;gap:2px"><div class="section-title">Rigidity</div><div class="meta">Tendency toward absolutism, purity politics, and rejection of compromise.</div></div>
     </div>
 
     <div class="hr"></div>

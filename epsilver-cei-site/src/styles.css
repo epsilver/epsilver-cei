@@ -146,12 +146,16 @@ a:hover{ text-decoration:underline; }
   font-weight:700;
   margin:0 0 10px;
 }
+.section-title{
+  font-size:22px;
+  font-weight:700;
+}
 .small{
   font-size:20px;
   font-family:"Inter",system-ui,-apple-system,sans-serif;
   font-weight:300;
   color:var(--muted);
-  line-height:1.6;
+  line-height:1.9;
 }
 
 .row{
@@ -282,10 +286,17 @@ a:hover{ text-decoration:underline; }
   flex-direction:column;
   gap:3px;
 }
+.meta{
+  font-size:18px;
+  font-weight:400;
+  color:var(--muted);
+  line-height:1.9;
+}
 .item .meta{
   font-size:18px;
+  font-weight:500;
   color:var(--muted);
-  line-height:1.6;
+  line-height:1.9;
 }
 .pill{
   font-size:16px;

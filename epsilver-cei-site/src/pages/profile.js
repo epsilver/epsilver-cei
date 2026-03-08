@@ -141,7 +141,7 @@ function renderModelEvidence(p){
       </div>`;
     }).join("");
 
-    return `<div style="margin-top:8px">
+    return `<div style="margin-top:20px">
       <div class="small"><b>${axisLabel(k)}:</b></div>
       ${rows}
     </div>`;
@@ -264,11 +264,11 @@ export async function ProfilePage(root, { slug }) {
   glossary.className = "list glossary";
   glossary.innerHTML = `
     <div class="h1">Axis Glossary</div>
-    <div class="item"><div class="left"><b>Establishment</b><div class="meta">Alignment with institutional legitimacy and mainstream systems.</div></div></div>
-    <div class="item"><div class="left"><b>Justice</b><div class="meta">Rights/inequality framing; emphasis on fairness enforcement.</div></div></div>
-    <div class="item"><div class="left"><b>Tradition</b><div class="meta">Preference for continuity, norms, and heritage narratives.</div></div></div>
-    <div class="item"><div class="left"><b>Conflict</b><div class="meta">Tolerance for confrontation and culture-war engagement.</div></div></div>
-    <div class="item"><div class="left"><b>Rigidity</b><div class="meta">Tendency toward “us vs. them” framing, purity politics, and rejection of compromise.</div></div></div>
+    <div class="item"><div class="left"><div class="section-title">Establishment</div><div class="meta">Alignment with institutional legitimacy and mainstream systems.</div></div></div>
+    <div class="item"><div class="left"><div class="section-title">Justice</div><div class="meta">Rights/inequality framing; emphasis on fairness enforcement.</div></div></div>
+    <div class="item"><div class="left"><div class="section-title">Tradition</div><div class="meta">Preference for continuity, norms, and heritage narratives.</div></div></div>
+    <div class=”item”><div class=”left”><div class=”section-title”>Conflict</div><div class=”meta”>Tolerance for confrontation and culture-war engagement.</div></div></div>
+    <div class=”item”><div class=”left”><div class=”section-title”>Rigidity</div><div class=”meta”>Tendency toward “us vs. them” framing, purity politics, and rejection of compromise.</div></div></div>
   `;
   right.appendChild(glossary);
 
