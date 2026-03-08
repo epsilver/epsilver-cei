@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import path from "node:path";
 
 export default defineConfig({
-  base: "/epsilver-cei/",
+  base: "/",
   plugins: [
     {
       name: "profiles-reload",
