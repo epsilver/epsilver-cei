@@ -398,6 +398,10 @@ body{
   font-family:"HelveticaNeueMedium",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
 }
 
+b,strong{
+  font-size:18px;
+}
+
 .card{
   border:0 !important;
   border-radius:0 !important;
