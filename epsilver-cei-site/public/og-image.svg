@@ -19,7 +19,7 @@
   <text x="600" y="72" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="22" font-weight="400" fill="#444444" letter-spacing="3">CULTURAL EXTREMITY INDEX</text>
 
   <!-- Hexagon -->
-  <polygon points="600,150 738,230 738,390 600,470 462,390 462,230" fill="#888888"/>
+  <polygon points="600,150 765,272 703,448 497,448 435,272" fill="#888888"/>
 
   <!-- URL -->
   <text x="600" y="584" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="22" font-weight="400" fill="#444444" letter-spacing="3">CULTURALEXTREMITYINDEX.COM</text>
