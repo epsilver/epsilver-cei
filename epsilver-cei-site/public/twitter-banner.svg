@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 500" width="1500" height="500">
+  <rect width="1500" height="500" fill="#ffffff"/>
+
+  <defs>
+    <linearGradient id="rainbow" x1="0" y1="0" x2="1500" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0"   stop-color="#ff2a2a"/>
+      <stop offset="0.2" stop-color="#ff7a00"/>
+      <stop offset="0.4" stop-color="#ffd400"/>
+      <stop offset="0.6" stop-color="#10c070"/>
+      <stop offset="0.8" stop-color="#2c6bff"/>
+      <stop offset="1.0" stop-color="#8a2be2"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="8" fill="url(#rainbow)"/>
+
+  <text x="1440" y="278" text-anchor="end" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="96" font-weight="700" fill="#0a0a0a">Cultural Extremity Index</text>
+</svg>
