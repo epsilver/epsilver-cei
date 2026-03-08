@@ -71,7 +71,7 @@ const QUESTIONS = [
   {
     text: "Diversity, equity, and inclusion initiatives...",
     answers: [
-      { label: "Are necessary and must be enforced at all times.",    deltas: { justice:  14 } },
+      { label: "Are necessary and must be enforced at all times",     deltas: { justice:  14 } },
       { label: "Are broadly positive with room to improve",         deltas: { justice:   6 } },
       { label: "Depend entirely on implementation",                 deltas: {} },
       { label: "Are often counterproductive and divisive",          deltas: { justice:  -7 } },
@@ -83,7 +83,7 @@ const QUESTIONS = [
     answers: [
       { label: "Are precious and must be actively preserved",       deltas: { tradition:  12 } },
       { label: "Matter and deserve genuine respect",                deltas: { tradition:   5 } },
-      { label: "Can mostly be ignored.",                            deltas: {} },
+      { label: "Can mostly be ignored",                             deltas: {} },
       { label: "Are often weaponized to exclude people",            deltas: { tradition:  -6 } },
       { label: "Are constructs used primarily to divide",           deltas: { tradition: -12 } },
     ]
@@ -95,7 +95,7 @@ const QUESTIONS = [
       { label: "I try to understand it before responding",          deltas: { conflict:  -3 } },
       { label: "I politely engage",      deltas: {} },
       { label: "I challenge it respectfully, but make my view clear", deltas: { conflict:   8 } },
-      { label: "I publicly debate it. Silence is complicity.",      deltas: { conflict:  14 } },
+      { label: "I publicly debate it — silence is complicity",      deltas: { conflict:  14 } },
     ]
   },
   {
