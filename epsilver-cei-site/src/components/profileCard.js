@@ -105,7 +105,7 @@ function drawRadar(ctx, scores, cx, cy, r) {
   // Labels
   ctx.fillStyle = "#666";
   ctx.textAlign = "center";
-  ctx.font = "800 18px 'Helvetica Neue', Helvetica, Arial, sans-serif";
+  ctx.font = "800 18px 'Inter', system-ui, sans-serif";
   for (let i = 0; i < n; i++) {
     const ang = (Math.PI * 2 * i) / n - Math.PI / 2;
     const p = radarPoint(cx, cy, r + 26, ang);
@@ -113,21 +113,6 @@ function drawRadar(ctx, scores, cx, cy, r) {
   }
 }
 
-// ── Font loader ───────────────────────────────────────────────────────────────
-
-async function loadHeavyFont() {
-  if (document.fonts && !loadHeavyFont._loaded) {
-    try {
-      const ff = new FontFace(
-        "HelveticaNeueHeavy",
-        "url('/Fonts/helvetica-neue-5/HelveticaNeueHeavy.otf') format('opentype')"
-      );
-      const loaded = await ff.load();
-      document.fonts.add(loaded);
-      loadHeavyFont._loaded = true;
-    } catch(e) { /* fall back to system font */ }
-  }
-}
 
 // ── Shared bottom section ─────────────────────────────────────────────────────
 
@@ -155,16 +140,16 @@ function drawBottom(ctx, p, y, W, H, PAD, INK, MUTED, RULE) {
 
   ctx.fillStyle = INK;
   ctx.textAlign = "left";
-  ctx.font = "900 100px 'HelveticaNeueHeavy', 'Helvetica Neue', Helvetica, Arial, sans-serif";
+  ctx.font = "900 100px 'Inter', system-ui, sans-serif";
   ctx.fillText("CEI " + String(cei.value ?? ""), PAD + BOX_PAD, y + BOX_H / 2 + 30);
 
   ctx.fillStyle = MUTED;
   ctx.textAlign = "right";
-  ctx.font = "bold 34px 'Helvetica Neue', Helvetica, Arial, sans-serif";
+  ctx.font = "bold 34px 'Inter', system-ui, sans-serif";
   setSpacing(ctx, 1.5);
   ctx.fillText((cei.tier || "").toUpperCase(), PAD + BOX_W2 - BOX_PAD, y + BOX_H / 2 - 8);
 
-  ctx.font = "bold 26px 'Helvetica Neue', Helvetica, Arial, sans-serif";
+  ctx.font = "bold 26px 'Inter', system-ui, sans-serif";
   setSpacing(ctx, 1.8);
   ctx.fillText(lean.toUpperCase(), PAD + BOX_W2 - BOX_PAD, y + BOX_H / 2 + 30);
   setSpacing(ctx, 0);
@@ -186,7 +171,7 @@ function drawBottom(ctx, p, y, W, H, PAD, INK, MUTED, RULE) {
 
     ctx.fillStyle = INK;
     ctx.textAlign = "left";
-    ctx.font = "bold 24px 'Helvetica Neue', Helvetica, Arial, sans-serif";
+    ctx.font = "bold 24px 'Inter', system-ui, sans-serif";
     setSpacing(ctx, 0.8);
     ctx.fillText(axisLabels[i].toUpperCase(), PAD, y + 22);
     setSpacing(ctx, 0);
@@ -198,7 +183,7 @@ function drawBottom(ctx, p, y, W, H, PAD, INK, MUTED, RULE) {
 
     ctx.fillStyle = MUTED;
     ctx.textAlign = "right";
-    ctx.font = "400 24px 'Helvetica Neue', Helvetica, Arial, sans-serif";
+    ctx.font = "400 24px 'Inter', system-ui, sans-serif";
     ctx.fillText(String(val), W - PAD, y + 22);
 
     y += 48;
@@ -212,7 +197,7 @@ function drawBottom(ctx, p, y, W, H, PAD, INK, MUTED, RULE) {
   const urlY = y + (H - y) / 2 + 8;
   ctx.fillStyle = MUTED;
   ctx.textAlign = "center";
-  ctx.font = "400 22px 'Helvetica Neue', Helvetica, Arial, sans-serif";
+  ctx.font = "400 22px 'Inter', system-ui, sans-serif";
   setSpacing(ctx, 2.5);
   ctx.fillText(url.toUpperCase(), W / 2, urlY);
   setSpacing(ctx, 0);
@@ -221,7 +206,6 @@ function drawBottom(ctx, p, y, W, H, PAD, INK, MUTED, RULE) {
 // ── Card generator ────────────────────────────────────────────────────────────
 
 export async function generateProfileCard(p) {
-  await loadHeavyFont();
 
   const W     = 1080;
   const H     = 1350;
@@ -254,7 +238,7 @@ export async function generateProfileCard(p) {
   // Kicker
   ctx.fillStyle = MUTED;
   ctx.textAlign = "center";
-  ctx.font = "400 24px 'Helvetica Neue', Helvetica, Arial, sans-serif";
+  ctx.font = "400 24px 'Inter', system-ui, sans-serif";
   setSpacing(ctx, 2.5);
   ctx.fillText("CULTURAL EXTREMITY INDEX", W / 2, 6 + 36);
   setSpacing(ctx, 0);
@@ -303,9 +287,9 @@ export async function generateProfileCard(p) {
     const name = p.name || "";
     ctx.fillStyle = INK;
     ctx.textAlign = "center";
-    ctx.font = "bold 100px 'Helvetica Neue', Helvetica, Arial, sans-serif";
+    ctx.font = "bold 100px 'Inter', system-ui, sans-serif";
     if (ctx.measureText(name).width > W - PAD * 2) {
-      ctx.font = "bold 70px 'Helvetica Neue', Helvetica, Arial, sans-serif";
+      ctx.font = "bold 70px 'Inter', system-ui, sans-serif";
     }
     ctx.fillText(name, W / 2, y + 78);
     y += 106;
@@ -317,7 +301,7 @@ export async function generateProfileCard(p) {
       const occLine = occs.slice(0, 4).join("  ·  ");
       ctx.fillStyle = MUTED;
       ctx.textAlign = "center";
-      ctx.font = "300 30px 'Helvetica Neue', Helvetica, Arial, sans-serif";
+      ctx.font = "300 30px 'Inter', system-ui, sans-serif";
       const lines = wrapText(ctx, occLine, W - PAD * 2, 2);
       for (const line of lines) { ctx.fillText(line, W / 2, y); y += 40; }
       y += 14;
@@ -336,9 +320,9 @@ export async function generateProfileCard(p) {
     const name = p.name || "Self-Assessment";
     ctx.fillStyle = INK;
     ctx.textAlign = "center";
-    ctx.font = "bold 100px 'Helvetica Neue', Helvetica, Arial, sans-serif";
+    ctx.font = "bold 100px 'Inter', system-ui, sans-serif";
     if (ctx.measureText(name).width > W - PAD * 2) {
-      ctx.font = "bold 70px 'Helvetica Neue', Helvetica, Arial, sans-serif";
+      ctx.font = "bold 70px 'Inter', system-ui, sans-serif";
     }
     ctx.fillText(name, W / 2, y + 78);
     y += 130;

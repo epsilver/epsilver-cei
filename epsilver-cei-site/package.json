@@ -10,7 +10,10 @@
     "icons": "node scripts/gen-icons.mjs"
   },
   "devDependencies": {
-    "vite": "^6.0.0",
-    "sharp": "^0.33.0"
+    "sharp": "^0.33.0",
+    "vite": "^6.0.0"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.2.8"
   }
 }

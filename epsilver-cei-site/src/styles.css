@@ -1,23 +1,3 @@
-@font-face{
-  font-family:"HelveticaNeueLight";
-  src:url("../Fonts/helvetica-neue-5/HelveticaNeueLight.otf") format("opentype");
-  font-display:swap;
-}
-@font-face{
-  font-family:"HelveticaNeueMedium";
-  src:url("../Fonts/helvetica-neue-5/HelveticaNeueMedium.otf") format("opentype");
-  font-display:swap;
-}
-@font-face{
-  font-family:"HelveticaNeueThin";
-  src:url("../Fonts/helvetica-neue-5/HelveticaNeueThin.otf") format("opentype");
-  font-display:swap;
-}
-@font-face{
-  font-family:"HelveticaNeueHeavy";
-  src:url("../Fonts/helvetica-neue-5/HelveticaNeueHeavy.otf") format("opentype");
-  font-display:swap;
-}
 
 :root{
   --paper:#ffffff;
@@ -43,7 +23,7 @@ body{
   margin:0;
   background:var(--paper);
   color:var(--ink);
-  font-family:"Helvetica Neue", Helvetica, Arial, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-family:"Inter", system-ui, -apple-system, sans-serif;
   letter-spacing:.2px;
 }
 
@@ -168,7 +148,8 @@ a:hover{ text-decoration:underline; }
 }
 .small{
   font-size:20px;
-  font-family:"HelveticaNeueLight",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  font-family:"Inter",system-ui,-apple-system,sans-serif;
+  font-weight:300;
   color:var(--muted);
   line-height:1.6;
 }
@@ -227,7 +208,7 @@ a:hover{ text-decoration:underline; }
   background:#fff;
 }
 .cei-score{
-  font-family:"HelveticaNeueHeavy","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family:"Inter",system-ui,-apple-system,sans-serif;
   font-weight:900;
   font-size:50px;
   letter-spacing:.2px;
@@ -241,7 +222,7 @@ a:hover{ text-decoration:underline; }
   gap:4px;
 }
 .cei-tier{
-  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family:"Inter",system-ui,-apple-system,sans-serif;
   font-weight:800;
   text-transform:uppercase;
   letter-spacing:1.4px;
@@ -249,7 +230,7 @@ a:hover{ text-decoration:underline; }
   font-size:14px;
 }
 .cei-lean{
-  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family:"Inter",system-ui,-apple-system,sans-serif;
   font-weight:800;
   text-transform:uppercase;
   letter-spacing:1.8px;
@@ -390,12 +371,14 @@ select.btn{
 }
 
 body{
-  font-family:"HelveticaNeueLight",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  font-family:"Inter",system-ui,-apple-system,sans-serif;
+  font-weight:300;
   color:var(--ink);
 }
 
 .h1,.bigline,.tier,.value,b,strong{
-  font-family:"HelveticaNeueMedium",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  font-family:"Inter",system-ui,-apple-system,sans-serif;
+  font-weight:500;
 }
 
 b,strong{

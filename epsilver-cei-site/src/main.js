@@ -1,3 +1,4 @@
+import "@fontsource-variable/inter";
 import "./styles.css";
 import { renderApp } from "./router.js";
 
