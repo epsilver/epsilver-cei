@@ -1,0 +1,1094 @@
+{
+  "profiles": [
+    {
+      "slug": "alex-jones",
+      "name": "Alex Jones",
+      "aliases": [],
+      "portraitPath": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Alex_Jones_%2853808242292%29_%28cropped%29.jpg",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Alex_Jones"
+      ],
+      "researchSummary": "Alexander Emerick Jones (born February 11, 1974) is an American far-right radio show host and prominent conspiracy theorist. He hosts The Alex Jones Show from Austin, Texas.",
+      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 9 signal cluster(s). Confidence 90%.",
+      "modelInputs": {
+        "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
+        "signalsFired": 9,
+        "confidence": 0.9,
+        "lastImportedAt": "2026-03-07T21:41:06.883Z"
+      },
+      "scores": {
+        "establishment": 50,
+        "justice": 75,
+        "tradition": 70,
+        "conflict": 58,
+        "rigidity": 68
+      },
+      "adjustments": [],
+      "status": "active",
+      "reviewNote": "",
+      "confidence": 0.9,
+      "reviewFlags": [],
+      "imageCredit": {
+        "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Alex_Jones_%2853808242292%29_%28cropped%29.jpg",
+        "author": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/22007612@N05\">Gage Skidmore</a> from Surprise, AZ, United States of America",
+        "license": "CC BY-SA 2.0",
+        "attributionText": null
+      },
+      "cei": {
+        "value": 77,
+        "tier": "High"
+      },
+      "primaryLean": "Chud",
+      "portraitIsRemote": true,
+      "modelReadout": {
+        "instrument": "Wikipedia lead + infobox metadata -> heuristic clusters -> five-axis signal wheel",
+        "observed": {
+          "sourceCount": 1,
+          "occupationsCount": 0,
+          "hasImage": true,
+          "signalCount": 9
+        },
+        "confidencePct": 90,
+        "evidence": {
+          "establishment": [],
+          "justice": [
+            {
+              "clusterId": "J1",
+              "term": "rights advocate",
+              "sentence": "Jones is a vocal gun rights advocate.",
+              "weight": 14
+            },
+            {
+              "clusterId": "J4",
+              "term": "lgbt",
+              "sentence": "Jones has repeatedly made hateful comments towards the LGBT community and has associated the community with pedophilia.",
+              "weight": 12
+            },
+            {
+              "clusterId": "J5",
+              "term": "ada",
+              "sentence": "He was later allowed to enter Canada legally.",
+              "weight": 8
+            }
+          ],
+          "tradition": [
+            {
+              "clusterId": "T1",
+              "term": "far-right",
+              "sentence": "Alexander Emerick Jones (born February 11, 1974) is an American far-right radio show host and prominent conspiracy theorist.",
+              "weight": 14
+            },
+            {
+              "clusterId": "T2",
+              "term": "nationalist",
+              "sentence": "Jones has provided a platform for white nationalists and neo-Nazis on his website Banned.Video, as well as providing an \"entry point\" to their ideology.",
+              "weight": 16
+            },
+            {
+              "clusterId": "T7",
+              "term": "globalist",
+              "sentence": "He has also claimed that several governments and large businesses have colluded to create a globalist \"New World Order\" through \"manufactured economic crises, sophisticated surveillance tech and-above all-inside-job terror attacks that fuel exploitable hysteri...",
+              "weight": -10
+            }
+          ],
+          "conflict": [
+            {
+              "clusterId": "C3",
+              "term": "banned",
+              "sentence": "He is the founder of Infowars and Banned.Video, websites that promote conspiracy theories and fake news.",
+              "weight": 8
+            }
+          ],
+          "rigidity": [
+            {
+              "clusterId": "R1",
+              "term": "staunch",
+              "sentence": "A staunch supporter of Trump's re-election, Jones also supported the attempts to overturn the 2020 United States presidential election.",
+              "weight": 12
+            },
+            {
+              "clusterId": "R4",
+              "term": "conspiracy theorist",
+              "sentence": "Alexander Emerick Jones (born February 11, 1974) is an American far-right radio show host and prominent conspiracy theorist.",
+              "weight": 6
+            }
+          ]
+        },
+        "signals": {
+          "establishment": [],
+          "justice": [
+            {
+              "clusterId": "J1",
+              "term": "rights advocate",
+              "weight": 14
+            },
+            {
+              "clusterId": "J4",
+              "term": "lgbt",
+              "weight": 12
+            },
+            {
+              "clusterId": "J5",
+              "term": "ada",
+              "weight": 8
+            }
+          ],
+          "tradition": [
+            {
+              "clusterId": "T1",
+              "term": "far-right",
+              "weight": 14
+            },
+            {
+              "clusterId": "T2",
+              "term": "nationalist",
+              "weight": 16
+            },
+            {
+              "clusterId": "T7",
+              "term": "globalist",
+              "weight": -10
+            }
+          ],
+          "conflict": [
+            {
+              "clusterId": "C3",
+              "term": "banned",
+              "weight": 8
+            }
+          ],
+          "rigidity": [
+            {
+              "clusterId": "R1",
+              "term": "staunch",
+              "weight": 12
+            },
+            {
+              "clusterId": "R4",
+              "term": "conspiracy theorist",
+              "weight": 6
+            }
+          ]
+        },
+        "pfFallbackApplied": false,
+        "salienceApplied": false
+      },
+      "occupations": [
+        "radio personality",
+        "film producer",
+        "writer",
+        "conspiracy theorist",
+        "podcaster",
+        "anti-vaccine activist",
+        "gun rights advocate",
+        "misinformation creator",
+        "film director",
+        "political activist"
+      ]
+    },
+    {
+      "slug": "taylor-swift",
+      "name": "Taylor Swift",
+      "aliases": [],
+      "portraitPath": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Taylor_Swift_at_the_2023_MTV_Video_Music_Awards_%282%29_%28cropped%29.png",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Taylor_Swift"
+      ],
+      "researchSummary": "Taylor Alison Swift (born December 13, 1989) is an American singer-songwriter. An influential figure in popular culture, she is known for her autobiographical songwriting and artistic reinventions.",
+      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 0 signal cluster(s). Confidence 75%.",
+      "modelInputs": {
+        "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
+        "signalsFired": 0,
+        "confidence": 0.75,
+        "lastImportedAt": "2026-03-07T21:41:01.966Z"
+      },
+      "scores": {
+        "establishment": 53,
+        "justice": 50,
+        "tradition": 50,
+        "conflict": 51,
+        "rigidity": 50
+      },
+      "adjustments": [
+        {
+          "at": "2026-03-07T21:41:01.965Z",
+          "type": "auto",
+          "note": "Automatic normalization applied due to low signal density: public-figure fallback bump (low signal density) + salience-term bump"
+        }
+      ],
+      "status": "active",
+      "reviewNote": "",
+      "confidence": 0.75,
+      "reviewFlags": [],
+      "imageCredit": {
+        "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Taylor_Swift_at_the_2023_MTV_Video_Music_Awards_%282%29_%28cropped%29.png",
+        "author": "<a rel=\"nofollow\" class=\"external text\" href=\"https://youtube.com/@iHeartRadioCA\">iHeartRadioCA</a>",
+        "license": "CC BY 3.0",
+        "attributionText": "iHeartRadioCA"
+      },
+      "cei": {
+        "value": 8,
+        "tier": "Minimal"
+      },
+      "primaryLean": "Chud",
+      "portraitIsRemote": true,
+      "modelReadout": {
+        "instrument": "Wikipedia lead + infobox metadata -> heuristic clusters -> five-axis signal wheel",
+        "observed": {
+          "sourceCount": 1,
+          "occupationsCount": 0,
+          "hasImage": true,
+          "signalCount": 0
+        },
+        "confidencePct": 75,
+        "evidence": {
+          "establishment": [],
+          "justice": [],
+          "tradition": [],
+          "conflict": [],
+          "rigidity": []
+        },
+        "signals": {
+          "establishment": [],
+          "justice": [],
+          "tradition": [],
+          "conflict": [],
+          "rigidity": []
+        },
+        "pfFallbackApplied": true,
+        "salienceApplied": true
+      },
+      "occupations": [
+        "actor",
+        "composer",
+        "singer",
+        "record producer",
+        "philanthropist",
+        "singer-songwriter",
+        "lyricist",
+        "music video director",
+        "film director",
+        "director"
+      ]
+    },
+    {
+      "slug": "adolf-hitler",
+      "name": "Adolf Hitler",
+      "aliases": [],
+      "portraitPath": "https://upload.wikimedia.org/wikipedia/commons/1/16/Adolf_Hitler_cropped_restored_3x4.jpg",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Adolf_Hitler"
+      ],
+      "researchSummary": "Adolf Hitler (20 April 1889 - 30 April 1945) was an Austrian-born German politician who was the dictator of Germany during the Nazi era, which lasted from 1933 until his suicide in 1945. He rose to power as the leader of the Nazi Party, becoming the chancellor of Germany in 1933 and then taking the title of Führer und ",
+      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 8 signal cluster(s). Confidence 90%.",
+      "modelReadout": {
+        "instrument": "Wikipedia lead + infobox metadata -> heuristic clusters -> five-axis signal wheel",
+        "observed": {
+          "sourceCount": 1,
+          "occupationsCount": 0,
+          "hasImage": true,
+          "signalCount": 8
+        },
+        "confidencePct": 90,
+        "evidence": {
+          "establishment": [
+            {
+              "clusterId": "E1",
+              "term": "appointed",
+              "sentence": "In 1919, he joined the German Workers' Party (DAP), the precursor of the Nazi Party, and in 1921, was appointed the leader of the Nazi Party.",
+              "weight": 10
+            }
+          ],
+          "justice": [],
+          "tradition": [
+            {
+              "clusterId": "T1",
+              "term": "conservative",
+              "sentence": "Former chancellor Franz von Papen and other conservative politicians convinced President Paul von Hindenburg to appoint Hitler as chancellor on 30 January 1933.",
+              "weight": 14
+            },
+            {
+              "clusterId": "T2",
+              "term": "Nazi",
+              "sentence": "Adolf Hitler (20 April 1889 - 30 April 1945) was an Austrian-born German politician who was the dictator of Germany during the Nazi era, which lasted from 1933 until his suicide in 1945.",
+              "weight": 16
+            },
+            {
+              "clusterId": "T3",
+              "term": "evangelical",
+              "sentence": "In a conversation with Albert Speer, Hitler said, \"Through me the Evangelical Church could become the established church, as in England.\" thumb|Hitler shaking hands with Bishop [[Ludwig Müller in 1934]] Hitler viewed the church as an important politically cons...",
+              "weight": 12
+            }
+          ],
+          "conflict": [
+            {
+              "clusterId": "C1",
+              "term": "denounced",
+              "sentence": "He frequently denounced communism as being part of an international Jewish conspiracy.",
+              "weight": 10
+            },
+            {
+              "clusterId": "C5",
+              "term": "coup",
+              "sentence": "In 1923, he attempted to seize governmental power in a failed coup in Munich and was sentenced to five years in prison, serving just over a year.",
+              "weight": 12
+            },
+            {
+              "clusterId": "C6",
+              "term": "genocide",
+              "sentence": "Throughout the ensuing conflict, Hitler was closely involved in the direction of German military operations as well as the perpetration of the Holocaust, the genocide of about six million Jews and millions of other victims.",
+              "weight": 14
+            }
+          ],
+          "rigidity": [
+            {
+              "clusterId": "R1",
+              "term": "strict",
+              "sentence": "His first six years in power resulted in rapid economic recovery from the Great Depression, the abrogation of restrictions imposed on Germany after the First World War, and the annexation of territories inhabited by millions of ethnic Germans, which initially...",
+              "weight": 12
+            }
+          ]
+        },
+        "signals": {
+          "establishment": [
+            {
+              "clusterId": "E1",
+              "term": "appointed",
+              "weight": 10
+            }
+          ],
+          "justice": [],
+          "tradition": [
+            {
+              "clusterId": "T1",
+              "term": "conservative",
+              "weight": 14
+            },
+            {
+              "clusterId": "T2",
+              "term": "Nazi",
+              "weight": 16
+            },
+            {
+              "clusterId": "T3",
+              "term": "evangelical",
+              "weight": 12
+            }
+          ],
+          "conflict": [
+            {
+              "clusterId": "C1",
+              "term": "denounced",
+              "weight": 10
+            },
+            {
+              "clusterId": "C5",
+              "term": "coup",
+              "weight": 12
+            },
+            {
+              "clusterId": "C6",
+              "term": "genocide",
+              "weight": 14
+            }
+          ],
+          "rigidity": [
+            {
+              "clusterId": "R1",
+              "term": "strict",
+              "weight": 12
+            }
+          ]
+        },
+        "pfFallbackApplied": false,
+        "salienceApplied": false
+      },
+      "modelInputs": {
+        "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
+        "signalsFired": 8,
+        "confidence": 0.9,
+        "lastImportedAt": "2026-03-07T21:41:10.819Z"
+      },
+      "scores": {
+        "establishment": 60,
+        "justice": 50,
+        "tradition": 80,
+        "conflict": 85,
+        "rigidity": 62
+      },
+      "adjustments": [],
+      "status": "active",
+      "reviewNote": "",
+      "confidence": 0.9,
+      "reviewFlags": [],
+      "imageCredit": {
+        "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/1/16/Adolf_Hitler_cropped_restored_3x4.jpg",
+        "author": "<div class=\"fn value\">\nUnknown author<span style=\"display: none;\">Unknown author</span></div>",
+        "license": "CC BY-SA 3.0 de",
+        "attributionText": "Bundesarchiv, Bild 183-S33882 / CC BY-SA 3.0 DE"
+      },
+      "cei": {
+        "value": 94,
+        "tier": "Extreme"
+      },
+      "primaryLean": "Chud",
+      "portraitIsRemote": true,
+      "occupations": [
+        "soldier",
+        "painter",
+        "political writer",
+        "politician",
+        "military commander",
+        "writer",
+        "Holocaust perpetrator"
+      ]
+    },
+    {
+      "slug": "bernie-sanders",
+      "name": "Bernie Sanders",
+      "aliases": [],
+      "portraitPath": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Bernie_Sanders_2023.jpg",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Bernie_Sanders"
+      ],
+      "researchSummary": "Bernard Sanders (born September 8, 1941) is an American politician and activist serving as the senior United States senator from Vermont, a seat he has held since 2007. He is the longest-serving independent in U.S.",
+      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 9 signal cluster(s). Confidence 90%.",
+      "modelReadout": {
+        "instrument": "Wikipedia lead + infobox metadata -> heuristic clusters -> five-axis signal wheel",
+        "observed": {
+          "sourceCount": 1,
+          "occupationsCount": 0,
+          "hasImage": true,
+          "signalCount": 9
+        },
+        "confidencePct": 90,
+        "evidence": {
+          "establishment": [
+            {
+              "clusterId": "E3",
+              "term": "billionaire",
+              "sentence": "Since Donald Trump's reelection as president in 2024, Sanders has vocally opposed Trump's administration and perceived corruption as what he calls a right-wing oligarchy, rallying an organization tour against Trump and his allies, especially MAGA-aligned billi...",
+              "weight": 8
+            },
+            {
+              "clusterId": "E6",
+              "term": "grassroots",
+              "sentence": "His 2016 campaign generated significant grassroots enthusiasm and funding from small-dollar donors, helping him win 23 primaries and caucuses.",
+              "weight": -6
+            }
+          ],
+          "justice": [
+            {
+              "clusterId": "J1",
+              "term": "civil rights",
+              "sentence": "While a student, he was a protest organizer for the Congress of Racial Equality (CORE) and the Student Nonviolent Coordinating Committee (SNCC) during the civil rights movement.",
+              "weight": 14
+            },
+            {
+              "clusterId": "J2",
+              "term": "racial equality",
+              "sentence": "While a student, he was a protest organizer for the Congress of Racial Equality (CORE) and the Student Nonviolent Coordinating Committee (SNCC) during the civil rights movement.",
+              "weight": 12
+            },
+            {
+              "clusterId": "J7",
+              "term": "worker control",
+              "sentence": "He supports workers' self-management, universal and single-payer healthcare, paid parental leave, tuition-free tertiary education, a Green New Deal, and worker control of production through cooperatives, unions, and democratic public enterprises.",
+              "weight": 12
+            },
+            {
+              "clusterId": "J9",
+              "term": "socialist",
+              "sentence": "Ideologically a democratic socialist, Sanders is regarded as one of the main leaders of the modern American progressive movement.",
+              "weight": 8
+            }
+          ],
+          "tradition": [
+            {
+              "clusterId": "T1",
+              "term": "right-wing",
+              "sentence": "Since Donald Trump's reelection as president in 2024, Sanders has vocally opposed Trump's administration and perceived corruption as what he calls a right-wing oligarchy, rallying an organization tour against Trump and his allies, especially MAGA-aligned billi...",
+              "weight": 14
+            },
+            {
+              "clusterId": "T6",
+              "term": "progressive",
+              "sentence": "Ideologically a democratic socialist, Sanders is regarded as one of the main leaders of the modern American progressive movement.",
+              "weight": -14
+            }
+          ],
+          "conflict": [],
+          "rigidity": [
+            {
+              "clusterId": "R1",
+              "term": "strict",
+              "sentence": "House of Representatives in 1990, representing Vermont's at-large congressional district.",
+              "weight": 12
+            }
+          ]
+        },
+        "signals": {
+          "establishment": [
+            {
+              "clusterId": "E3",
+              "term": "billionaire",
+              "weight": 8
+            },
+            {
+              "clusterId": "E6",
+              "term": "grassroots",
+              "weight": -6
+            }
+          ],
+          "justice": [
+            {
+              "clusterId": "J1",
+              "term": "civil rights",
+              "weight": 14
+            },
+            {
+              "clusterId": "J2",
+              "term": "racial equality",
+              "weight": 12
+            },
+            {
+              "clusterId": "J7",
+              "term": "worker control",
+              "weight": 12
+            },
+            {
+              "clusterId": "J9",
+              "term": "socialist",
+              "weight": 8
+            }
+          ],
+          "tradition": [
+            {
+              "clusterId": "T1",
+              "term": "right-wing",
+              "weight": 14
+            },
+            {
+              "clusterId": "T6",
+              "term": "progressive",
+              "weight": -14
+            }
+          ],
+          "conflict": [],
+          "rigidity": [
+            {
+              "clusterId": "R1",
+              "term": "strict",
+              "weight": 12
+            }
+          ]
+        },
+        "pfFallbackApplied": false,
+        "salienceApplied": false
+      },
+      "modelInputs": {
+        "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
+        "signalsFired": 9,
+        "confidence": 0.9,
+        "lastImportedAt": "2026-03-07T21:41:06.151Z"
+      },
+      "scores": {
+        "establishment": 52,
+        "justice": 75,
+        "tradition": 50,
+        "conflict": 50,
+        "rigidity": 62
+      },
+      "adjustments": [],
+      "status": "active",
+      "reviewNote": "",
+      "confidence": 0.9,
+      "reviewFlags": [],
+      "imageCredit": {
+        "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Bernie_Sanders_2023.jpg",
+        "author": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/51178866@N04\">Palácio do Planalto</a> from Brasilia, Brasil",
+        "license": "CC BY 2.0",
+        "attributionText": null
+      },
+      "cei": {
+        "value": 56,
+        "tier": "Elevated"
+      },
+      "primaryLean": "Woke",
+      "portraitIsRemote": true,
+      "occupations": [
+        "politician",
+        "journalist",
+        "carpenter",
+        "university teacher",
+        "writer",
+        "television producer"
+      ]
+    },
+    {
+      "slug": "nick-fuentes",
+      "name": "Nick Fuentes",
+      "aliases": [],
+      "portraitPath": "https://upload.wikimedia.org/wikipedia/commons/9/95/Nick_Fuentes_screencap_from_July_2022_virtual_debate.png",
+      "portraitIsRemote": true,
+      "sources": [
+        "https://en.wikipedia.org/wiki/Nick_Fuentes"
+      ],
+      "researchSummary": "Nicholas Joseph Fuentes (born August 18, 1998) is an American far-right political commentator and live streamer. He hosts America First, a livestream that has promoted white nationalism and supremacy, Christian nationalism, the incel movement, misogyny, anti-LGBTQ views and antisemitism including Holocaust denial.",
+      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 8 signal cluster(s). Confidence 90%.",
+      "modelReadout": {
+        "instrument": "Wikipedia lead + infobox metadata -> heuristic clusters -> five-axis signal wheel",
+        "observed": {
+          "sourceCount": 1,
+          "occupationsCount": 0,
+          "hasImage": true,
+          "signalCount": 8
+        },
+        "confidencePct": 90,
+        "evidence": {
+          "establishment": [],
+          "justice": [
+            {
+              "clusterId": "J4",
+              "term": "lgbt",
+              "sentence": "He hosts America First, a livestream that has promoted white nationalism and supremacy, Christian nationalism, the incel movement, misogyny, anti-LGBTQ views and antisemitism including Holocaust denial.",
+              "weight": 12
+            },
+            {
+              "clusterId": "J2",
+              "term": "diversity",
+              "sentence": "At the time, Seales remarked: \"RSBN prides itself in our diversity, as we are a company loaded with folks from all different backgrounds.",
+              "weight": 12
+            }
+          ],
+          "tradition": [
+            {
+              "clusterId": "T1",
+              "term": "conservative",
+              "sentence": "Fuentes was raised in La Grange Park, Illinois, and held mainstream conservative views while attending high school.",
+              "weight": 14
+            },
+            {
+              "clusterId": "T2",
+              "term": "nationalist",
+              "sentence": "In 2020, he established the America First Political Action Conference (AFPAC), a white nationalist alternative to rival CPAC.",
+              "weight": 16
+            },
+            {
+              "clusterId": "T3",
+              "term": "Christian nationalism",
+              "sentence": "He hosts America First, a livestream that has promoted white nationalism and supremacy, Christian nationalism, the incel movement, misogyny, anti-LGBTQ views and antisemitism including Holocaust denial.",
+              "weight": 12
+            }
+          ],
+          "conflict": [
+            {
+              "clusterId": "C6",
+              "term": "Holocaust",
+              "sentence": "He hosts America First, a livestream that has promoted white nationalism and supremacy, Christian nationalism, the incel movement, misogyny, anti-LGBTQ views and antisemitism including Holocaust denial.",
+              "weight": 14
+            }
+          ],
+          "rigidity": [
+            {
+              "clusterId": "R5",
+              "term": "Holocaust denial",
+              "sentence": "He hosts America First, a livestream that has promoted white nationalism and supremacy, Christian nationalism, the incel movement, misogyny, anti-LGBTQ views and antisemitism including Holocaust denial.",
+              "weight": 14
+            },
+            {
+              "clusterId": "R4",
+              "term": "conspiracy theorist",
+              "sentence": "He has primarily appeared on podcast episodes with Myron Gaines, a fellow right-wing conspiracy theorist, appearing on his Fresh & Fit episodes alongside his co-host Walter Weekes, as well as on debates and discussions hosted by streamer Adin Ross.",
+              "weight": 6
+            }
+          ]
+        },
+        "signals": {
+          "establishment": [],
+          "justice": [
+            {
+              "clusterId": "J4",
+              "term": "lgbt",
+              "weight": 12
+            },
+            {
+              "clusterId": "J2",
+              "term": "diversity",
+              "weight": 12
+            }
+          ],
+          "tradition": [
+            {
+              "clusterId": "T1",
+              "term": "conservative",
+              "weight": 14
+            },
+            {
+              "clusterId": "T2",
+              "term": "nationalist",
+              "weight": 16
+            },
+            {
+              "clusterId": "T3",
+              "term": "Christian nationalism",
+              "weight": 12
+            }
+          ],
+          "conflict": [
+            {
+              "clusterId": "C6",
+              "term": "Holocaust",
+              "weight": 14
+            }
+          ],
+          "rigidity": [
+            {
+              "clusterId": "R5",
+              "term": "Holocaust denial",
+              "weight": 14
+            },
+            {
+              "clusterId": "R4",
+              "term": "conspiracy theorist",
+              "weight": 6
+            }
+          ]
+        },
+        "pfFallbackApplied": false,
+        "salienceApplied": false
+      },
+      "modelInputs": {
+        "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
+        "signalsFired": 8,
+        "confidence": 0.9,
+        "lastImportedAt": "2026-03-07T21:41:10.380Z"
+      },
+      "scores": {
+        "establishment": 50,
+        "justice": 74,
+        "tradition": 80,
+        "conflict": 64,
+        "rigidity": 70
+      },
+      "adjustments": [],
+      "status": "active",
+      "reviewNote": "",
+      "confidence": 0.9,
+      "reviewFlags": [],
+      "imageCredit": {
+        "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/9/95/Nick_Fuentes_screencap_from_July_2022_virtual_debate.png",
+        "author": "Modern-Day Debate",
+        "license": "CC BY 3.0",
+        "attributionText": "Modern-Day Debate"
+      },
+      "cei": {
+        "value": 86,
+        "tier": "Extreme"
+      },
+      "primaryLean": "Chud",
+      "occupations": [
+        "political pundit",
+        "podcaster",
+        "online streamer"
+      ]
+    },
+    {
+      "slug": "hasan-piker",
+      "name": "Hasan Piker",
+      "aliases": [],
+      "portraitPath": "https://upload.wikimedia.org/wikipedia/commons/9/93/Hasan_Piker_2018_%28cropped%29.jpg",
+      "portraitIsRemote": true,
+      "sources": [
+        "https://en.wikipedia.org/wiki/Hasan_Piker"
+      ],
+      "researchSummary": "Hasan Doğan Piker (born July 25, 1991), known online by the name HasanAbi, is an American Twitch streamer, influencer, and left-wing political commentator. His content primarily consists of political and social commentary and media consumption.",
+      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 5 signal cluster(s). Confidence 75%.",
+      "modelReadout": {
+        "instrument": "Wikipedia lead + infobox metadata -> heuristic clusters -> five-axis signal wheel",
+        "observed": {
+          "sourceCount": 1,
+          "occupationsCount": 0,
+          "hasImage": true,
+          "signalCount": 5
+        },
+        "confidencePct": 75,
+        "evidence": {
+          "establishment": [],
+          "justice": [
+            {
+              "clusterId": "J9",
+              "term": "left-wing",
+              "sentence": "Hasan Doğan Piker (born July 25, 1991), known online by the name HasanAbi, is an American Twitch streamer, influencer, and left-wing political commentator.",
+              "weight": 8
+            },
+            {
+              "clusterId": "J4",
+              "term": "lgbt",
+              "sentence": "He has advocated in favor of workplace democracy, universal health care, LGBTQ+ rights, Andrew Marantz of The New Yorker described Piker as anti-Trump but \"hardly a loyal Democrat\".",
+              "weight": 12
+            },
+            {
+              "clusterId": "J7",
+              "term": "marxist",
+              "sentence": "Piker has been most commonly identified as a leftist, socialist, and Marxist.",
+              "weight": 12
+            }
+          ],
+          "tradition": [
+            {
+              "clusterId": "T6",
+              "term": "left-wing",
+              "sentence": "Hasan Doğan Piker (born July 25, 1991), known online by the name HasanAbi, is an American Twitch streamer, influencer, and left-wing political commentator.",
+              "weight": -14
+            },
+            {
+              "clusterId": "T2",
+              "term": "antisemitism",
+              "sentence": "The pro-Israel group StopAntisemitism nominated Piker as \"Antisemite of the Year\" in 2024.",
+              "weight": 16
+            }
+          ],
+          "conflict": [],
+          "rigidity": []
+        },
+        "signals": {
+          "establishment": [],
+          "justice": [
+            {
+              "clusterId": "J9",
+              "term": "left-wing",
+              "weight": 8
+            },
+            {
+              "clusterId": "J4",
+              "term": "lgbt",
+              "weight": 12
+            },
+            {
+              "clusterId": "J7",
+              "term": "marxist",
+              "weight": 12
+            }
+          ],
+          "tradition": [
+            {
+              "clusterId": "T6",
+              "term": "left-wing",
+              "weight": -14
+            },
+            {
+              "clusterId": "T2",
+              "term": "antisemitism",
+              "weight": 16
+            }
+          ],
+          "conflict": [],
+          "rigidity": []
+        },
+        "pfFallbackApplied": false,
+        "salienceApplied": false
+      },
+      "modelInputs": {
+        "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
+        "signalsFired": 5,
+        "confidence": 0.75,
+        "lastImportedAt": "2026-03-07T21:41:14.971Z"
+      },
+      "scores": {
+        "establishment": 50,
+        "justice": 75,
+        "tradition": 52,
+        "conflict": 50,
+        "rigidity": 50
+      },
+      "adjustments": [
+        {
+          "at": "2026-03-07T19:25:00.283Z",
+          "type": "auto",
+          "note": "Automatic normalization applied due to low signal density: public-figure fallback bump (low signal density)"
+        }
+      ],
+      "status": "active",
+      "reviewNote": "",
+      "confidence": 0.75,
+      "reviewFlags": [],
+      "imageCredit": {
+        "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/9/93/Hasan_Piker_2018_%28cropped%29.jpg",
+        "author": "mo1567",
+        "license": "CC BY-SA 2.0",
+        "attributionText": null
+      },
+      "cei": {
+        "value": 36,
+        "tier": "Moderate"
+      },
+      "primaryLean": "Woke",
+      "occupations": [
+        "vlogger",
+        "Twitch streamer",
+        "pundit",
+        "political pundit",
+        "television producer",
+        "columnist",
+        "gamer",
+        "YouTuber"
+      ]
+    },
+    {
+      "slug": "martin-luther-king-jr",
+      "name": "Martin Luther King Jr.",
+      "aliases": [],
+      "portraitPath": "https://upload.wikimedia.org/wikipedia/commons/0/05/Martin_Luther_King%2C_Jr..jpg",
+      "portraitIsRemote": true,
+      "sources": [
+        "https://en.wikipedia.org/wiki/Martin_Luther_King_Jr."
+      ],
+      "researchSummary": "Martin Luther King Jr. (born Michael King Jr.; January 15, 1929 - April 4, 1968) was an American civil rights activist and Baptist minister who was a leader of the civil rights movement from 1955 until his assassination in 1968.",
+      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 6 signal cluster(s). Confidence 90%.",
+      "modelReadout": {
+        "instrument": "Wikipedia lead + infobox metadata -> heuristic clusters -> five-axis signal wheel",
+        "observed": {
+          "sourceCount": 1,
+          "occupationsCount": 0,
+          "hasImage": true,
+          "signalCount": 6
+        },
+        "confidencePct": 90,
+        "evidence": {
+          "establishment": [
+            {
+              "clusterId": "E6",
+              "term": "civil disobedience",
+              "sentence": "He advanced civil rights for people of color in the United States through the use of nonviolent resistance and civil disobedience against Jim Crow laws and other forms of legalized discrimination, which most commonly affected African Americans.",
+              "weight": -6
+            }
+          ],
+          "justice": [
+            {
+              "clusterId": "J1",
+              "term": "civil rights",
+              "sentence": "(born Michael King Jr.; January 15, 1929 - April 4, 1968) was an American civil rights activist and Baptist minister who was a leader of the civil rights movement from 1955 until his assassination in 1968.",
+              "weight": 14
+            },
+            {
+              "clusterId": "J2",
+              "term": "racial equality",
+              "sentence": "King critiqued both parties' performance on promoting racial equality: }} Although King never publicly supported a political party or candidate for president, in a letter to a civil rights supporter in October 1956 he said that he had not decided whether he wo...",
+              "weight": 12
+            }
+          ],
+          "tradition": [
+            {
+              "clusterId": "T6",
+              "term": "communist",
+              "sentence": "FBI agents investigated him for possible communist ties, spied on his personal life, and secretly recorded him.",
+              "weight": -14
+            }
+          ],
+          "conflict": [
+            {
+              "clusterId": "C2",
+              "term": "investigated",
+              "sentence": "FBI agents investigated him for possible communist ties, spied on his personal life, and secretly recorded him.",
+              "weight": 10
+            }
+          ],
+          "rigidity": [
+            {
+              "clusterId": "R4",
+              "term": "conspiracy theories",
+              "sentence": "James Earl Ray was convicted of the assassination, though it remains the subject of conspiracy theories.",
+              "weight": 6
+            }
+          ]
+        },
+        "signals": {
+          "establishment": [
+            {
+              "clusterId": "E6",
+              "term": "civil disobedience",
+              "weight": -6
+            }
+          ],
+          "justice": [
+            {
+              "clusterId": "J1",
+              "term": "civil rights",
+              "weight": 14
+            },
+            {
+              "clusterId": "J2",
+              "term": "racial equality",
+              "weight": 12
+            }
+          ],
+          "tradition": [
+            {
+              "clusterId": "T6",
+              "term": "communist",
+              "weight": -14
+            }
+          ],
+          "conflict": [
+            {
+              "clusterId": "C2",
+              "term": "investigated",
+              "weight": 10
+            }
+          ],
+          "rigidity": [
+            {
+              "clusterId": "R4",
+              "term": "conspiracy theories",
+              "weight": 6
+            }
+          ]
+        },
+        "pfFallbackApplied": false,
+        "salienceApplied": false
+      },
+      "modelInputs": {
+        "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
+        "signalsFired": 6,
+        "confidence": 0.9,
+        "lastImportedAt": "2026-03-07T21:41:14.344Z"
+      },
+      "scores": {
+        "establishment": 44,
+        "justice": 75,
+        "tradition": 36,
+        "conflict": 60,
+        "rigidity": 56
+      },
+      "adjustments": [],
+      "status": "active",
+      "reviewNote": "",
+      "confidence": 0.9,
+      "reviewFlags": [],
+      "imageCredit": {
+        "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/0/05/Martin_Luther_King%2C_Jr..jpg",
+        "author": "Nobel Foundation",
+        "license": "Public domain",
+        "attributionText": null
+      },
+      "cei": {
+        "value": 60,
+        "tier": "Elevated"
+      },
+      "primaryLean": "Woke",
+      "occupations": [
+        "pastor",
+        "preacher",
+        "civil rights advocate",
+        "human rights defender",
+        "peace activist",
+        "pacifist",
+        "writer",
+        "politician",
+        "opinion journalist",
+        "religious leader"
+      ]
+    }
+  ]
+}

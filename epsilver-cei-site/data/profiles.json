@@ -1,0 +1,555 @@
+{
+  "profiles": [
+    {
+      "slug": "alex-jones",
+      "name": "Alex Jones",
+      "aliases": [],
+      "portraitPath": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Alex_Jones_%2853808242292%29_%28cropped%29.jpg",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Alex_Jones"
+      ],
+      "researchSummary": "Alexander Emerick Jones (born February 11, 1974) is an American far-right radio show host and prominent conspiracy theorist. He hosts The Alex Jones Show from Austin, Texas.",
+      "computedSummary": "DG CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 8 signal cluster(s). Confidence 90%.",
+      "modelInputs": {
+        "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
+        "signalsFired": 8,
+        "confidence": 0.9,
+        "lastImportedAt": "2026-03-07T07:34:26.579Z"
+      },
+      "scores": {
+        "establishment": 50,
+        "justice": 50,
+        "tradition": 70,
+        "conflict": 48,
+        "rigidity": 56
+      },
+      "adjustments": [],
+      "status": "active",
+      "reviewNote": "",
+      "confidence": 0.9,
+      "reviewFlags": [],
+      "imageCredit": {
+        "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Alex_Jones_%2853808242292%29_%28cropped%29.jpg",
+        "author": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/22007612@N05\">Gage Skidmore</a> from Surprise, AZ, United States of America",
+        "license": "CC BY-SA 2.0",
+        "attributionText": null
+      },
+      "cei": {
+        "value": 62,
+        "tier": "High"
+      },
+      "primaryLean": "Chud",
+      "portraitIsRemote": true,
+      "modelReadout": {
+        "instrument": "Wikipedia lead + infobox metadata -> heuristic clusters -> five-axis signal wheel",
+        "observed": {
+          "sourceCount": 1,
+          "occupationsCount": 0,
+          "hasImage": true,
+          "signalCount": 8
+        },
+        "confidencePct": 90,
+        "evidence": {
+          "establishment": [],
+          "justice": [],
+          "tradition": [
+            {
+              "clusterId": "T1",
+              "term": "far-right",
+              "sentence": "Alexander Emerick Jones (born February 11, 1974) is an American far-right radio show host and prominent conspiracy theorist.",
+              "weight": 14
+            },
+            {
+              "clusterId": "T2",
+              "term": "nationalist",
+              "sentence": "Jones has provided a platform for white nationalists and neo-Nazis on his website Banned.Video, as well as providing an \"entry point\" to their ideology.",
+              "weight": 16
+            },
+            {
+              "clusterId": "T7",
+              "term": "globalist",
+              "sentence": "He has also claimed that several governments and large businesses have colluded to create a globalist \"New World Order\" through \"manufactured economic crises, sophisticated surveillance tech and-above all-inside-job terror attacks that fuel exploitable hysteri...",
+              "weight": -10
+            }
+          ],
+          "conflict": [
+            {
+              "clusterId": "C3",
+              "term": "banned",
+              "sentence": "He is the founder of Infowars and Banned.Video, websites that promote conspiracy theories and fake news.",
+              "weight": 8
+            },
+            {
+              "clusterId": "CD1",
+              "term": "bipartisan",
+              "sentence": "A longtime critic of Republican and Democratic foreign and security policy, Jones supported Donald Trump's 2016 presidential bid and continued to support him as a savior from an alleged criminal bipartisan cabal controlling the federal government, despite also...",
+              "weight": -10
+            }
+          ],
+          "rigidity": [
+            {
+              "clusterId": "R1",
+              "term": "staunch",
+              "sentence": "A staunch supporter of Trump's re-election, Jones also supported the attempts to overturn the 2020 United States presidential election.",
+              "weight": 12
+            },
+            {
+              "clusterId": "R4",
+              "term": "conspiracy theorist",
+              "sentence": "Alexander Emerick Jones (born February 11, 1974) is an American far-right radio show host and prominent conspiracy theorist.",
+              "weight": 6
+            },
+            {
+              "clusterId": "RD1",
+              "term": "bipartisan",
+              "sentence": "A longtime critic of Republican and Democratic foreign and security policy, Jones supported Donald Trump's 2016 presidential bid and continued to support him as a savior from an alleged criminal bipartisan cabal controlling the federal government, despite also...",
+              "weight": -12
+            }
+          ]
+        },
+        "signals": {
+          "establishment": [],
+          "justice": [],
+          "tradition": [
+            {
+              "clusterId": "T1",
+              "term": "far-right",
+              "weight": 14
+            },
+            {
+              "clusterId": "T2",
+              "term": "nationalist",
+              "weight": 16
+            },
+            {
+              "clusterId": "T7",
+              "term": "globalist",
+              "weight": -10
+            }
+          ],
+          "conflict": [
+            {
+              "clusterId": "C3",
+              "term": "banned",
+              "weight": 8
+            },
+            {
+              "clusterId": "CD1",
+              "term": "bipartisan",
+              "weight": -10
+            }
+          ],
+          "rigidity": [
+            {
+              "clusterId": "R1",
+              "term": "staunch",
+              "weight": 12
+            },
+            {
+              "clusterId": "R4",
+              "term": "conspiracy theorist",
+              "weight": 6
+            },
+            {
+              "clusterId": "RD1",
+              "term": "bipartisan",
+              "weight": -12
+            }
+          ]
+        },
+        "pfFallbackApplied": false,
+        "salienceApplied": false
+      }
+    },
+    {
+      "slug": "taylor-swift",
+      "name": "Taylor Swift",
+      "aliases": [],
+      "portraitPath": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Taylor_Swift_at_the_2023_MTV_Video_Music_Awards_%282%29_%28cropped%29.png",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Taylor_Swift"
+      ],
+      "researchSummary": "Taylor Alison Swift (born December 13, 1989) is an American singer-songwriter. An influential figure in popular culture, she is known for her autobiographical songwriting and artistic reinventions.",
+      "computedSummary": "DG CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 0 signal cluster(s). Confidence 75%.",
+      "modelInputs": {
+        "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
+        "signalsFired": 0,
+        "confidence": 0.75,
+        "lastImportedAt": "2026-02-26T14:31:11.433Z"
+      },
+      "scores": {
+        "establishment": 64,
+        "justice": 50,
+        "tradition": 50,
+        "conflict": 54,
+        "rigidity": 50
+      },
+      "adjustments": [
+        {
+          "at": "2026-02-26T14:31:11.432Z",
+          "type": "auto",
+          "note": "Automatic normalization applied due to low signal density: public-figure fallback bump (low signal density) + salience-term bump"
+        }
+      ],
+      "status": "active",
+      "reviewNote": "",
+      "confidence": 0.75,
+      "reviewFlags": [],
+      "imageCredit": {
+        "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Taylor_Swift_at_the_2023_MTV_Video_Music_Awards_%282%29_%28cropped%29.png",
+        "author": "<a rel=\"nofollow\" class=\"external text\" href=\"https://youtube.com/@iHeartRadioCA\">iHeartRadioCA</a>",
+        "license": "CC BY 3.0",
+        "attributionText": "iHeartRadioCA"
+      },
+      "cei": {
+        "value": 34,
+        "tier": "Moderate"
+      },
+      "primaryLean": "Chud",
+      "portraitIsRemote": true,
+      "modelReadout": {
+        "instrument": "Wikipedia lead + infobox metadata -> heuristic clusters -> five-axis signal wheel",
+        "observed": {
+          "sourceCount": 1,
+          "occupationsCount": 0,
+          "hasImage": true,
+          "signalCount": 0
+        },
+        "confidencePct": 75,
+        "evidence": {
+          "establishment": [],
+          "justice": [],
+          "tradition": [],
+          "conflict": [],
+          "rigidity": []
+        },
+        "signals": {
+          "establishment": [],
+          "justice": [],
+          "tradition": [],
+          "conflict": [],
+          "rigidity": []
+        },
+        "pfFallbackApplied": true,
+        "salienceApplied": true
+      }
+    },
+    {
+      "slug": "adolf-hitler",
+      "name": "Adolf Hitler",
+      "aliases": [],
+      "portraitPath": "https://upload.wikimedia.org/wikipedia/commons/1/16/Adolf_Hitler_cropped_restored_3x4.jpg",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Adolf_Hitler"
+      ],
+      "researchSummary": "Adolf Hitler (20 April 1889 - 30 April 1945) was an Austrian-born German politician who was the dictator of Germany during the Nazi era, which lasted from 1933 until his suicide in 1945. He rose to power as the leader of the Nazi Party, becoming the chancellor of Germany in 1933 and then taking the title of Führer und ",
+      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 7 signal cluster(s). Confidence 90%.",
+      "modelReadout": {
+        "instrument": "Wikipedia lead + infobox metadata -> heuristic clusters -> five-axis signal wheel",
+        "observed": {
+          "sourceCount": 1,
+          "occupationsCount": 0,
+          "hasImage": true,
+          "signalCount": 7
+        },
+        "confidencePct": 90,
+        "evidence": {
+          "establishment": [
+            {
+              "clusterId": "E1",
+              "term": "appointed",
+              "sentence": "In 1919, he joined the German Workers' Party (DAP), the precursor of the Nazi Party, and in 1921, was appointed the leader of the Nazi Party.",
+              "weight": 10
+            }
+          ],
+          "justice": [],
+          "tradition": [
+            {
+              "clusterId": "T1",
+              "term": "conservative",
+              "sentence": "Former chancellor Franz von Papen and other conservative politicians convinced President Paul von Hindenburg to appoint Hitler as chancellor on 30 January 1933.",
+              "weight": 14
+            },
+            {
+              "clusterId": "T2",
+              "term": "Nazi",
+              "sentence": "Adolf Hitler (20 April 1889 - 30 April 1945) was an Austrian-born German politician who was the dictator of Germany during the Nazi era, which lasted from 1933 until his suicide in 1945.",
+              "weight": 16
+            }
+          ],
+          "conflict": [
+            {
+              "clusterId": "C1",
+              "term": "denounced",
+              "sentence": "He frequently denounced communism as being part of an international Jewish conspiracy.",
+              "weight": 10
+            },
+            {
+              "clusterId": "C5",
+              "term": "coup",
+              "sentence": "In 1923, he attempted to seize governmental power in a failed coup in Munich and was sentenced to five years in prison, serving just over a year.",
+              "weight": 12
+            },
+            {
+              "clusterId": "C6",
+              "term": "genocide",
+              "sentence": "Throughout the ensuing conflict, Hitler was closely involved in the direction of German military operations as well as the perpetration of the Holocaust, the genocide of about six million Jews and millions of other victims.",
+              "weight": 14
+            }
+          ],
+          "rigidity": [
+            {
+              "clusterId": "R1",
+              "term": "strict",
+              "sentence": "His first six years in power resulted in rapid economic recovery from the Great Depression, the abrogation of restrictions imposed on Germany after the First World War, and the annexation of territories inhabited by millions of ethnic Germans, which initially...",
+              "weight": 12
+            }
+          ]
+        },
+        "signals": {
+          "establishment": [
+            {
+              "clusterId": "E1",
+              "term": "appointed",
+              "weight": 10
+            }
+          ],
+          "justice": [],
+          "tradition": [
+            {
+              "clusterId": "T1",
+              "term": "conservative",
+              "weight": 14
+            },
+            {
+              "clusterId": "T2",
+              "term": "Nazi",
+              "weight": 16
+            }
+          ],
+          "conflict": [
+            {
+              "clusterId": "C1",
+              "term": "denounced",
+              "weight": 10
+            },
+            {
+              "clusterId": "C5",
+              "term": "coup",
+              "weight": 12
+            },
+            {
+              "clusterId": "C6",
+              "term": "genocide",
+              "weight": 14
+            }
+          ],
+          "rigidity": [
+            {
+              "clusterId": "R1",
+              "term": "strict",
+              "weight": 12
+            }
+          ]
+        },
+        "pfFallbackApplied": false,
+        "salienceApplied": false
+      },
+      "modelInputs": {
+        "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
+        "signalsFired": 7,
+        "confidence": 0.9,
+        "lastImportedAt": "2026-03-07T08:07:52.371Z"
+      },
+      "scores": {
+        "establishment": 60,
+        "justice": 50,
+        "tradition": 80,
+        "conflict": 85,
+        "rigidity": 62
+      },
+      "adjustments": [],
+      "status": "active",
+      "reviewNote": "",
+      "confidence": 0.9,
+      "reviewFlags": [],
+      "imageCredit": {
+        "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/1/16/Adolf_Hitler_cropped_restored_3x4.jpg",
+        "author": "<div class=\"fn value\">\nUnknown author<span style=\"display: none;\">Unknown author</span></div>",
+        "license": "CC BY-SA 3.0 de",
+        "attributionText": "Bundesarchiv, Bild 183-S33882 / CC BY-SA 3.0 DE"
+      },
+      "cei": {
+        "value": 100,
+        "tier": "Extreme"
+      },
+      "primaryLean": "Chud",
+      "portraitIsRemote": true
+    },
+    {
+      "slug": "bernie-sanders",
+      "name": "Bernie Sanders",
+      "aliases": [],
+      "portraitPath": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Bernie_Sanders_2023.jpg",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Bernie_Sanders"
+      ],
+      "researchSummary": "Bernard Sanders (born September 8, 1941) is an American politician and activist serving as the senior United States senator from Vermont, a seat he has held since 2007. He is the longest-serving independent in U.S.",
+      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 8 signal cluster(s). Confidence 90%.",
+      "modelReadout": {
+        "instrument": "Wikipedia lead + infobox metadata -> heuristic clusters -> five-axis signal wheel",
+        "observed": {
+          "sourceCount": 1,
+          "occupationsCount": 0,
+          "hasImage": true,
+          "signalCount": 8
+        },
+        "confidencePct": 90,
+        "evidence": {
+          "establishment": [
+            {
+              "clusterId": "E3",
+              "term": "billionaire",
+              "sentence": "Since Donald Trump's reelection as president in 2024, Sanders has vocally opposed Trump's administration and perceived corruption as what he calls a right-wing oligarchy, rallying an organization tour against Trump and his allies, especially MAGA-aligned billi...",
+              "weight": 8
+            },
+            {
+              "clusterId": "E6",
+              "term": "grassroots",
+              "sentence": "His 2016 campaign generated significant grassroots enthusiasm and funding from small-dollar donors, helping him win 23 primaries and caucuses.",
+              "weight": -6
+            }
+          ],
+          "justice": [
+            {
+              "clusterId": "J1",
+              "term": "civil rights",
+              "sentence": "While a student, he was a protest organizer for the Congress of Racial Equality (CORE) and the Student Nonviolent Coordinating Committee (SNCC) during the civil rights movement.",
+              "weight": 14
+            },
+            {
+              "clusterId": "J2",
+              "term": "racial equality",
+              "sentence": "While a student, he was a protest organizer for the Congress of Racial Equality (CORE) and the Student Nonviolent Coordinating Committee (SNCC) during the civil rights movement.",
+              "weight": 12
+            }
+          ],
+          "tradition": [
+            {
+              "clusterId": "T1",
+              "term": "right-wing",
+              "sentence": "Since Donald Trump's reelection as president in 2024, Sanders has vocally opposed Trump's administration and perceived corruption as what he calls a right-wing oligarchy, rallying an organization tour against Trump and his allies, especially MAGA-aligned billi...",
+              "weight": 14
+            },
+            {
+              "clusterId": "T6",
+              "term": "progressive",
+              "sentence": "Ideologically a democratic socialist, Sanders is regarded as one of the main leaders of the modern American progressive movement.",
+              "weight": -14
+            }
+          ],
+          "conflict": [
+            {
+              "clusterId": "C5",
+              "term": "authoritarian",
+              "sentence": "An advocate of progressive policies, he opposes neoliberalism and authoritarianism.",
+              "weight": 12
+            }
+          ],
+          "rigidity": [
+            {
+              "clusterId": "R1",
+              "term": "strict",
+              "sentence": "House of Representatives in 1990, representing Vermont's at-large congressional district.",
+              "weight": 12
+            }
+          ]
+        },
+        "signals": {
+          "establishment": [
+            {
+              "clusterId": "E3",
+              "term": "billionaire",
+              "weight": 8
+            },
+            {
+              "clusterId": "E6",
+              "term": "grassroots",
+              "weight": -6
+            }
+          ],
+          "justice": [
+            {
+              "clusterId": "J1",
+              "term": "civil rights",
+              "weight": 14
+            },
+            {
+              "clusterId": "J2",
+              "term": "racial equality",
+              "weight": 12
+            }
+          ],
+          "tradition": [
+            {
+              "clusterId": "T1",
+              "term": "right-wing",
+              "weight": 14
+            },
+            {
+              "clusterId": "T6",
+              "term": "progressive",
+              "weight": -14
+            }
+          ],
+          "conflict": [
+            {
+              "clusterId": "C5",
+              "term": "authoritarian",
+              "weight": 12
+            }
+          ],
+          "rigidity": [
+            {
+              "clusterId": "R1",
+              "term": "strict",
+              "weight": 12
+            }
+          ]
+        },
+        "pfFallbackApplied": false,
+        "salienceApplied": false
+      },
+      "modelInputs": {
+        "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
+        "signalsFired": 8,
+        "confidence": 0.9,
+        "lastImportedAt": "2026-03-07T08:11:23.352Z"
+      },
+      "scores": {
+        "establishment": 52,
+        "justice": 75,
+        "tradition": 50,
+        "conflict": 62,
+        "rigidity": 62
+      },
+      "adjustments": [],
+      "status": "active",
+      "reviewNote": "",
+      "confidence": 0.9,
+      "reviewFlags": [],
+      "imageCredit": {
+        "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Bernie_Sanders_2023.jpg",
+        "author": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/51178866@N04\">Palácio do Planalto</a> from Brasilia, Brasil",
+        "license": "CC BY 2.0",
+        "attributionText": null
+      },
+      "cei": {
+        "value": 92,
+        "tier": "Extreme"
+      },
+      "primaryLean": "Woke",
+      "portraitIsRemote": true
+    }
+  ]
+}

@@ -1,0 +1,310 @@
+#!/usr/bin/env node
+import path from "node:path";
+import readline from "node:readline/promises";
+import { stdin as input, stdout as output } from "node:process";
+
+import { DEFAULTS } from "../lib/config.js";
+import { wikiSearch, wikiPageBundle, wikiImageInfo } from "../lib/wiki.js";
+import { wikidataOccupationsAndImage } from "../lib/wikidata.js";
+import { scoreFromTextAndOcc } from "../lib/heuristic.js";
+import { computeCEI, computeLean, leanLabel } from "../lib/scoring.js";
+import { computeConfidence } from "../lib/confidence.js";
+import { buildProfile, mergeIntoProfilesJson, slugify } from "../lib/profile.js";
+import { downloadTo } from "../lib/image.js";
+
+function parseArgs(argv) {
+  const args = { _: [] };
+  for (let i = 2; i < argv.length; i++) {
+    const a = argv[i];
+    if (a === "--help" || a === "-h") { args.help = true; continue; }
+    if (a.startsWith("--")) {
+      const k = a.slice(2);
+      const v = argv[i+1] && !argv[i+1].startsWith("--") ? argv[++i] : true;
+      args[k] = v;
+    } else {
+      args._.push(a);
+    }
+  }
+  return args;
+}
+
+function cfgFromArgs(args) {
+  return {
+    ...DEFAULTS,
+    cacheDir: args["cache-dir"] ? String(args["cache-dir"]) : DEFAULTS.cacheDir,
+    sleepMs: args["sleep-ms"] ? Number(args["sleep-ms"]) : DEFAULTS.sleepMs,
+    userAgent: args["user-agent"] ? String(args["user-agent"]) : DEFAULTS.userAgent
+  };
+}
+
+function print(s="") { output.write(String(s) + "\n"); }
+function fmtPct(x) { return `${Math.round(x * 100)}%`; }
+
+function help() {
+  print("dg-cei (CLI) - Depravity Girlz CEI tool");
+  print("");
+  print("Commands:");
+  print("  dg-cei add \"Name\" [--pick 1|2|3]");
+  print("  dg-cei import --query \"Name\" --site \"C:\\path\\to\\site\" [--pick 1|2|3] [--yes]");
+  print("");
+  print("Global flags:");
+  print("  --help, -h");
+  print("  --cache-dir <path>     Override cache dir (default .cache_wiki)");
+  print("  --sleep-ms <n>         Throttle requests in ms (default 900)");
+  print("  --user-agent <string>  Override user agent");
+  print("");
+  print("Examples:");
+  print("  dg-cei add \"Taylor Swift\"");
+  print("  dg-cei add \"John Smith\" --pick 2");
+  print("  dg-cei import --query \"John Smith\" --site \"C:\\cei-site\" --pick 1 --yes");
+}
+
+async function chooseResult(results, pickArg) {
+  if (!results.length) throw new Error("No results.");
+  print("Top results:");
+  results.forEach((r, i) => {
+    const snip = r.snippet ? ` - ${r.snippet.slice(0, 90)}${r.snippet.length > 90 ? "..." : ""}` : "";
+    print(`  ${i+1}) ${r.title}${snip}`);
+  });
+
+  const n = Number(pickArg);
+  if ([1,2,3].includes(n)) return results[n-1].title;
+
+  const rl = readline.createInterface({ input, output });
+  const ans = await rl.question("Select [1-3] (default 1): ");
+  rl.close();
+
+  const k = ans.trim() === "" ? 1 : Number(ans.trim());
+  if (![1,2,3].includes(k)) return results[0].title;
+  return results[k-1].title;
+}
+
+function deriveStatus(scores, confidence, signalCount, summaryWordCount, hasImage, hasOccupations) {
+  const reviewFlags = [];
+  const contradictions = (scores.justice >= 75 && scores.tradition >= 75);
+
+  // NEW: neutral public figures shouldn't be auto-under_review
+  const neutralButConfident =
+    signalCount < 3 &&
+    confidence >= 0.70 &&
+    hasImage &&
+    hasOccupations;
+
+  if (confidence < 0.55) reviewFlags.push("low_confidence");
+  if (signalCount < 3 && !neutralButConfident) reviewFlags.push("low_signal_density");
+  if (summaryWordCount < 40) reviewFlags.push("short_summary");
+  if (!hasImage) reviewFlags.push("image_missing");
+  if (contradictions) reviewFlags.push("contradictory_vectors");
+
+  const status =
+    (confidence < 0.55 || contradictions || (signalCount < 3 && !neutralButConfident))
+      ? "under_review"
+      : "active";
+
+  return { status, reviewFlags, contradictions };
+}
+
+function printPreview(bundle, occupations, scores, ceiOut, leanOut, confidence, signalCount, status, reviewFlags) {
+  print("=== DG CEI PREVIEW (dry-run) ===");
+  print(`Name: ${bundle.title}`);
+  print(`Slug: ${slugify(bundle.title)}`);
+  if (occupations?.length) print(`Occupations: ${occupations.slice(0,6).join(", ")}${occupations.length>6?"...":""}`);
+  print(`Primary Lean: ${leanLabel(leanOut.code)} (P=${leanOut.progressive.toFixed(2)} / R=${leanOut.reactionary.toFixed(2)})`);
+  print(`CEI: ${ceiOut.cei} - ${ceiOut.tier}`);
+  print(`Status: ${status}`);
+  if (reviewFlags.length) print(`Review Flags: ${reviewFlags.join(", ")}`);
+  print("");
+  print("Vectors (0-100):");
+  print(`  Establishment: ${scores.establishment}`);
+  print(`  Justice:       ${scores.justice}`);
+  print(`  Tradition:     ${scores.tradition}`);
+  print(`  Conflict:      ${scores.conflict}`);
+  print(`  Rigidity:      ${scores.rigidity}`);
+  print("");
+  print("Sources:");
+  if (bundle.fullurl) print(`  Wikipedia: ${bundle.fullurl}`);
+  if (bundle.pageimage) print(`  Image (infobox): ${bundle.pageimage}`);
+  if (!bundle.pageimage && bundle.qid) print(`  Image fallback: Wikidata P18 via ${bundle.qid}`);
+  print("");
+  print(`Confidence: ${fmtPct(confidence)} | Signal clusters fired: ${signalCount}`);
+}
+
+async function resolveImageInfo(bundle, wdImageName, cfg) {
+  // Prefer Wikipedia infobox image filename, else Wikidata P18 filename
+  const fileName = bundle.pageimage || wdImageName;
+  if (!fileName) return null;
+  return await wikiImageInfo(fileName, cfg);
+}
+
+async function cmdAdd(query, args, cfg) {
+  const results = await wikiSearch(query, cfg);
+  const chosen = await chooseResult(results, args.pick);
+  const bundle = await wikiPageBundle(chosen, cfg);
+
+  const wd = await wikidataOccupationsAndImage(bundle.qid, cfg);
+  const occupations = wd.occupations || [];
+
+  // IMPORTANT: capture evidence + signals
+  const { scores, signals, evidence, signalCount } = scoreFromTextAndOcc(bundle.extract, occupations, cfg);
+  bundle.signals = signals;
+  bundle.evidence = evidence;
+  bundle.signalCount = signalCount;
+
+  const ceiOut = computeCEI(scores, cfg);
+  const leanOut = computeLean(scores, cfg);
+
+  const imageInfo = await resolveImageInfo(bundle, wd.imageName, cfg);
+  const hasImage = Boolean(imageInfo?.url);
+
+  const summaryWordCount = (bundle.extract || "").trim().split(/\s+/).filter(Boolean).length;
+  const { contradictions } = deriveStatus(scores, 1, signalCount, summaryWordCount, hasImage, occupations.length > 0);
+
+  const confidence = computeConfidence({
+    signalCount,
+    hasImage,
+    hasOccupations: occupations.length > 0,
+    summaryWordCount,
+    contradictions
+  });
+
+  const { status, reviewFlags } = deriveStatus(scores, confidence, signalCount, summaryWordCount, hasImage, occupations.length > 0);
+
+  printPreview(bundle, occupations, scores, ceiOut, leanOut, confidence, signalCount, status, reviewFlags);
+  print("");
+  print("Note: dry-run only. Use import to write into a site repo.");
+}
+
+async function cmdImport(args, cfg) {
+  const query = args.query;
+  const site = args.site;
+  if (!query) throw new Error("--query is required");
+  if (!site) throw new Error("--site is required");
+
+  const results = await wikiSearch(query, cfg);
+  const chosen = await chooseResult(results, args.pick);
+  const bundle = await wikiPageBundle(chosen, cfg);
+
+  const wd = await wikidataOccupationsAndImage(bundle.qid, cfg);
+  const occupations = wd.occupations || [];
+
+  // IMPORTANT: capture evidence + signals
+  const { scores, signals, evidence, signalCount } = scoreFromTextAndOcc(bundle.extract, occupations, cfg);
+  bundle.signals = signals;
+  bundle.evidence = evidence;
+  bundle.signalCount = signalCount;
+
+  const ceiOut = computeCEI(scores, cfg);
+  const leanOut = computeLean(scores, cfg);
+
+  const imageInfo = await resolveImageInfo(bundle, wd.imageName, cfg);
+  const hasImage = Boolean(imageInfo?.url);
+
+  const summaryWordCount = (bundle.extract || "").trim().split(/\s+/).filter(Boolean).length;
+  const { contradictions } = deriveStatus(scores, 1, signalCount, summaryWordCount, hasImage, occupations.length > 0);
+
+  const confidence = computeConfidence({
+    signalCount,
+    hasImage,
+    hasOccupations: occupations.length > 0,
+    summaryWordCount,
+    contradictions
+  });
+
+  const { status, reviewFlags } = deriveStatus(scores, confidence, signalCount, summaryWordCount, hasImage, occupations.length > 0);
+
+  // Preview first
+  printPreview(bundle, occupations, scores, ceiOut, leanOut, confidence, signalCount, status, reviewFlags);
+
+  if (!args.yes) {
+    const rl = readline.createInterface({ input, output });
+    const ans = await rl.question("Proceed with import? (y/N): ");
+    rl.close();
+    if (ans.trim().toLowerCase() !== "y") {
+      print("Import cancelled.");
+      return;
+    }
+  }
+
+  const profile = buildProfile({
+  const adjustments = [];
+  if (pfFallbackApplied || salienceApplied) {
+    const reasons = [];
+    if (pfFallbackApplied) reasons.push("public-figure baseline normalization");
+    if (salienceApplied) reasons.push("salience phrase adjustment");
+
+    adjustments.push({
+      at: new Date().toISOString(),
+      type: "heuristic",
+      field: "scores",
+      note: "Automatic normalization applied due to low signal density: " + reasons.join(" + "),
+      deltas
+    });
+  }
+  const profile = buildProfile({
+    bundle,
+    imageInfo,
+    scores,
+    confidence,
+    reviewFlags,
+    status,
+    adjustments
+  });
+
+  // Persist computed display fields (so the site doesn't have to guess)
+  profile.cei = { value: ceiOut.cei, tier: ceiOut.tier };
+  profile.primaryLean = leanLabel(leanOut.code);
+
+  if (imageInfo?.url && profile.portraitPath) {
+    const ext = profile.portraitPath.split(".").pop() || "jpg";
+    const outPath = path.join(site, "public", "portraits", `${profile.slug}.${ext}`);
+    try {
+      await downloadTo(imageInfo.url, outPath, cfg.userAgent, (bundle.pageimage || wd.imageName));
+    } catch (e) {
+      // Best-effort: keep import working even if Wikimedia blocks downloads (403)
+      print("");
+      print("WARN: Portrait download failed; using remote URL instead.");
+      print(`WARN: ${e?.message || e}`);
+
+      // Flip portrait to remote so the site can still render something
+      profile.portraitPath = imageInfo.url;
+      profile.portraitIsRemote = true;
+    }
+  }
+
+  mergeIntoProfilesJson(site, profile);
+
+  print("");
+  print("=== IMPORT COMPLETE ===");
+  print(`Wrote profile: ${profile.slug}`);
+  if (profile.portraitPath) print(`Portrait saved as: ${profile.portraitPath}`);
+  if (profile.imageCredit?.license) print(`License: ${profile.imageCredit.license}`);
+}
+
+async function main() {
+  const args = parseArgs(process.argv);
+  const cfg = cfgFromArgs(args);
+
+  if (args.help || !args._.length) { help(); process.exit(args._.length ? 0 : 1); }
+
+  const [cmd, ...rest] = args._;
+
+  try {
+    if (cmd === "add") {
+      const q = rest.join(" ").trim();
+      if (!q) throw new Error("Usage: dg-cei add \"Name\"");
+      await cmdAdd(q, args, cfg);
+      return;
+    }
+    if (cmd === "import") {
+      await cmdImport(args, cfg);
+      return;
+    }
+    help();
+    process.exit(1);
+  } catch (e) {
+    console.error("Error:", e?.message || e);
+    process.exit(1);
+  }
+}
+
+main();

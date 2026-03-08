@@ -1,0 +1,133 @@
+import { loadProfiles, getPortraitSrc } from "../components/data.js";
+import { radarSVG } from "../components/radar.js";
+import { showTip } from "../components/tooltip.js";
+
+function tierFromCEI(cei){
+  if (cei <= 20) return "Minimal";
+  if (cei <= 40) return "Moderate";
+  if (cei <= 60) return "Elevated";
+  if (cei <= 80) return "High";
+  return "Extreme";
+}
+
+function computeCEIFromScores(scores){
+  const b = 50;
+  const devs = ["establishment","justice","tradition","conflict","rigidity"]
+    .map(k => Math.abs((scores?.[k] ?? b) - b));
+  const rms = Math.sqrt(devs.reduce((a,d)=>a+d*d,0)/devs.length);
+
+  const raw = rms;
+  const k = 0.35, m = 8;
+  const logistic01 = (x)=>1/(1+Math.exp(-k*(x-m)));
+  const s0 = logistic01(0);
+  const sr = logistic01(raw);
+  const x01 = (sr - s0)/(1 - s0);
+  const cei = Math.max(0, Math.min(100, Math.round(x01*100)));
+  return { value: cei, tier: tierFromCEI(cei) };
+}
+
+export async function ProfilePage(root, { slug }) {
+  let profiles = [];
+  try {
+    profiles = await loadProfiles();
+  } catch (e) {
+    root.innerHTML = `<div class="card"><div class="h1">Data error</div><div class="small">${e?.message || e}</div></div>`;
+    return;
+  }
+
+  const p = profiles.find(x => x.slug === slug);
+  if (!p) {
+    root.innerHTML = `<div class="card"><div class="h1">Not found</div><div class="small">No profile for slug: ${slug}</div></div>`;
+    return;
+  }
+
+  const cei = p.cei || computeCEIFromScores(p.scores);
+  const primaryLean = p.primaryLean || "ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â";
+
+  const grid = document.createElement("div");
+  grid.className = "grid";
+
+  const left = document.createElement("div");
+  left.className = "card";
+
+  const portrait = getPortraitSrc(p);
+  left.innerHTML = `
+    <div class="row">
+      <div class="portrait">${portrait ? `<img src="${portrait}" alt="${p.name}">` : ""}</div>
+      <div style="flex:1">
+        <div class="bigline">
+          <div class="name">${p.name}</div>
+          <div class="lean">${primaryLean}</div>
+        </div>
+        <div class="small" style="margin-top:6px">${p.researchSummary || ""}</div>
+      </div>
+    </div>
+    <div class="hr"></div>
+
+    <div class="cei">
+      <div>
+        <div class="small">Cultural Extremity Index</div>
+        <div class="value">${cei.value}</div>
+      </div>
+      <div class="tier">${cei.tier}</div>
+    </div>
+    <div class="hr"></div>
+    <div class="hr"></div>
+    <div class="h1">Model Readout</div>
+    <div class="small">${p.computedSummary || ("DG CEI model ingest: public-source summary normalized into a five-axis signal wheel. Inputs observed: Wikipedia lead + infobox fields. Confidence " + Math.round((p.confidence || 0) * 100) + "%.")}</div><div class="small"><b>Sources</b><br>${(p.sources||[]).map(s=>`<div><a href="${s}" target="_blank" rel="noreferrer">${s}</a></div>`).join("")}</div>
+  `;
+const right = document.createElement("div");
+  right.className = "card";
+  right.innerHTML = `<div class="h1">Signal Wheel</div><div class="small">Hover sectors for axis detail. Polygon stretches into place.</div><div class="hr"></div>`;
+
+  const wheelWrap = document.createElement("div");
+  wheelWrap.style.maxWidth = "420px";
+  wheelWrap.style.margin = "0 auto";
+
+  const svg = radarSVG({
+    scores: p.scores || {},
+    size: 320,
+    onHover: (tip) => showTip(tip)
+  });
+
+  wheelWrap.appendChild(svg);
+  right.appendChild(wheelWrap);
+
+  right.appendChild(Object.assign(document.createElement("div"), { className: "hr" }));
+
+  
+  // Axis Glossary
+  const glossary = document.createElement("div");
+  glossary.className = "list glossary";
+  glossary.innerHTML = `
+    <div class="h1">Axis Glossary</div>
+    <div class="item"><div class="left"><b>Establishment</b><div class="meta">Alignment with institutional legitimacy and mainstream systems.</div></div></div>
+    <div class="item"><div class="left"><b>Justice</b><div class="meta">Rights/inequality framing; emphasis on fairness enforcement.</div></div></div>
+    <div class="item"><div class="left"><b>Tradition</b><div class="meta">Preference for continuity, norms, and heritage narratives.</div></div></div>
+    <div class="item"><div class="left"><b>Conflict</b><div class="meta">Tolerance for confrontation and culture-war engagement.</div></div></div>
+    <div class="item"><div class="left"><b>Rigidity</b><div class="meta">Consistency of positioning; low tolerance for ambiguity or reversal.</div></div></div>
+  `;
+  right.appendChild(glossary);
+const adjustments = Array.isArray(p.adjustments) ? p.adjustments : [];
+  const notes = document.createElement("div");
+  notes.innerHTML = `
+    <div class="h1">Adjustments</div>
+    <div class="small">${adjustments.length ? "" : "No manual adjustments recorded."}</div>
+    <div class="list" style="margin-top:10px">
+      ${adjustments.map(a => `
+        <div class="item">
+          <div class="left">
+            <div><b>${a?.when || "ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â"}</b></div>
+            <div class="meta">${a?.note || ""}</div>
+          </div>
+          <div class="pill">${a?.by || "DG"}</div>
+        </div>
+      `).join("")}
+    </div>
+  `;
+  right.appendChild(notes);
+
+  grid.appendChild(left);
+  grid.appendChild(right);
+  root.appendChild(grid);
+}

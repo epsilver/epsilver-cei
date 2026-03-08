@@ -1,0 +1,12 @@
+﻿{
+  "name": "epsilver-cei-cli",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "cei-cli": "./bin/cei-cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
