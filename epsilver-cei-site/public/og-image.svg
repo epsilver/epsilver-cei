@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#ffffff"/>
+
+  <!-- Rainbow stripe -->
+  <defs>
+    <linearGradient id="rainbow" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0"   stop-color="#ff2a2a"/>
+      <stop offset="0.2" stop-color="#ff7a00"/>
+      <stop offset="0.4" stop-color="#ffd400"/>
+      <stop offset="0.6" stop-color="#10c070"/>
+      <stop offset="0.8" stop-color="#2c6bff"/>
+      <stop offset="1.0" stop-color="#8a2be2"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="8" fill="url(#rainbow)"/>
+
+  <!-- Kicker -->
+  <text x="600" y="72" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="22" font-weight="400" fill="#444444" letter-spacing="3">CULTURAL EXTREMITY INDEX</text>
+
+  <!-- Hexagon -->
+  <polygon points="600,150 738,230 738,390 600,470 462,390 462,230" fill="#888888"/>
+
+  <!-- URL -->
+  <text x="600" y="584" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="22" font-weight="400" fill="#444444" letter-spacing="3">CULTURALEXTREMITYINDEX.COM</text>
+</svg>
