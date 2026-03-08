@@ -124,7 +124,7 @@ function renderModelEvidence(p){
     const items = Array.isArray(ev?.[k]) ? ev[k] : [];
 
     if (!items.length) {
-      return `<div class="small"><b>${axisLabel(k)}:</b> <i>No scored triggers detected.</i></div>`;
+      return `<div style="margin-top:20px"><div class="small"><b>${axisLabel(k)}:</b> <i>No scored triggers detected.</i></div></div>`;
     }
 
     const rows = items.slice(0, 8).map(x => {
