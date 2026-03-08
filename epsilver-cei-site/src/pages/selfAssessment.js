@@ -94,7 +94,7 @@ const QUESTIONS = [
       { label: "I disengage — the conflict isn't worth it",         deltas: { conflict:  -8 } },
       { label: "I try to understand it before responding",          deltas: { conflict:  -3 } },
       { label: "I politely engage",      deltas: {} },
-      { label: "I challenge it respectfully, but make my view clear", deltas: { conflict:   8 } },
+      { label: "I challenge it respectfully but make my view clear", deltas: { conflict:   8 } },
       { label: "I publicly debate it — silence is complicity",      deltas: { conflict:  14 } },
     ]
   },
@@ -104,7 +104,7 @@ const QUESTIONS = [
       { label: "Absolute — some things are simply right or wrong",  deltas: { rigidity:  12 } },
       { label: "Usually clear, though context matters",             deltas: { rigidity:   5 } },
       { label: "Complicated and rarely fully black or white",       deltas: {} },
-      { label: "Subjective. We have to listen to all sides",        deltas: { rigidity:  -5 } },
+      { label: "Subjective — we have to listen to all sides",        deltas: { rigidity:  -5 } },
       { label: "Only winners decide the truth",                     deltas: { rigidity: -12 } },
     ]
   },
@@ -112,7 +112,7 @@ const QUESTIONS = [
     text: "Electoral institutions and democratic processes...",
     answers: [
       { label: "Are fundamentally sound and trustworthy",           deltas: { establishment:  12 } },
-      { label: "Work, but require meaningful reform",               deltas: { establishment:   5 } },
+      { label: "Work but require meaningful reform",               deltas: { establishment:   5 } },
       { label: "Are flawed but still the best available system",    deltas: {} },
       { label: "Are influenced by money and power",                 deltas: { establishment:  -6 } },
       { label: "Are completely rigged",                             deltas: { establishment: -12 } },
