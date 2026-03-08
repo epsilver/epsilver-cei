@@ -71,7 +71,7 @@ const QUESTIONS = [
   {
     text: "Diversity, equity, and inclusion initiatives...",
     answers: [
-      { label: "Are vital and should be significantly expanded",    deltas: { justice:  14 } },
+      { label: "Are necessary and must be enforced at all times.",    deltas: { justice:  14 } },
       { label: "Are broadly positive with room to improve",         deltas: { justice:   6 } },
       { label: "Depend entirely on implementation",                 deltas: {} },
       { label: "Are often counterproductive and divisive",          deltas: { justice:  -7 } },
@@ -83,7 +83,7 @@ const QUESTIONS = [
     answers: [
       { label: "Are precious and must be actively preserved",       deltas: { tradition:  12 } },
       { label: "Matter and deserve genuine respect",                deltas: { tradition:   5 } },
-      { label: "Are worth acknowledging without mythologizing",     deltas: {} },
+      { label: "Can mostly be ignored.",                            deltas: {} },
       { label: "Are often weaponized to exclude people",            deltas: { tradition:  -6 } },
       { label: "Are constructs used primarily to divide",           deltas: { tradition: -12 } },
     ]
@@ -93,9 +93,9 @@ const QUESTIONS = [
     answers: [
       { label: "I disengage — the conflict isn't worth it",         deltas: { conflict:  -8 } },
       { label: "I try to understand it before responding",          deltas: { conflict:  -3 } },
-      { label: "I engage respectfully but make my view clear",      deltas: {} },
-      { label: "I challenge it directly and publicly",              deltas: { conflict:   8 } },
-      { label: "I call it out loudly — silence is complicity",      deltas: { conflict:  14 } },
+      { label: "I politely engage",      deltas: {} },
+      { label: "I challenge it respectfully, but make my view clear", deltas: { conflict:   8 } },
+      { label: "I publicly debate it. Silence is complicity.",      deltas: { conflict:  14 } },
     ]
   },
   {
@@ -104,8 +104,8 @@ const QUESTIONS = [
       { label: "Absolute — some things are simply right or wrong",  deltas: { rigidity:  12 } },
       { label: "Usually clear, though context matters",             deltas: { rigidity:   5 } },
       { label: "Complicated and rarely fully black or white",       deltas: {} },
-      { label: "More nuanced than most people acknowledge",         deltas: { rigidity:  -5 } },
-      { label: "Largely a matter of power and perspective",         deltas: { rigidity: -12 } },
+      { label: "Subjective. We have to listen to all sides",        deltas: { rigidity:  -5 } },
+      { label: "Only winners decide the truth",                     deltas: { rigidity: -12 } },
     ]
   },
   {
@@ -114,8 +114,8 @@ const QUESTIONS = [
       { label: "Are fundamentally sound and trustworthy",           deltas: { establishment:  12 } },
       { label: "Work, but require meaningful reform",               deltas: { establishment:   5 } },
       { label: "Are flawed but still the best available system",    deltas: {} },
-      { label: "Are deeply compromised by money and power",         deltas: { establishment:  -6 } },
-      { label: "Are rigged to serve entrenched interests",          deltas: { establishment: -12 } },
+      { label: "Are influenced by money and power",                 deltas: { establishment:  -6 } },
+      { label: "Are completely rigged",                             deltas: { establishment: -12 } },
     ]
   },
   {
@@ -123,7 +123,7 @@ const QUESTIONS = [
     answers: [
       { label: "Should actively guide policy and public morality",  deltas: { tradition:  12, rigidity:  6 } },
       { label: "Have an important role in civic discourse",         deltas: { tradition:   5 } },
-      { label: "Should remain largely a personal matter",           deltas: {} },
+      { label: "Are not threatening issues",                        deltas: {} },
       { label: "Should be strictly separated from governance",      deltas: { tradition:  -5 } },
       { label: "Are primarily sources of division and harm",        deltas: { tradition: -10, conflict:  4 } },
     ]
@@ -133,8 +133,8 @@ const QUESTIONS = [
     answers: [
       { label: "Police are essential and deserve full support",     deltas: { justice: -12 } },
       { label: "Reform is needed but the institution is sound",     deltas: { justice:  -5 } },
-      { label: "Significant structural reform is urgent",           deltas: { justice:   7 } },
-      { label: "The system requires fundamental reimagining",       deltas: { justice:  12 } },
+      { label: "System requires significant structural reform",     deltas: { justice:   7 } },
+      { label: "Needs massive cuts immediately",                    deltas: { justice:  12 } },
       { label: "Abolition and alternative models are necessary",    deltas: { justice:  14 } },
     ]
   },
