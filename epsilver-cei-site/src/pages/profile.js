@@ -136,7 +136,7 @@ function renderModelEvidence(p){
 
       // “Complete sentences ripped from the article itself”:
       // We show the actual sentence + a small preface explaining the effect.
-      return `<div class=”meta” style=”margin-left:10px;margin-top:6px”>
+      return `<div class=”meta” style=”margin-left:10px;margin-top:6px;font-size:clamp(18px,2.5vw,30px)”>
         • Matched “<b>${term}</b>” (${dir}, weight ${escapeHtml(wTxt)}): ${sentence}
       </div>`;
     }).join("");
