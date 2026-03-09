@@ -2,6 +2,7 @@ import { radarSVG } from "../components/radar.js";
 import { showTip } from "../components/tooltip.js";
 import { ICONS } from "../components/icons.js";
 import { generateProfileCard, downloadProfileCard } from "../components/profileCard.js";
+import { showCardInline } from "../components/cardDisplay.js";
 
 const LS_KEY = "ceiQuizResult";
 
@@ -401,14 +402,17 @@ function renderResult(root, scores, cei, lean, name) {
     tip._t = setTimeout(() => { tip.style.opacity = "0"; }, 3000);
   }
 
-  left.querySelector("#saveImg").addEventListener("click", () => {
+  left.querySelector("#saveImg").addEventListener("click", async () => {
     const btn = left.querySelector("#saveImg");
     btn.textContent = "Generating…";
     btn.disabled = true;
-    downloadProfileCard(profile).finally(() => {
+    try {
+      const canvas = await generateProfileCard(profile);
+      showCardInline(canvas, left);
+    } finally {
       btn.textContent = "Save Image";
       btn.disabled = false;
-    });
+    }
   });
 
   left.querySelector("#compare").addEventListener("click", () => {

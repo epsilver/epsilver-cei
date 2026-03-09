@@ -1,6 +1,8 @@
 import { loadProfiles, getPortraitSrc } from "../components/data.js";
 import { radarSVG } from "../components/radar.js";
 import { showTip } from "../components/tooltip.js";
+import { generateCompareCard } from "../components/compareCard.js";
+import { showCardInline } from "../components/cardDisplay.js";
 
 function tierFromCEI(cei){
   if (cei <= 20) return "Minimal";
@@ -205,6 +207,10 @@ export async function ComparePage(root, { a="", b="" }) {
       </div>
 
       <div class="hr"></div>
+      <button class="btn" id="saveCompareCard" style="width:100%">Save Compare Card</button>
+      <div id="compareCardDisplay"></div>
+
+      <div class="hr"></div>
       <div class="h1">Signal Triggers</div>
       <div id="triggerSection"></div>
     `;
@@ -219,6 +225,19 @@ export async function ComparePage(root, { a="", b="" }) {
       onHover: showTip
     });
     combinedWheel.appendChild(svgCombined);
+
+    content.querySelector("#saveCompareCard").addEventListener("click", () => {
+      const btn = content.querySelector("#saveCompareCard");
+      btn.textContent = "Generating…";
+      btn.disabled = true;
+      try {
+        const canvas = generateCompareCard(pa, pb);
+        showCardInline(canvas, content.querySelector("#compareCardDisplay"));
+      } finally {
+        btn.textContent = "Save Compare Card";
+        btn.disabled = false;
+      }
+    });
 
     const triggerSection = content.querySelector("#triggerSection");
     for (const [profile, evidence] of [[pa, renderEvidenceSummary(pa)], [pb, renderEvidenceSummary(pb)]]) {

@@ -1,4 +1,5 @@
-import { downloadExplainerCard } from "../components/explainerCard.js";
+import { generateExplainerCard } from "../components/explainerCard.js";
+import { showCardInline } from "../components/cardDisplay.js";
 
 export function MethodologyPage(root) {
   const wrap = document.createElement("div");
@@ -296,11 +297,15 @@ export function MethodologyPage(root) {
       </div>
 
       <div class="hr"></div>
-      <button class="btn" id="dlExplainer">Download Explainer Card</button>
+      <button class="btn" id="dlExplainer">Save Explainer Card</button>
+      <div id="explainerDisplay"></div>
 
     </div>
   `;
 
-  wrap.querySelector("#dlExplainer").addEventListener("click", downloadExplainerCard);
+  wrap.querySelector("#dlExplainer").addEventListener("click", () => {
+    const canvas = generateExplainerCard();
+    showCardInline(canvas, wrap.querySelector("#explainerDisplay"));
+  });
   root.appendChild(wrap);
 }
