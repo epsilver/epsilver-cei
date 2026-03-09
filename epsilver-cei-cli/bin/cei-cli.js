@@ -91,15 +91,14 @@ async function refresh(cfg) {
 
   print("");
   print("╔" + "═".repeat(50) + "╗");
-  print("║" + " ".repeat(14) + "REFRESH ALL PROFILES" + " ".repeat(16) + "║");
-  print("╠" + "═".repeat(50) + "╣");
-  print("║  " + DIM + total + " profiles found" + R + " ".repeat(50 - 4 - String(total).length - 16) + "  ║");
+  print("║              REFRESH ALL PROFILES               ║");
+  print("║  " + total + " profiles found" + " ".repeat(50 - 4 - String(total).length - 15) + "║");
   print("╚" + "═".repeat(50) + "╝");
   print("");
 
   for (let i = 0; i < names.length; i++) {
     const name = names[i];
-    print(DIM + "[" + (i + 1) + "/" + total + "]" + R + " " + WHT + name + R + "...");
+    print("[" + (i + 1) + "/" + total + "] " + name + "...");
     try {
       const results = await wikiSearch(name, cfg);
       if (!results.length) throw new Error("No results");
@@ -112,21 +111,21 @@ async function refresh(cfg) {
       profile.cei         = { value: ceiOut.cei, tier: ceiOut.tier };
       profile.primaryLean = leanLabel(leanOut.code);
       mergeIntoProfilesJson(profile);
-      print("  " + GRN + "✓" + R + " " + DIM + "CEI " + ceiOut.cei + " · " + profile.primaryLean + R);
+      print("  ✓ CEI " + ceiOut.cei + " · " + profile.primaryLean);
     } catch(e) {
       failed.push(name);
-      print("  " + RED + "✗ " + (e?.message || e) + R);
+      print("  ✗ " + (e?.message || e));
     }
   }
 
   print("");
   print("╔" + "═".repeat(50) + "╗");
-  print("║  " + GRN + BOLD + "Refresh complete" + R + " ".repeat(32) + "  ║");
-  print("║  " + DIM + (total - failed.length) + "/" + total + " imported successfully" + R + " ".repeat(50 - 4 - String(total).length * 2 - 23) + "  ║");
+  print("║  Refresh complete" + " ".repeat(32) + "║");
+  print("║  " + (total - failed.length) + "/" + total + " imported successfully" + " ".repeat(50 - 4 - String(total).length * 2 - 22) + "║");
   if (failed.length) {
     print("╠" + "═".repeat(50) + "╣");
-    print("║  " + YEL + "Failed:" + R + " ".repeat(41) + "  ║");
-    for (const n of failed) print("║  " + RED + "· " + n + R + " ".repeat(Math.max(0, 46 - n.length)) + "  ║");
+    print("║  Failed:" + " ".repeat(41) + "║");
+    for (const n of failed) print("║  · " + n + " ".repeat(Math.max(0, 46 - n.length)) + "║");
   }
   print("╚" + "═".repeat(50) + "╝");
   print("");
