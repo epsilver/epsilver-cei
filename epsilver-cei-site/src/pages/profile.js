@@ -1,7 +1,8 @@
 import { loadProfiles, getPortraitSrc } from "../components/data.js";
 import { radarSVG } from "../components/radar.js";
 import { showTip } from "../components/tooltip.js";
-import { downloadProfileCard } from "../components/profileCard.js";
+import { generateProfileCard } from "../components/profileCard.js";
+import { showCardInline } from "../components/cardDisplay.js";
 
 function tierFromCEI(cei){
   if (cei <= 20) return "Minimal";
@@ -223,7 +224,7 @@ export async function ProfilePage(root, { slug }) {
 
     <div class="hr"></div>
 
-    <button class="btn" id="saveCard" style="width:100%;margin-bottom:14px">Save Profile Card</button>
+    <div id="profileCardDisplay"></div>
 
     <div class="small">
 
@@ -279,13 +280,7 @@ export async function ProfilePage(root, { slug }) {
   root.innerHTML = "";
   root.appendChild(grid);
 
-  left.querySelector("#saveCard").addEventListener("click", () => {
-    const btn = left.querySelector("#saveCard");
-    btn.textContent = "Generating…";
-    btn.disabled = true;
-    downloadProfileCard(p).finally(() => {
-      btn.textContent = "Save Profile Card";
-      btn.disabled = false;
-    });
+  generateProfileCard(p).then(canvas => {
+    showCardInline(canvas, left.querySelector("#profileCardDisplay"));
   });
 }
