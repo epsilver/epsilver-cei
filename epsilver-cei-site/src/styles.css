@@ -294,7 +294,7 @@ a:hover{ text-decoration:underline; }
 }
 .item .meta{
   font-size:18px;
-  font-weight:500;
+  font-weight:400;
   color:var(--muted);
   line-height:1.9;
 }
