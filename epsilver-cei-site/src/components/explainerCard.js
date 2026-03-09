@@ -137,7 +137,7 @@ export function generateExplainerCard() {
   // Tagline
   ctx.fillStyle = MUTED;
   ctx.font = "300 28px 'Inter', system-ui, sans-serif";
-  ctx.fillText("LLM-free. Wikipedia-sourced. Fully deterministic.", PAD, y + 36);
+  ctx.fillText("LLM-free. Publicly sourced. Fully deterministic.", PAD, y + 36);
   y += 62;
 
   // HR
@@ -175,7 +175,7 @@ export function generateExplainerCard() {
     ["No large language models", "Pure heuristic keyword scoring across five axes."],
     ["Signal balanced in context", "Each match checks the sentence for negation and affirmation before counting."],
     ["Five axes", "Establishment · Justice · Tradition · Conflict · Rigidity"],
-    ["Wikipedia-sourced", "Scores derived from public encyclopedia text only."],
+    ["Publicly sourced", "Scores derived from publicly available online information only."],
   ];
 
   for (const [title, body] of bullets) {
