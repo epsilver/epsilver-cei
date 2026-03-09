@@ -15,7 +15,7 @@ export function MethodologyPage(root) {
       <div class="hr"></div>
 
       <!-- AXES -->
-      <div class="h1" style="font-size:21px;letter-spacing:.6px;text-transform:uppercase;margin-bottom:12px">The Five Axes</div>
+      <div class="h1" style="font-size:26px;letter-spacing:.6px;text-transform:uppercase;margin-bottom:12px">The Five Axes</div>
       <div class="small" style="margin-bottom:12px">
         Every profile is scored on five independent dimensions. Two axes capture <b>behavior</b>
         (how someone acts in public life). Three capture <b>ideology</b> (what positions they hold).
@@ -90,7 +90,7 @@ export function MethodologyPage(root) {
       <div class="hr"></div>
 
       <!-- SIGNAL DETECTION -->
-      <div class="h1" style="font-size:21px;letter-spacing:.6px;text-transform:uppercase;margin-bottom:12px">Signal Detection</div>
+      <div class="h1" style="font-size:26px;letter-spacing:.6px;text-transform:uppercase;margin-bottom:12px">Signal Detection</div>
       <div class="small" style="margin-bottom:10px">
         Signals are collected by matching keyword clusters against Wikipedia article text.
         Each cluster is a named group of related terms with a fixed weight (positive or negative).
@@ -142,7 +142,7 @@ export function MethodologyPage(root) {
       <div class="hr"></div>
 
       <!-- FORMULA -->
-      <div class="h1" style="font-size:21px;letter-spacing:.6px;text-transform:uppercase;margin-bottom:12px">The CEI Formula</div>
+      <div class="h1" style="font-size:26px;letter-spacing:.6px;text-transform:uppercase;margin-bottom:12px">The CEI Formula</div>
       <div class="small" style="margin-bottom:12px">
         Raw axis weights are converted to 0–100 axis scores, then combined into a single CEI
         using a four-step process designed to be sensitive at low scores and compressed at high ones.
@@ -190,20 +190,20 @@ export function MethodologyPage(root) {
       <div class="hr"></div>
 
       <!-- LEAN -->
-      <div class="h1" style="font-size:21px;letter-spacing:.6px;text-transform:uppercase;margin-bottom:12px">Lean Classifier</div>
-      <div class="small">
+      <div class="h1" style="font-size:26px;letter-spacing:.6px;text-transform:uppercase;margin-bottom:12px">Lean Classifier</div>
+      <div class="meta">
         After the CEI score is computed, a separate classifier determines whether the profile
         leans <b>Woke</b> (progressive-dominant) or <b>Chud</b> (reactionary-dominant).
         This is calculated from axis deltas, not from the CEI score itself.
       </div>
-      <div class="small" style="margin-top:10px">
+      <div class="meta" style="margin-top:10px">
         A <b>progressive signal</b> is calculated as: Justice minus Tradition, minus half of
         Rigidity's deviation above 50, with small adjustments for Establishment and Conflict.
         A <b>reactionary signal</b> mirrors this: Tradition minus Justice, plus half of
         Rigidity's deviation above 50, with the same adjustments inverted.
         Whichever is larger determines the lean.
       </div>
-      <div class="small" style="margin-top:10px">
+      <div class="meta" style="margin-top:10px">
         Rigidity is included in the lean calculation because extreme Rigidity — Holocaust denial,
         absolutism, dogmatism — correlates more strongly with reactionary framing in practice
         than with progressive framing, even when Justice scores are elevated.
@@ -215,7 +215,7 @@ export function MethodologyPage(root) {
       <div class="hr"></div>
 
       <!-- EXAMPLES -->
-      <div class="h1" style="font-size:21px;letter-spacing:.6px;text-transform:uppercase;margin-bottom:12px">Worked Examples</div>
+      <div class="h1" style="font-size:26px;letter-spacing:.6px;text-transform:uppercase;margin-bottom:12px">Worked Examples</div>
       <div class="small" style="margin-bottom:16px">
         Three profiles illustrating how the algorithm produces different outcomes from different signal patterns.
       </div>
