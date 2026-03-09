@@ -7,7 +7,7 @@ export function mountLayout(root, active) {
       <div class="stripe"></div>
       <div class="topbar-inner">
         <div class="brand">
-          <div class="kicker">Epsilver</div>
+          <a class="kicker" href="https://epsilver.xyz" target="_blank" rel="noopener">Epsilver</a>
           <a class="title" href="#/">Cultural Extremity Index</a>
         </div>
         <div class="nav">
