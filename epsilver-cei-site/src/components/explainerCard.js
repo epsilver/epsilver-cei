@@ -127,7 +127,7 @@ export function generateExplainerCard() {
   ctx.textAlign = "center";
   ctx.font = "bold 100px 'Inter', system-ui, sans-serif";
   ctx.fillText("How it works.", W / 2, y + 78);
-  y += 106;
+  y += 130;
 
   // Tagline (occupations-style)
   ctx.fillStyle = MUTED;
