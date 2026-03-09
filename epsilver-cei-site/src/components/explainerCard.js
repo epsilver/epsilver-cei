@@ -89,6 +89,7 @@ export function generateExplainerCard() {
   const PAD   = 64;
   const INK   = "#0a0a0a";
   const MUTED = "#444";
+  const RULE  = "#d9d9d9";
 
   const canvas = document.createElement("canvas");
   canvas.width  = W * 2;
@@ -114,38 +115,29 @@ export function generateExplainerCard() {
   // Kicker
   ctx.fillStyle = MUTED;
   ctx.textAlign = "center";
-  ctx.font = "400 22px 'Inter', system-ui, sans-serif";
+  ctx.font = "400 24px 'Inter', system-ui, sans-serif";
   setSpacing(ctx, 2.5);
-  ctx.fillText("CULTURAL EXTREMITY INDEX", W / 2, 6 + 34);
+  ctx.fillText("CULTURAL EXTREMITY INDEX", W / 2, 6 + 36);
   setSpacing(ctx, 0);
 
-  let y = 6 + 34 + 20;
-
-  // HR
-  hr(ctx, PAD, W - PAD, y);
-  y += 48;
+  let y = 6 + 60;
 
   // Title
   ctx.fillStyle = INK;
-  ctx.textAlign = "left";
-  ctx.font = "900 88px 'Inter', system-ui, sans-serif";
-  ctx.fillText("Assessing", PAD, y + 72);
-  y += 86;
-  ctx.fillText("extremism.", PAD, y + 72);
-  y += 96;
+  ctx.textAlign = "center";
+  ctx.font = "bold 100px 'Inter', system-ui, sans-serif";
+  ctx.fillText("How it works.", W / 2, y + 78);
+  y += 106;
 
-  // Tagline
+  // Tagline (occupations-style)
   ctx.fillStyle = MUTED;
-  ctx.font = "300 28px 'Inter', system-ui, sans-serif";
-  ctx.fillText("LLM-free. Publicly sourced. Fully deterministic.", PAD, y + 36);
-  y += 62;
-
-  // HR
-  hr(ctx, PAD, W - PAD, y);
-  y += 32;
+  ctx.textAlign = "center";
+  ctx.font = "300 30px 'Inter', system-ui, sans-serif";
+  ctx.fillText("LLM-free heuristic scoring  ·  Five axes  ·  Publicly sourced", W / 2, y);
+  y += 52;
 
   // Radar wheel
-  const RADAR_SIZE = 480;
+  const RADAR_SIZE = 520;
   const RADAR_R    = RADAR_SIZE / 2 - 36;
   const illustrative = {
     establishment: 72,
@@ -155,59 +147,78 @@ export function generateExplainerCard() {
     rigidity: 55
   };
   drawRadar(ctx, illustrative, W / 2, y + RADAR_SIZE / 2, RADAR_R);
-  y += RADAR_SIZE + 10;
-
-  // Sample label
-  ctx.fillStyle = MUTED;
-  ctx.textAlign = "center";
-  ctx.font = "400 20px 'Inter', system-ui, sans-serif";
-  setSpacing(ctx, 1.5);
-  ctx.fillText("ILLUSTRATIVE PROFILE  ·  CEI 61  ·  HIGH", W / 2, y + 4);
-  setSpacing(ctx, 0);
-  y += 36;
+  y += RADAR_SIZE + 28;
 
   // HR
   hr(ctx, PAD, W - PAD, y);
-  y += 44;
+  y += 32;
 
-  // Bullets
-  const bullets = [
-    ["No large language models", "Pure heuristic keyword scoring across five axes."],
-    ["Signal balanced in context", "Each match checks the sentence for negation and affirmation before counting."],
-    ["Five axes", "Establishment · Justice · Tradition · Conflict · Rigidity"],
-    ["Publicly sourced", "Scores derived from publicly available online information only."],
-  ];
+  // CEI box — identical to profileCard.js drawBottom
+  const BOX_PAD = 28;
+  const BOX_H   = 135;
+  const BOX_W2  = W - PAD * 2;
 
-  for (const [title, body] of bullets) {
+  ctx.save();
+  ctx.strokeStyle = RULE;
+  ctx.lineWidth = 1;
+  ctx.strokeRect(PAD, y, BOX_W2, BOX_H);
+  ctx.restore();
+
+  ctx.fillStyle = INK;
+  ctx.textAlign = "left";
+  ctx.font = "900 100px 'Inter', system-ui, sans-serif";
+  ctx.fillText("CEI 61", PAD + BOX_PAD, y + BOX_H / 2 + 30);
+
+  ctx.fillStyle = MUTED;
+  ctx.textAlign = "right";
+  ctx.font = "bold 34px 'Inter', system-ui, sans-serif";
+  setSpacing(ctx, 1.5);
+  ctx.fillText("HIGH", PAD + BOX_W2 - BOX_PAD, y + BOX_H / 2 - 8);
+  ctx.font = "bold 26px 'Inter', system-ui, sans-serif";
+  setSpacing(ctx, 1.8);
+  ctx.fillText("CHUD", PAD + BOX_W2 - BOX_PAD, y + BOX_H / 2 + 30);
+  setSpacing(ctx, 0);
+
+  y += BOX_H + 28;
+
+  // HR
+  hr(ctx, PAD, W - PAD, y);
+  y += 28;
+
+  // Axis bars — identical to profileCard.js drawBottom
+  const axisKeys   = ["establishment", "justice", "tradition", "conflict", "rigidity"];
+  const axisLabels = ["Establishment", "Justice", "Tradition", "Conflict", "Rigidity"];
+  const LABEL_W = 230;
+  const VAL_W   = 56;
+  const barX    = PAD + LABEL_W;
+  const barW    = W - PAD * 2 - LABEL_W - VAL_W - 10;
+
+  for (let i = 0; i < axisKeys.length; i++) {
+    const val = illustrative[axisKeys[i]] ?? 50;
+
     ctx.fillStyle = INK;
     ctx.textAlign = "left";
-    ctx.font = "700 26px 'Inter', system-ui, sans-serif";
-    ctx.fillText("— " + title, PAD, y);
-    y += 34;
+    ctx.font = "bold 24px 'Inter', system-ui, sans-serif";
+    setSpacing(ctx, 0.8);
+    ctx.fillText(axisLabels[i].toUpperCase(), PAD, y + 22);
+    setSpacing(ctx, 0);
+
+    ctx.fillStyle = RULE;
+    ctx.fillRect(barX, y + 16, barW, 3);
+    ctx.fillStyle = INK;
+    ctx.fillRect(barX, y + 16, (val / 100) * barW, 3);
 
     ctx.fillStyle = MUTED;
-    ctx.font = "300 22px 'Inter', system-ui, sans-serif";
+    ctx.textAlign = "right";
+    ctx.font = "400 24px 'Inter', system-ui, sans-serif";
+    ctx.fillText(String(val), W - PAD, y + 22);
 
-    // Simple word wrap
-    const words = body.split(" ");
-    let line = "";
-    const maxW = W - PAD * 2;
-    for (const word of words) {
-      const test = line ? line + " " + word : word;
-      if (ctx.measureText(test).width > maxW && line) {
-        ctx.fillText(line, PAD, y);
-        y += 30;
-        line = word;
-      } else {
-        line = test;
-      }
-    }
-    if (line) { ctx.fillText(line, PAD, y); y += 30; }
-    y += 18;
+    y += 48;
   }
 
+  y += 14;
+
   // HR + URL
-  y += 10;
   hr(ctx, PAD, W - PAD, y);
   ctx.fillStyle = MUTED;
   ctx.textAlign = "center";
