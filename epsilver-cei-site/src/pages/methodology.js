@@ -15,7 +15,7 @@ export function MethodologyPage(root) {
       <div class="hr"></div>
 
       <!-- AXES -->
-      <div class="h1" style="font-size:14px;letter-spacing:.6px;text-transform:uppercase;margin-bottom:12px">The Five Axes</div>
+      <div class="h1" style="font-size:21px;letter-spacing:.6px;text-transform:uppercase;margin-bottom:12px">The Five Axes</div>
       <div class="small" style="margin-bottom:12px">
         Every profile is scored on five independent dimensions. Two axes capture <b>behavior</b>
         (how someone acts in public life). Three capture <b>ideology</b> (what positions they hold).
@@ -90,7 +90,7 @@ export function MethodologyPage(root) {
       <div class="hr"></div>
 
       <!-- SIGNAL DETECTION -->
-      <div class="h1" style="font-size:14px;letter-spacing:.6px;text-transform:uppercase;margin-bottom:12px">Signal Detection</div>
+      <div class="h1" style="font-size:21px;letter-spacing:.6px;text-transform:uppercase;margin-bottom:12px">Signal Detection</div>
       <div class="small" style="margin-bottom:10px">
         Signals are collected by matching keyword clusters against Wikipedia article text.
         Each cluster is a named group of related terms with a fixed weight (positive or negative).
@@ -99,7 +99,7 @@ export function MethodologyPage(root) {
 
       <div class="list" style="margin-top:0;gap:0">
         <div class="item" style="flex-direction:column;gap:4px">
-          <div class="section-title">Text sources</div>
+          <div class="section-subtitle">Text sources</div>
           <div class="meta">
             Behavioral axes (Establishment, Conflict) are scored only from the Wikipedia
             <b>introduction</b> — the paragraph summary that appears before the first section heading.
@@ -110,7 +110,7 @@ export function MethodologyPage(root) {
           </div>
         </div>
         <div class="item" style="flex-direction:column;gap:4px">
-          <div class="section-title">Opposition detection</div>
+          <div class="section-subtitle">Opposition detection</div>
           <div class="meta">
             Sentences are checked for opposition framing before any cluster match is counted.
             Patterns like "critics accused him of…", "opponents claim…", "he has been labeled…",
@@ -119,7 +119,7 @@ export function MethodologyPage(root) {
           </div>
         </div>
         <div class="item" style="flex-direction:column;gap:4px">
-          <div class="section-title">Two-pass ideological scoring</div>
+          <div class="section-subtitle">Two-pass ideological scoring</div>
           <div class="meta">
             When a views section is available, ideological axes use a two-pass approach.
             Pass 1 scores the introduction with all clusters — including dampeners like
@@ -130,7 +130,7 @@ export function MethodologyPage(root) {
           </div>
         </div>
         <div class="item" style="flex-direction:column;gap:4px">
-          <div class="section-title">Axis caps</div>
+          <div class="section-subtitle">Axis caps</div>
           <div class="meta">
             Each axis has a maximum raw weight cap to prevent a single heavily-documented person
             from maxing out every dimension. Establishment caps at 20 points, Justice at 25,
@@ -142,7 +142,7 @@ export function MethodologyPage(root) {
       <div class="hr"></div>
 
       <!-- FORMULA -->
-      <div class="h1" style="font-size:14px;letter-spacing:.6px;text-transform:uppercase;margin-bottom:12px">The CEI Formula</div>
+      <div class="h1" style="font-size:21px;letter-spacing:.6px;text-transform:uppercase;margin-bottom:12px">The CEI Formula</div>
       <div class="small" style="margin-bottom:12px">
         Raw axis weights are converted to 0–100 axis scores, then combined into a single CEI
         using a four-step process designed to be sensitive at low scores and compressed at high ones.
@@ -150,7 +150,7 @@ export function MethodologyPage(root) {
 
       <div class="list" style="margin-top:0;gap:0">
         <div class="item" style="flex-direction:column;gap:4px">
-          <div class="section-title">Step 1 — Weighted RMS deviation</div>
+          <div class="section-subtitle">Step 1 — Weighted RMS deviation</div>
           <div class="meta">
             Each axis score is compared to the 50-point neutral baseline. The deviation on each axis
             is weighted (Conflict ×1.4, Rigidity ×1.3, Establishment ×1.0, Justice ×0.6,
@@ -160,7 +160,7 @@ export function MethodologyPage(root) {
           </div>
         </div>
         <div class="item" style="flex-direction:column;gap:4px">
-          <div class="section-title">Step 2 — Conflict and Rigidity amplifiers</div>
+          <div class="section-subtitle">Step 2 — Conflict and Rigidity amplifiers</div>
           <div class="meta">
             If Conflict or Rigidity exceed the 50-point baseline, the raw distance is multiplied
             by an amplifier: +10% per unit of Conflict excess, +30% per unit of Rigidity excess
@@ -169,7 +169,7 @@ export function MethodologyPage(root) {
           </div>
         </div>
         <div class="item" style="flex-direction:column;gap:4px">
-          <div class="section-title">Step 3 — Square root compression</div>
+          <div class="section-subtitle">Step 3 — Square root compression</div>
           <div class="meta">
             The amplified raw distance is square-root compressed before entering the logistic curve.
             This flattens the top of the range, ensuring that accumulating more signals past a
@@ -177,7 +177,7 @@ export function MethodologyPage(root) {
           </div>
         </div>
         <div class="item" style="flex-direction:column;gap:4px">
-          <div class="section-title">Step 4 — Rescaled logistic → 0–100</div>
+          <div class="section-subtitle">Step 4 — Rescaled logistic → 0–100</div>
           <div class="meta">
             The compressed value is passed through a logistic function anchored so that a raw score
             of zero always maps to CEI 0. The result is stretched to the 0–100 range and rounded
@@ -190,7 +190,7 @@ export function MethodologyPage(root) {
       <div class="hr"></div>
 
       <!-- LEAN -->
-      <div class="h1" style="font-size:14px;letter-spacing:.6px;text-transform:uppercase;margin-bottom:12px">Lean Classifier</div>
+      <div class="h1" style="font-size:21px;letter-spacing:.6px;text-transform:uppercase;margin-bottom:12px">Lean Classifier</div>
       <div class="small">
         After the CEI score is computed, a separate classifier determines whether the profile
         leans <b>Woke</b> (progressive-dominant) or <b>Chud</b> (reactionary-dominant).
@@ -215,7 +215,7 @@ export function MethodologyPage(root) {
       <div class="hr"></div>
 
       <!-- EXAMPLES -->
-      <div class="h1" style="font-size:14px;letter-spacing:.6px;text-transform:uppercase;margin-bottom:12px">Worked Examples</div>
+      <div class="h1" style="font-size:21px;letter-spacing:.6px;text-transform:uppercase;margin-bottom:12px">Worked Examples</div>
       <div class="small" style="margin-bottom:16px">
         Three profiles illustrating how the algorithm produces different outcomes from different signal patterns.
       </div>

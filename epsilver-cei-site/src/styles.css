@@ -150,6 +150,10 @@ a:hover{ text-decoration:underline; }
   font-size:22px;
   font-weight:700;
 }
+.section-subtitle{
+  font-size:17px;
+  font-weight:700;
+}
 .small{
   font-size:20px;
   font-family:"Inter",system-ui,-apple-system,sans-serif;
