@@ -20,6 +20,10 @@ export function mountLayout(root, active) {
     </div>
 
     <div id="outlet"></div>
+
+    <div style="text-align:center;padding:40px 0 60px;color:#444;font-size:16px;letter-spacing:.4px">
+      Contact us: <a href="mailto:contact@culturalextremityindex.com">contact@culturalextremityindex.com</a>
+    </div>
   `;
 
   root.appendChild(wrap);
