@@ -134,10 +134,10 @@ export function generateExplainerCard() {
   ctx.textAlign = "center";
   ctx.font = "300 30px 'Inter', system-ui, sans-serif";
   ctx.fillText("LLM-free heuristic scoring  ·  Five axes  ·  Publicly sourced", W / 2, y);
-  y += 52;
+  y += 82;
 
-  // Radar wheel
-  const RADAR_SIZE = 520;
+  // Radar + left axis column
+  const RADAR_SIZE = 480;
   const RADAR_R    = RADAR_SIZE / 2 - 36;
   const illustrative = {
     establishment: 72,
@@ -146,7 +146,38 @@ export function generateExplainerCard() {
     conflict: 80,
     rigidity: 55
   };
-  drawRadar(ctx, illustrative, W / 2, y + RADAR_SIZE / 2, RADAR_R);
+
+  const COL_W    = 260;
+  const GAP      = 24;
+  const radarX   = PAD + COL_W + GAP;
+  const radarCX  = radarX + RADAR_SIZE / 2;
+  const radarCY  = y + RADAR_SIZE / 2;
+
+  drawRadar(ctx, illustrative, radarCX, radarCY, RADAR_R);
+
+  // Left axis column
+  const axisDefs = [
+    ["Establishment", "Institutional alignment"],
+    ["Justice",       "Rights & equity signals"],
+    ["Tradition",     "Nationalism & heritage"],
+    ["Conflict",      "Confrontation & controversy"],
+    ["Rigidity",      "Absolutism & purity politics"],
+  ];
+  const colTotalH = axisDefs.length * 76;
+  let colY = radarCY - colTotalH / 2 + 16;
+
+  for (const [name, desc] of axisDefs) {
+    ctx.fillStyle = INK;
+    ctx.textAlign = "left";
+    ctx.font = "700 22px 'Inter', system-ui, sans-serif";
+    ctx.fillText(name, PAD, colY);
+    colY += 28;
+    ctx.fillStyle = MUTED;
+    ctx.font = "300 20px 'Inter', system-ui, sans-serif";
+    ctx.fillText(desc, PAD, colY);
+    colY += 48;
+  }
+
   y += RADAR_SIZE + 28;
 
   // HR
