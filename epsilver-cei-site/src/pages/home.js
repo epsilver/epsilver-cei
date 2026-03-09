@@ -35,7 +35,7 @@ export async function HomePage(root) {
     <div class="small">Heuristic keyword scoring across five behavioral and ideological axes. Scores are derived from Wikipedia lead sections and Wikidata occupation tags.</div>
 
     <div class="hr"></div>
-    <div class="h1" style="font-size:13px;margin-bottom:8px">Five-Axis Signal Wheel</div>
+    <div class="h1" style="font-size:21px;margin-bottom:8px">Five-Axis Signal Wheel</div>
     <div class="list" style="margin-top:0;gap:0">
       <div class="item" style="flex-direction:column;gap:2px"><div class="section-title">Establishment</div><div class="meta">Alignment with institutional power, governance, and mainstream systems.</div></div>
       <div class="item" style="flex-direction:column;gap:2px"><div class="section-title">Justice</div><div class="meta">Emphasis on rights, equity, and anti-discrimination framing.</div></div>
@@ -45,7 +45,7 @@ export async function HomePage(root) {
     </div>
 
     <div class="hr"></div>
-    <div class="h1" style="font-size:13px;margin-bottom:8px">CEI Tier Scale</div>
+    <div class="h1" style="font-size:21px;margin-bottom:8px">CEI Tier Scale</div>
     <div class="list" style="margin-top:0;gap:0">
       <div class="item"><div class="left"><b>Minimal</b><div class="meta">0 – 20</div></div><div class="pill">Low deviation</div></div>
       <div class="item"><div class="left"><b>Moderate</b><div class="meta">21 – 40</div></div><div class="pill">Mild signal</div></div>
@@ -55,7 +55,7 @@ export async function HomePage(root) {
     </div>
 
     <div class="hr"></div>
-    <div class="h1" style="font-size:13px;margin-bottom:8px">Primary Lean</div>
+    <div class="h1" style="font-size:21px;margin-bottom:8px">Primary Lean</div>
     <div class="small">A deterministic classifier derived from axis deltas. <b>Woke</b> indicates progressive-leaning signal dominance. <b>Chud</b> indicates reactionary-leaning signal dominance.</div>
   `;
 
