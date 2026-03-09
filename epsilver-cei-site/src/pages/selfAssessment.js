@@ -355,9 +355,9 @@ function renderResult(root, scores, cei, lean, name) {
     </div>
     <div class="hr"></div>
     <div style="display:flex;gap:10px;margin-bottom:14px">
-      <button class="btn" id="saveImg" style="flex:1">Save Image</button>
       <button class="btn" id="compare" style="flex:1">Compare with Profile</button>
     </div>
+    <div id="selfCardDisplay"></div>
     <div class="share-row">
       ${hasNativeShare ? `<button class="share-icon" id="shr-native" title="Share">${ICONS.share}</button>` : ""}
       <button class="share-icon" id="shr-x"         title="Share on X">${ICONS.x}</button>
@@ -402,17 +402,8 @@ function renderResult(root, scores, cei, lean, name) {
     tip._t = setTimeout(() => { tip.style.opacity = "0"; }, 3000);
   }
 
-  left.querySelector("#saveImg").addEventListener("click", async () => {
-    const btn = left.querySelector("#saveImg");
-    btn.textContent = "Generating…";
-    btn.disabled = true;
-    try {
-      const canvas = await generateProfileCard(profile);
-      showCardInline(canvas, left);
-    } finally {
-      btn.textContent = "Save Image";
-      btn.disabled = false;
-    }
+  generateProfileCard(profile).then(canvas => {
+    showCardInline(canvas, left.querySelector("#selfCardDisplay"));
   });
 
   left.querySelector("#compare").addEventListener("click", () => {

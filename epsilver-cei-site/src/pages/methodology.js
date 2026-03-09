@@ -297,15 +297,11 @@ export function MethodologyPage(root) {
       </div>
 
       <div class="hr"></div>
-      <button class="btn" id="dlExplainer">Save Explainer Card</button>
       <div id="explainerDisplay"></div>
 
     </div>
   `;
 
-  wrap.querySelector("#dlExplainer").addEventListener("click", () => {
-    const canvas = generateExplainerCard();
-    showCardInline(canvas, wrap.querySelector("#explainerDisplay"));
-  });
+  showCardInline(generateExplainerCard(), wrap.querySelector("#explainerDisplay"));
   root.appendChild(wrap);
 }
