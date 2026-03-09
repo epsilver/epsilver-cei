@@ -1,21 +1,27 @@
 #!/usr/bin/env node
 import readline from "node:readline/promises";
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { stdin as input, stdout as output } from "node:process";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 import { DEFAULTS } from "../lib/config.js";
 import { wikiSearch } from "../lib/wiki.js";
 import { runPipeline, makeAutoAdjustments } from "../lib/pipeline.js";
-import { leanLabel } from "../lib/scoring.js";
 import { buildProfile, mergeIntoProfilesJson } from "../lib/profile.js";
+import { leanLabel } from "../lib/scoring.js";
 import { printPreview, printImportComplete, printSearchResults } from "../lib/cli.js";
 
 function parseArgs(argv) {
   const args = { _: [] };
   for (let i = 2; i < argv.length; i++) {
     const a = argv[i];
-    if (a === "--help"   || a === "-h") { args.help   = true; continue; }
-    if (a === "--first" || a === "-f")  { args.first  = true; continue; }
-    if (a === "--import" || a === "-i") { args.import = true; continue; }
+    if (a === "--help"    || a === "-h") { args.help    = true; continue; }
+    if (a === "--first"  || a === "-f") { args.first   = true; continue; }
+    if (a === "--import" || a === "-i") { args.import  = true; continue; }
+    if (a === "--refresh"|| a === "-r") { args.refresh = true; continue; }
     if (a.startsWith("--")) {
       const k = a.slice(2);
       const v = argv[i + 1] && !argv[i + 1].startsWith("--") ? argv[++i] : true;
@@ -46,6 +52,7 @@ function help() {
   print("");
   print("  --first, -f     Auto-select the first search result");
   print("  --import, -i    Write profile into the site after previewing");
+  print("  --refresh, -r   Re-import all profiles from profiles.json");
   print("  --help, -h      Show this help");
   print("");
   print("Examples:");
@@ -69,11 +76,69 @@ async function chooseResult(results, autoFirst) {
   return results[k - 1].title;
 }
 
+async function refresh(cfg) {
+  const dataPath = path.resolve(__dirname, "../../epsilver-cei-site/public/data/profiles.json");
+  if (!fs.existsSync(dataPath)) {
+    print("error: profiles.json not found at " + dataPath);
+    process.exit(1);
+  }
+
+  const doc = JSON.parse(fs.readFileSync(dataPath, "utf8"));
+  const profiles = Array.isArray(doc?.profiles) ? doc.profiles : [];
+  const names = profiles.map(p => p.name).filter(Boolean);
+  const total = names.length;
+  const failed = [];
+
+  print("");
+  print("╔" + "═".repeat(50) + "╗");
+  print("║" + " ".repeat(14) + "REFRESH ALL PROFILES" + " ".repeat(16) + "║");
+  print("╠" + "═".repeat(50) + "╣");
+  print("║  " + DIM + total + " profiles found" + R + " ".repeat(50 - 4 - String(total).length - 16) + "  ║");
+  print("╚" + "═".repeat(50) + "╝");
+  print("");
+
+  for (let i = 0; i < names.length; i++) {
+    const name = names[i];
+    print(DIM + "[" + (i + 1) + "/" + total + "]" + R + " " + WHT + name + R + "...");
+    try {
+      const results = await wikiSearch(name, cfg);
+      if (!results.length) throw new Error("No results");
+      const pipeline = await runPipeline(results[0].title, cfg);
+      const { bundle, imageInfo, scores, ceiOut, leanOut, confidence, reviewFlags, status, occupations } = pipeline;
+      const profile = buildProfile({
+        bundle, imageInfo, scores, confidence, reviewFlags, status, occupations,
+        adjustments: makeAutoAdjustments(bundle)
+      });
+      profile.cei         = { value: ceiOut.cei, tier: ceiOut.tier };
+      profile.primaryLean = leanLabel(leanOut.code);
+      mergeIntoProfilesJson(profile);
+      print("  " + GRN + "✓" + R + " " + DIM + "CEI " + ceiOut.cei + " · " + profile.primaryLean + R);
+    } catch(e) {
+      failed.push(name);
+      print("  " + RED + "✗ " + (e?.message || e) + R);
+    }
+  }
+
+  print("");
+  print("╔" + "═".repeat(50) + "╗");
+  print("║  " + GRN + BOLD + "Refresh complete" + R + " ".repeat(32) + "  ║");
+  print("║  " + DIM + (total - failed.length) + "/" + total + " imported successfully" + R + " ".repeat(50 - 4 - String(total).length * 2 - 23) + "  ║");
+  if (failed.length) {
+    print("╠" + "═".repeat(50) + "╣");
+    print("║  " + YEL + "Failed:" + R + " ".repeat(41) + "  ║");
+    for (const n of failed) print("║  " + RED + "· " + n + R + " ".repeat(Math.max(0, 46 - n.length)) + "  ║");
+  }
+  print("╚" + "═".repeat(50) + "╝");
+  print("");
+}
+
 async function main() {
   const args = parseArgs(process.argv);
   const cfg  = cfgFromArgs(args);
 
-  if (args.help || !args._.length) { help(); process.exit(args._.length ? 0 : 1); }
+  if (args.help || !args._.length && !args.refresh) { help(); process.exit(args._.length ? 0 : 1); }
+
+  if (args.refresh) { await refresh(cfg); return; }
 
   const query = args._.join(" ").trim();
 
