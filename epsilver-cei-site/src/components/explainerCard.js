@@ -147,11 +147,13 @@ export function generateExplainerCard() {
     rigidity: 55
   };
 
-  const COL_W    = 260;
-  const GAP      = 24;
-  const radarX   = PAD + COL_W + GAP;
-  const radarCX  = radarX + RADAR_SIZE / 2;
-  const radarCY  = y + RADAR_SIZE / 2;
+  const COL_W      = 260;
+  const GAP        = 24;
+  const totalBlock = COL_W + GAP + RADAR_SIZE;
+  const blockX     = (W - totalBlock) / 2;
+  const radarX     = blockX + COL_W + GAP;
+  const radarCX    = radarX + RADAR_SIZE / 2;
+  const radarCY    = y + RADAR_SIZE / 2;
 
   drawRadar(ctx, illustrative, radarCX, radarCY, RADAR_R);
 
@@ -170,11 +172,11 @@ export function generateExplainerCard() {
     ctx.fillStyle = INK;
     ctx.textAlign = "left";
     ctx.font = "700 22px 'Inter', system-ui, sans-serif";
-    ctx.fillText(name, PAD, colY);
+    ctx.fillText(name, blockX, colY);
     colY += 28;
     ctx.fillStyle = MUTED;
     ctx.font = "300 20px 'Inter', system-ui, sans-serif";
-    ctx.fillText(desc, PAD, colY);
+    ctx.fillText(desc, blockX, colY);
     colY += 48;
   }
 
