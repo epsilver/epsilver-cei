@@ -22,7 +22,9 @@
   lean: {
     establishmentWeight: 0.25,
     conflictWeight: 0.15,
-    rigidityWeight: 0.5
+    rigidityWeight: 0.5,
+    normieThreshold: 15,
+    normieMinSignal: 8
   },
 
   caps: {

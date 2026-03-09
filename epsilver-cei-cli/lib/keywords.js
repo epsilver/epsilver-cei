@@ -20,7 +20,8 @@ export const JUSTICE = [
   { id:"J6", weight:-14, terms:["anti-woke","critic of social justice","opponent of dei","anti-dei","anti-critical race theory","anti-crt"]},
   { id:"J7", weight:+12, terms:["anti-capitalist","anti-capitalism","abolish capitalism","class struggle","class warfare","class war","marxist","marxism","socialist revolution","revolutionary socialist","means of production","worker control","proletariat","bourgeois","bourgeoisie"]},
   { id:"J8", weight:+10, terms:["anti-imperialist","anti-imperialism","american imperialism","imperialist","colonialism","decolonize","decolonization","settler colonialism"]},
-  { id:"J9", weight:+8,  terms:["left-wing","left wing","socialist","democratic socialist","progressive","far-left","hard-left"]}
+  { id:"J9",  weight:+8,  terms:["left-wing","left wing","socialist","democratic socialist","progressive","far-left","hard-left"]},
+  { id:"JD1", weight:-8,  terms:["bipartisan","both sides","centrist","moderate","nonpartisan","pragmatist"]}
 ];
 
 export const TRADITION = [
@@ -30,7 +31,8 @@ export const TRADITION = [
   { id:"T4", weight:+10, terms:["anti-immigration","immigration restriction","border security","deportation","mass deportation","refugee ban"]},
   { id:"T5", weight:+10, terms:["family values","law and order","tough on crime","pro-family"]},
   { id:"T6", weight:-14, terms:["progressive","left-wing","left wing","socialist","democratic socialist","communist"]},
-  { id:"T7", weight:-10, terms:["multiculturalism","pluralist","cosmopolitan","globalist","pro-immigration"]}
+  { id:"T7", weight:-10, terms:["multiculturalism","pluralist","cosmopolitan","globalist","pro-immigration"]},
+  { id:"TD1", weight:-8, terms:["bipartisan","both sides","centrist","moderate","nonpartisan","pragmatist"]}
 ];
 
 export const CONFLICT = [

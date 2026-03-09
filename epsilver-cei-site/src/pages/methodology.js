@@ -196,7 +196,8 @@ export function MethodologyPage(root) {
       <div class="h1" style="font-size:26px;letter-spacing:.6px;text-transform:uppercase;margin-bottom:12px">Lean Classifier</div>
       <div class="meta">
         After the CEI score is computed, a separate classifier determines whether the profile
-        leans <b>Woke</b> (progressive-dominant) or <b>Chud</b> (reactionary-dominant).
+        leans <b>Woke</b> (progressive-dominant), <b>Chud</b> (reactionary-dominant),
+        or <b>Normie</b> (ideologically unclassifiable in the binary).
         This is calculated from axis deltas, not from the CEI score itself.
       </div>
       <div class="meta" style="margin-top:10px">
@@ -204,7 +205,21 @@ export function MethodologyPage(root) {
         Rigidity's deviation above 50, with small adjustments for Establishment and Conflict.
         A <b>reactionary signal</b> mirrors this: Tradition minus Justice, plus half of
         Rigidity's deviation above 50, with the same adjustments inverted.
-        Whichever is larger determines the lean.
+        If the difference between the two signals is less than 15 points and at least one signal
+        exceeds 8 in absolute value, the profile is classified as <b>Normie</b>.
+        Otherwise, whichever signal is larger determines the lean.
+      </div>
+      <div class="meta" style="margin-top:10px">
+        <b>Normie does not mean low extremity.</b> A profile can score High or Extreme on the CEI
+        and still be Normie — for example, someone who is highly confrontational and rigid but whose
+        Justice and Tradition signals cancel each other out. Normie means the ideological direction
+        is genuinely ambiguous, not that the person is moderate.
+      </div>
+      <div class="meta" style="margin-top:10px">
+        Profiles with very low signal density — where both progressive and reactionary signals are
+        near zero — do not qualify for Normie. They receive a forced lean based on whichever signal
+        is fractionally larger. This reflects the principle that apathy and low engagement are
+        themselves a signal, not an absence of one.
       </div>
       <div class="meta" style="margin-top:10px">
         Rigidity is included in the lean calculation because extreme Rigidity — Holocaust denial,
@@ -241,6 +256,10 @@ export function MethodologyPage(root) {
             and do not cross any meaningful threshold. All five axes sit within a few points of 50.
             The resulting CEI reflects the formula's correct behavior at its lower bound: a person
             with no documented extremity scores near zero.
+            She is classified <b>Chud</b> rather than Normie because both her progressive and
+            reactionary signals are near zero — the Normie classification requires at least one
+            signal to be meaningfully present. Her low signal density is itself a signal: apathy
+            and disengagement tilt fractionally reactionary under the formula.
           </div>
         </div>
 

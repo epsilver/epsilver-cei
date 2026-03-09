@@ -61,10 +61,21 @@ export function computeLean(scores, cfg) {
     + cw * (scores.conflict - b)
     + rigidityBias;
 
-  const code = (progressive >= reactionary) ? "P" : "R";
+  const diff = Math.abs(progressive - reactionary);
+  const maxSig = Math.max(Math.abs(progressive), Math.abs(reactionary));
+  const threshold = cfg?.lean?.normieThreshold ?? 15;
+  const minSignal = cfg?.lean?.normieMinSignal ?? 8;
+
+  let code;
+  if (diff < threshold && maxSig >= minSignal) {
+    code = "N";
+  } else {
+    code = (progressive >= reactionary) ? "P" : "R";
+  }
+
   return { code, progressive, reactionary };
 }
 
-export function leanLabel(code, labels = { P:"Woke", R:"Chud" }) {
+export function leanLabel(code, labels = { P:"Woke", R:"Chud", N:"Normie" }) {
   return labels[code] || code;
 }

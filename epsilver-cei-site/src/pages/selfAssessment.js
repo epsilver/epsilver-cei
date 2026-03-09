@@ -204,9 +204,13 @@ function computeCEI(scores) {
 }
 
 function computeLean(scores) {
-  const b = 50, ew = 0.25, cw = 0.15;
-  const progressive = (scores.justice - scores.tradition) + ew * (b - scores.establishment) + cw * (scores.conflict - b);
-  const reactionary = (scores.tradition - scores.justice) + ew * (scores.establishment - b) + cw * (scores.conflict - b);
+  const b = 50, ew = 0.25, cw = 0.15, rw = 0.5;
+  const rigidityBias = rw * (scores.rigidity - b);
+  const progressive = (scores.justice - scores.tradition) + ew * (b - scores.establishment) + cw * (scores.conflict - b) - rigidityBias;
+  const reactionary = (scores.tradition - scores.justice) + ew * (scores.establishment - b) + cw * (scores.conflict - b) + rigidityBias;
+  const diff = Math.abs(progressive - reactionary);
+  const maxSig = Math.max(Math.abs(progressive), Math.abs(reactionary));
+  if (diff < 15 && maxSig >= 8) return "Normie";
   return progressive >= reactionary ? "Woke" : "Chud";
 }
 
