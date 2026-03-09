@@ -1089,6 +1089,100 @@
         "opinion journalist",
         "religious leader"
       ]
+    },
+    {
+      "slug": "michelle-obama",
+      "name": "Michelle Obama",
+      "aliases": [],
+      "portraitPath": "https://upload.wikimedia.org/wikipedia/commons/6/63/Michelle_Obama_2013_official_portrait_%282%29.jpg",
+      "portraitIsRemote": true,
+      "sources": [
+        "https://en.wikipedia.org/wiki/Michelle_Obama"
+      ],
+      "researchSummary": "Michelle LaVaughn Robinson Obama (née Robinson; born January 17, 1964) is an American attorney and author who served as First Lady of the United States from 2009 to 2017 as the wife of Barack Obama, the 44th president of the United States. Born in Chicago and raised on the South Side of the city, Obama is a graduate of",
+      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 1 signal cluster(s). Confidence 75%.",
+      "modelReadout": {
+        "instrument": "Wikipedia lead + infobox metadata -> heuristic clusters -> five-axis signal wheel",
+        "observed": {
+          "sourceCount": 1,
+          "occupationsCount": 0,
+          "hasImage": true,
+          "signalCount": 1
+        },
+        "confidencePct": 75,
+        "evidence": {
+          "establishment": [
+            {
+              "clusterId": "E1",
+              "term": "served as",
+              "sentence": "Michelle LaVaughn Robinson Obama (née Robinson; born January 17, 1964) is an American attorney and author who served as First Lady of the United States from 2009 to 2017 as the wife of Barack Obama, the 44th president of the United States.",
+              "weight": 10
+            }
+          ],
+          "justice": [],
+          "tradition": [],
+          "conflict": [],
+          "rigidity": []
+        },
+        "signals": {
+          "establishment": [
+            {
+              "clusterId": "E1",
+              "term": "served as",
+              "weight": 10
+            }
+          ],
+          "justice": [],
+          "tradition": [],
+          "conflict": [],
+          "rigidity": []
+        },
+        "pfFallbackApplied": true,
+        "salienceApplied": true
+      },
+      "modelInputs": {
+        "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
+        "signalsFired": 1,
+        "confidence": 0.75,
+        "lastImportedAt": "2026-03-09T09:28:51.386Z"
+      },
+      "occupations": [
+        "lawyer",
+        "writer",
+        "politician",
+        "podcaster",
+        "jurist",
+        "sociologist"
+      ],
+      "scores": {
+        "establishment": 63,
+        "justice": 50,
+        "tradition": 50,
+        "conflict": 51,
+        "rigidity": 50
+      },
+      "adjustments": [
+        {
+          "at": "2026-03-09T09:28:51.385Z",
+          "type": "auto",
+          "note": "Automatic normalization applied due to low signal density: public-figure fallback bump (low signal density) + salience-term bump"
+        }
+      ],
+      "status": "active",
+      "reviewNote": "",
+      "confidence": 0.75,
+      "reviewFlags": [],
+      "imageCredit": {
+        "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/6/63/Michelle_Obama_2013_official_portrait_%282%29.jpg",
+        "author": "Official White House Photo by Chuck Kennedy",
+        "license": "Public domain",
+        "attributionText": null
+      },
+      "cei": {
+        "value": 31,
+        "tier": "Moderate"
+      },
+      "primaryLean": "Chud"
     }
   ]
 }
