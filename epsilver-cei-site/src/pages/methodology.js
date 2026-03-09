@@ -26,7 +26,7 @@ export function MethodologyPage(root) {
 
       <div class="list" style="margin-top:0;gap:0">
         <div class="item" style="flex-direction:column;gap:4px">
-          <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <div style="display:flex;justify-content:space-between;align-items:center">
             <div class="section-title">Establishment</div>
             <span class="pill" style="font-size:20px">Behavioral</span>
           </div>
@@ -38,7 +38,7 @@ export function MethodologyPage(root) {
           </div>
         </div>
         <div class="item" style="flex-direction:column;gap:4px">
-          <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <div style="display:flex;justify-content:space-between;align-items:center">
             <div class="section-title">Justice</div>
             <span class="pill" style="font-size:20px">Ideological</span>
           </div>
@@ -51,7 +51,7 @@ export function MethodologyPage(root) {
           </div>
         </div>
         <div class="item" style="flex-direction:column;gap:4px">
-          <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <div style="display:flex;justify-content:space-between;align-items:center">
             <div class="section-title">Tradition</div>
             <span class="pill" style="font-size:20px">Ideological</span>
           </div>
@@ -63,7 +63,7 @@ export function MethodologyPage(root) {
           </div>
         </div>
         <div class="item" style="flex-direction:column;gap:4px">
-          <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <div style="display:flex;justify-content:space-between;align-items:center">
             <div class="section-title">Conflict</div>
             <span class="pill" style="font-size:20px">Behavioral</span>
           </div>
@@ -75,7 +75,7 @@ export function MethodologyPage(root) {
           </div>
         </div>
         <div class="item" style="flex-direction:column;gap:4px">
-          <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <div style="display:flex;justify-content:space-between;align-items:center">
             <div class="section-title">Rigidity</div>
             <span class="pill" style="font-size:20px">Ideological</span>
           </div>
