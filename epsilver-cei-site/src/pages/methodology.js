@@ -1,3 +1,5 @@
+import { downloadExplainerCard } from "../components/explainerCard.js";
+
 export function MethodologyPage(root) {
   const wrap = document.createElement("div");
   wrap.style.cssText = "max-width:740px;margin:24px auto;";
@@ -293,8 +295,12 @@ export function MethodologyPage(root) {
         consistent and transparent, not authoritative.
       </div>
 
+      <div class="hr"></div>
+      <button class="btn" id="dlExplainer">Download Explainer Card</button>
+
     </div>
   `;
 
+  wrap.querySelector("#dlExplainer").addEventListener("click", downloadExplainerCard);
   root.appendChild(wrap);
 }
