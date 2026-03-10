@@ -189,12 +189,10 @@ export async function ProfilePage(root, { slug }) {
       `Inputs observed: Wikipedia lead + infobox fields. Confidence ${Math.round((p.confidence || 0) * 100)}%.`;
 
   left.innerHTML = `
-    <div class="row">
-      <div class="portrait">${portrait ? `<img src="${portrait}" alt="${escapeHtml(p.name)}">` : ""}</div>
-      <div style="flex:1">
-        <div class="name">${escapeHtml(p.name || "")}</div>
-        <div class="small" style="margin-top:6px">${escapeHtml(cleanAscii(trimToSentence(p.researchSummary || "")))}</div>
-      </div>
+    <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px">
+      ${portrait ? `<div class="portrait"><img src="${portrait}" alt="${escapeHtml(p.name)}"></div>` : ""}
+      <div class="name">${escapeHtml(p.name || "")}</div>
+      <div class="small">${escapeHtml(cleanAscii(trimToSentence(p.researchSummary || "")))}</div>
     </div>
 
     <div class="hr"></div>
