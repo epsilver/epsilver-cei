@@ -272,10 +272,13 @@ export async function ProfilePage(root, { slug }) {
 
 
 
+  const wrap = document.createElement("div");
+  wrap.style.cssText = "max-width:740px;margin:24px auto;";
   grid.appendChild(left);
   grid.appendChild(right);
+  wrap.appendChild(grid);
   root.innerHTML = "";
-  root.appendChild(grid);
+  root.appendChild(wrap);
 
   generateProfileCard(p).then(canvas => {
     showCardInline(canvas, left.querySelector("#profileCardDisplay"));
