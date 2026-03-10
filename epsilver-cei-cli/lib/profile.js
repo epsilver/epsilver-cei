@@ -63,7 +63,7 @@ function makeComputedSummary({ confidence, signalCount, sourceCount, hasImage, o
   const sig = (typeof signalCount === "number") ? (signalCount + " signal cluster(s)") : "signal clusters";
   const conf = (typeof confidence === "number") ? confidence : 0;
 
-  return "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a " + ceiBasis +
+  return "cei-cli ingest: Wikipedia lead + infobox metadata; normalized into a " + ceiBasis +
     ". Inputs observed: " + src + ", " + occ + ", " + img + ", " + sig +
     ". Confidence " + Math.round(conf * 100) + "%.";
 }

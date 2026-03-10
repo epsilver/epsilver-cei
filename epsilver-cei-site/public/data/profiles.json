@@ -9,12 +9,12 @@
         "https://en.wikipedia.org/wiki/Alex_Jones"
       ],
       "researchSummary": "Alexander Emerick Jones (born February 11, 1974) is an American far-right radio show host and prominent conspiracy theorist. He hosts The Alex Jones Show from Austin, Texas.",
-      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 10 signal cluster(s). Confidence 90%.",
+      "computedSummary": "cei-cli ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 10 signal cluster(s). Confidence 90%.",
       "modelInputs": {
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 10,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-10T05:03:03.216Z"
+        "lastImportedAt": "2026-03-10T16:05:49.192Z"
       },
       "scores": {
         "establishment": 50,
@@ -206,12 +206,12 @@
         "https://en.wikipedia.org/wiki/Taylor_Swift"
       ],
       "researchSummary": "Taylor Alison Swift (born December 13, 1989) is an American singer-songwriter. An influential figure in popular culture, she is known for her autobiographical songwriting and artistic reinventions.",
-      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 0 signal cluster(s). Confidence 75%.",
+      "computedSummary": "cei-cli ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 0 signal cluster(s). Confidence 75%.",
       "modelInputs": {
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 0,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-10T05:03:03.229Z"
+        "lastImportedAt": "2026-03-10T16:05:49.206Z"
       },
       "scores": {
         "establishment": 53,
@@ -222,7 +222,7 @@
       },
       "adjustments": [
         {
-          "at": "2026-03-10T05:03:03.229Z",
+          "at": "2026-03-10T16:05:49.206Z",
           "type": "auto",
           "note": "Automatic normalization applied due to low signal density: public-figure fallback bump (low signal density) + salience-term bump"
         }
@@ -291,7 +291,7 @@
         "https://en.wikipedia.org/wiki/Adolf_Hitler"
       ],
       "researchSummary": "Adolf Hitler (20 April 1889 - 30 April 1945) was an Austrian-born German politician who was the dictator of Germany during the Nazi era, which lasted from 1933 until his suicide in 1945. He rose to power as the leader of the Nazi Party, becoming the chancellor of Germany in 1933 and then taking the title of Führer und ",
-      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 7 signal cluster(s). Confidence 90%.",
+      "computedSummary": "cei-cli ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 7 signal cluster(s). Confidence 90%.",
       "modelReadout": {
         "instrument": "Wikipedia lead + infobox metadata -> heuristic clusters -> five-axis signal wheel",
         "observed": {
@@ -405,7 +405,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 7,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-10T05:03:03.243Z"
+        "lastImportedAt": "2026-03-10T16:05:49.220Z"
       },
       "scores": {
         "establishment": 60,
@@ -450,7 +450,7 @@
         "https://en.wikipedia.org/wiki/Bernie_Sanders"
       ],
       "researchSummary": "Bernard Sanders (born September 8, 1941) is an American politician and activist serving as the senior United States senator from Vermont, a seat he has held since 2007. He is the longest-serving independent in U.S.",
-      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 8 signal cluster(s). Confidence 90%.",
+      "computedSummary": "cei-cli ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 8 signal cluster(s). Confidence 90%.",
       "modelReadout": {
         "instrument": "Wikipedia lead + infobox metadata -> heuristic clusters -> five-axis signal wheel",
         "observed": {
@@ -575,7 +575,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 8,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-10T05:03:05.293Z"
+        "lastImportedAt": "2026-03-10T16:05:55.270Z"
       },
       "scores": {
         "establishment": 52,
@@ -620,7 +620,7 @@
         "https://en.wikipedia.org/wiki/Nick_Fuentes"
       ],
       "researchSummary": "Nicholas Joseph Fuentes (born August 18, 1998) is an American far-right political commentator and live streamer. He hosts America First, a livestream that has promoted white nationalism and supremacy, Christian nationalism, the incel movement, misogyny, anti-LGBTQ views and antisemitism including Holocaust denial.",
-      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 8 signal cluster(s). Confidence 90%.",
+      "computedSummary": "cei-cli ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 8 signal cluster(s). Confidence 90%.",
       "modelReadout": {
         "instrument": "Wikipedia lead + infobox metadata -> heuristic clusters -> five-axis signal wheel",
         "observed": {
@@ -747,7 +747,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 8,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-10T05:03:06.024Z"
+        "lastImportedAt": "2026-03-10T16:05:59.969Z"
       },
       "scores": {
         "establishment": 50,
@@ -788,7 +788,7 @@
         "https://en.wikipedia.org/wiki/Hasan_Piker"
       ],
       "researchSummary": "Hasan Doğan Piker (born July 25, 1991), known online by the name HasanAbi, is an American Twitch streamer, influencer, and left-wing political commentator. His content primarily consists of political and social commentary and media consumption.",
-      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 5 signal cluster(s). Confidence 75%.",
+      "computedSummary": "cei-cli ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 5 signal cluster(s). Confidence 75%.",
       "modelReadout": {
         "instrument": "Wikipedia lead + infobox metadata -> heuristic clusters -> five-axis signal wheel",
         "observed": {
@@ -878,7 +878,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 5,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-10T05:03:06.582Z"
+        "lastImportedAt": "2026-03-10T16:06:02.620Z"
       },
       "scores": {
         "establishment": 50,
@@ -930,7 +930,7 @@
         "https://en.wikipedia.org/wiki/Martin_Luther_King_Jr."
       ],
       "researchSummary": "Martin Luther King Jr. (born Michael King Jr.; January 15, 1929 - April 4, 1968) was an American civil rights activist and Baptist minister who was a leader of the civil rights movement from 1955 until his assassination in 1968.",
-      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 6 signal cluster(s). Confidence 90%.",
+      "computedSummary": "cei-cli ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 6 signal cluster(s). Confidence 90%.",
       "modelReadout": {
         "instrument": "Wikipedia lead + infobox metadata -> heuristic clusters -> five-axis signal wheel",
         "observed": {
@@ -1037,7 +1037,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 6,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-10T05:03:07.324Z"
+        "lastImportedAt": "2026-03-10T16:06:03.942Z"
       },
       "scores": {
         "establishment": 44,
@@ -1085,7 +1085,7 @@
         "https://en.wikipedia.org/wiki/Michelle_Obama"
       ],
       "researchSummary": "Michelle LaVaughn Robinson Obama (née Robinson; born January 17, 1964) is an American attorney and author who served as First Lady of the United States from 2009 to 2017 as the wife of Barack Obama, the 44th president of the United States. Born in Chicago and raised on the South Side of the city, Obama is a graduate of",
-      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 2 signal cluster(s). Confidence 75%.",
+      "computedSummary": "cei-cli ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 2 signal cluster(s). Confidence 75%.",
       "modelReadout": {
         "instrument": "Wikipedia lead + infobox metadata -> heuristic clusters -> five-axis signal wheel",
         "observed": {
@@ -1142,7 +1142,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 2,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-10T05:03:07.336Z"
+        "lastImportedAt": "2026-03-10T16:06:03.950Z"
       },
       "occupations": [
         "lawyer",
@@ -1161,7 +1161,7 @@
       },
       "adjustments": [
         {
-          "at": "2026-03-10T05:03:07.336Z",
+          "at": "2026-03-10T16:06:03.950Z",
           "type": "auto",
           "note": "Automatic normalization applied due to low signal density: public-figure fallback bump (low signal density) + salience-term bump"
         }
@@ -1192,7 +1192,7 @@
         "https://en.wikipedia.org/wiki/Vaush"
       ],
       "researchSummary": "Ian Anthony Kochinski (born February 14, 1994), better known as Vaush ( VAWSH), is an American left-wing YouTuber and former Twitch streamer. Kochinski started his online career as a member of streamer Destiny's community, before creating his Twitch channel and YouTube account in 2019.",
-      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 4 signal cluster(s). Confidence 75%.",
+      "computedSummary": "cei-cli ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 4 signal cluster(s). Confidence 75%.",
       "modelReadout": {
         "instrument": "Wikipedia lead + infobox metadata -> heuristic clusters -> five-axis signal wheel",
         "observed": {
@@ -1273,7 +1273,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 4,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-10T05:03:08.925Z"
+        "lastImportedAt": "2026-03-10T16:06:05.184Z"
       },
       "occupations": [
         "online streamer",
@@ -1315,7 +1315,7 @@
         "https://en.wikipedia.org/wiki/Kyle_Kulinski"
       ],
       "researchSummary": "Kyle Edward Kulinski (born January 31, 1988) is an American left-wing political commentator and media host. He is the host and producer of The Kyle Kulinski Show on his YouTube channel Secular Talk, co-host on Kyle & Corin on the YouTube channel Corin's WORLD, and co-host with his wife Krystal Ball on the progressive p",
-      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 3 signal cluster(s). Confidence 75%.",
+      "computedSummary": "cei-cli ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 3 signal cluster(s). Confidence 75%.",
       "modelReadout": {
         "instrument": "Wikipedia lead + infobox metadata -> heuristic clusters -> five-axis signal wheel",
         "observed": {
@@ -1383,7 +1383,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 3,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-10T05:03:12.939Z"
+        "lastImportedAt": "2026-03-10T16:06:05.191Z"
       },
       "occupations": [
         "journalist",
@@ -1400,7 +1400,7 @@
       },
       "adjustments": [
         {
-          "at": "2026-03-10T05:03:12.939Z",
+          "at": "2026-03-10T16:06:05.191Z",
           "type": "auto",
           "note": "Automatic normalization applied due to low signal density: public-figure fallback bump (low signal density)"
         }
@@ -1431,7 +1431,7 @@
         "https://en.wikipedia.org/wiki/Tucker_Carlson"
       ],
       "researchSummary": "Tucker Swanson McNear Carlson (born May 16, 1969) is an American conservative political activist and commentator who hosts Tucker on X and The Tucker Carlson Show since 2023. He previously hosted the nightly political talk show Tucker Carlson Tonight on Fox News from 2016 to 2023, when his contract with Fox News was te",
-      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 6 signal cluster(s). Confidence 90%.",
+      "computedSummary": "cei-cli ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 6 signal cluster(s). Confidence 90%.",
       "modelReadout": {
         "instrument": "Wikipedia lead + infobox metadata -> heuristic clusters -> five-axis signal wheel",
         "observed": {
@@ -1536,7 +1536,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 6,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-10T05:03:21.718Z"
+        "lastImportedAt": "2026-03-10T16:06:05.202Z"
       },
       "occupations": [
         "pundit",
@@ -1582,7 +1582,7 @@
         "https://en.wikipedia.org/wiki/Bill_Maher"
       ],
       "researchSummary": "William Maher (born January 20, 1956) is an American television host, comedian, actor and political commentator. Known for his political satire, he is the host of the HBO political talk show Real Time with Bill Maher (2003-present) and podcast Club Random (2022-present).",
-      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 5 signal cluster(s). Confidence 75%.",
+      "computedSummary": "cei-cli ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 5 signal cluster(s). Confidence 75%.",
       "modelReadout": {
         "instrument": "Wikipedia lead + infobox metadata -> heuristic clusters -> five-axis signal wheel",
         "observed": {
@@ -1676,7 +1676,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 5,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-10T05:03:21.730Z"
+        "lastImportedAt": "2026-03-10T16:06:05.210Z"
       },
       "occupations": [
         "comedian",
@@ -1721,7 +1721,7 @@
         "https://en.wikipedia.org/wiki/Xi_Jinping"
       ],
       "researchSummary": "Xi Jinping (born 15 June 1953) is a Chinese statesman and politician who has served as the general secretary of the Chinese Communist Party (CCP) and chairman of the Central Military Commission (CMC) since 2012, and the president of China since 2013. Xi has been the leader of the fifth generation of Chinese leadership ",
-      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 9 signal cluster(s). Confidence 90%.",
+      "computedSummary": "cei-cli ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 9 signal cluster(s). Confidence 90%.",
       "modelReadout": {
         "instrument": "Wikipedia lead + infobox metadata -> heuristic clusters -> five-axis signal wheel",
         "observed": {
@@ -1859,7 +1859,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 9,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-10T05:03:23.143Z"
+        "lastImportedAt": "2026-03-10T16:06:06.074Z"
       },
       "occupations": [
         "statesperson",
@@ -1899,7 +1899,7 @@
         "https://en.wikipedia.org/wiki/Vladimir_Putin"
       ],
       "researchSummary": "Vladimir Vladimirovich Putin (born 7 October 1952) is a Russian politician and former intelligence officer who has served as President of Russia since 2012, having previously served from 2000 to 2008. Putin also served as Prime Minister of Russia from 1999 to 2000 and again from 2008 to 2012.",
-      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 4 signal cluster(s). Confidence 75%.",
+      "computedSummary": "cei-cli ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 4 signal cluster(s). Confidence 75%.",
       "modelReadout": {
         "instrument": "Wikipedia lead + infobox metadata -> heuristic clusters -> five-axis signal wheel",
         "observed": {
@@ -1980,7 +1980,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 4,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-10T05:03:24.498Z"
+        "lastImportedAt": "2026-03-10T16:06:06.587Z"
       },
       "occupations": [
         "judoka",
