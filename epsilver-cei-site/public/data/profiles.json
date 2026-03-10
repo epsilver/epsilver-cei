@@ -14,7 +14,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 10,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-10T00:18:47.905Z"
+        "lastImportedAt": "2026-03-10T04:10:54.303Z"
       },
       "scores": {
         "establishment": 50,
@@ -211,7 +211,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 0,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-10T00:18:47.915Z"
+        "lastImportedAt": "2026-03-10T04:11:05.470Z"
       },
       "scores": {
         "establishment": 53,
@@ -222,7 +222,7 @@
       },
       "adjustments": [
         {
-          "at": "2026-03-10T00:18:47.915Z",
+          "at": "2026-03-10T04:11:05.470Z",
           "type": "auto",
           "note": "Automatic normalization applied due to low signal density: public-figure fallback bump (low signal density) + salience-term bump"
         }
@@ -405,7 +405,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 7,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-10T00:18:47.926Z"
+        "lastImportedAt": "2026-03-10T04:11:21.001Z"
       },
       "scores": {
         "establishment": 60,
@@ -575,7 +575,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 8,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-10T00:18:47.937Z"
+        "lastImportedAt": "2026-03-10T04:11:21.241Z"
       },
       "scores": {
         "establishment": 52,
@@ -747,7 +747,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 8,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-10T00:18:47.943Z"
+        "lastImportedAt": "2026-03-10T04:11:21.456Z"
       },
       "scores": {
         "establishment": 50,
@@ -878,7 +878,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 5,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-10T00:18:47.948Z"
+        "lastImportedAt": "2026-03-10T04:11:21.663Z"
       },
       "scores": {
         "establishment": 50,
@@ -1037,7 +1037,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 6,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-10T00:18:47.957Z"
+        "lastImportedAt": "2026-03-10T04:11:21.893Z"
       },
       "scores": {
         "establishment": 44,
@@ -1142,7 +1142,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 2,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-10T00:18:47.963Z"
+        "lastImportedAt": "2026-03-10T04:11:28.523Z"
       },
       "occupations": [
         "lawyer",
@@ -1161,7 +1161,7 @@
       },
       "adjustments": [
         {
-          "at": "2026-03-10T00:18:47.963Z",
+          "at": "2026-03-10T04:11:28.523Z",
           "type": "auto",
           "note": "Automatic normalization applied due to low signal density: public-figure fallback bump (low signal density) + salience-term bump"
         }

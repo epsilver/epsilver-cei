@@ -1,5 +1,6 @@
 import { wikiPageBundle, wikiImageInfo, wikiViewsSection } from "./wiki.js";
 import { wikidataOccupationsAndImage } from "./wikidata.js";
+import { gdeltNewsText } from "./gdelt.js";
 import { scoreFromTextAndOcc } from "./heuristic.js";
 import { computeCEI, computeLean } from "./scoring.js";
 import { computeConfidence } from "./confidence.js";
@@ -56,8 +57,9 @@ export async function runPipeline(title, cfg) {
   const occupations = wd.occupations || [];
 
   const viewsText = await wikiViewsSection(bundle.title, cfg);
+  const newsText  = await gdeltNewsText(bundle.title, cfg);
 
-  const scored = scoreFromTextAndOcc(bundle.extract, occupations, cfg, viewsText);
+  const scored = scoreFromTextAndOcc(bundle.extract, occupations, cfg, viewsText, newsText);
   const { scores, signals, evidence, signalCount } = scored;
   bundle.signals = signals;
   bundle.evidence = evidence;

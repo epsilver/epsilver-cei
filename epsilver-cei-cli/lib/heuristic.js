@@ -18,7 +18,7 @@ function isPublicFigure(occupations) {
   return occ.some(o => PUBLIC_FIGURE_OCC.has(o));
 }
 
-export function scoreFromTextAndOcc(extract, occupations, cfg, viewsText = "") {
+export function scoreFromTextAndOcc(extract, occupations, cfg, viewsText = "", newsText = "") {
   const b = cfg.baseline;
 
   const evidenceOpts = {
@@ -26,39 +26,63 @@ export function scoreFromTextAndOcc(extract, occupations, cfg, viewsText = "") {
     maxSentenceChars: cfg?.evidence?.maxSentenceChars ?? 260
   };
 
-  // Behavioral axes: intro only — views sections discuss history/opponents, not subject's actions
+  // Behavioral axes: intro + news (positives only for news)
   const e = matchClusters(extract, ESTABLISHMENT, evidenceOpts);
-  const c = matchClusters(extract, CONFLICT, evidenceOpts);
+  const eNews = newsText ? matchClusters(newsText, ESTABLISHMENT, {
+    ...evidenceOpts, positivesOnly: true,
+    skipIds: new Set(e.hits.map(h => h.clusterId))
+  }) : { hits: [], excerpts: [] };
 
-  // Ideological axes: two-pass to prevent views-section dampeners from canceling intro signals
-  // Pass 1: intro with all clusters (positives + negatives/dampeners)
-  // Pass 2: views text with positive-weight clusters only, skipping IDs already fired in pass 1
+  const c = matchClusters(extract, CONFLICT, evidenceOpts);
+  const cNews = newsText ? matchClusters(newsText, CONFLICT, {
+    ...evidenceOpts, positivesOnly: true,
+    skipIds: new Set(c.hits.map(h => h.clusterId))
+  }) : { hits: [], excerpts: [] };
+
+  const eMerged = { hits: [...e.hits, ...eNews.hits], excerpts: [...e.excerpts, ...eNews.excerpts] };
+  const cMerged = { hits: [...c.hits, ...cNews.hits], excerpts: [...c.excerpts, ...cNews.excerpts] };
+
+  // Ideological axes: three-pass
+  // Pass 1: intro with all clusters (positives + dampeners)
+  // Pass 2: views text with positives only, skipping already-fired IDs
+  // Pass 3: news text with positives only, skipping all already-fired IDs
   function twoPass(axis) {
     const pass1 = matchClusters(extract, axis, evidenceOpts);
-    if (!viewsText) return pass1;
     const firedIds = new Set(pass1.hits.map(h => h.clusterId));
-    const pass2 = matchClusters(viewsText, axis, {
-      ...evidenceOpts,
-      positivesOnly: true,
-      skipIds: firedIds
-    });
-    return {
-      hits: [...pass1.hits, ...pass2.hits],
-      excerpts: [...pass1.excerpts, ...pass2.excerpts]
-    };
+    const allHits = [...pass1.hits];
+    const allExcerpts = [...pass1.excerpts];
+
+    if (viewsText) {
+      const pass2 = matchClusters(viewsText, axis, {
+        ...evidenceOpts, positivesOnly: true, skipIds: firedIds
+      });
+      pass2.hits.forEach(h => firedIds.add(h.clusterId));
+      allHits.push(...pass2.hits);
+      allExcerpts.push(...pass2.excerpts);
+    }
+
+    if (newsText) {
+      const pass3 = matchClusters(newsText, axis, {
+        ...evidenceOpts, positivesOnly: true, skipIds: firedIds
+      });
+      allHits.push(...pass3.hits);
+      allExcerpts.push(...pass3.excerpts);
+    }
+
+    return { hits: allHits, excerpts: allExcerpts };
   }
 
   const j = twoPass(JUSTICE);
   const t = twoPass(TRADITION);
   const r = twoPass(RIGIDITY);
 
-  let establishment = clamp(b + cap(sumWeights(e.hits), cfg.caps.establishmentText), 0, 100);
+  let establishment = clamp(b + cap(sumWeights(eMerged.hits), cfg.caps.establishmentText), 0, 100);
   let justice       = clamp(b + cap(sumWeights(j.hits), cfg.caps.justiceText), 0, 100);
   let tradition     = clamp(b + cap(sumWeights(t.hits), cfg.caps.traditionText), 0, 100);
-  let conflict      = clamp(b + cap(sumWeights(c.hits), cfg.caps.conflictText), 0, 100);
+  let conflict      = clamp(b + cap(sumWeights(cMerged.hits), cfg.caps.conflictText), 0, 100);
   let rigidity      = clamp(b + cap(sumWeights(r.hits), cfg.caps.rigidityText), 0, 100);
 
-  const fired = e.hits.length + j.hits.length + t.hits.length + c.hits.length + r.hits.length;
+  const fired = eMerged.hits.length + j.hits.length + t.hits.length + cMerged.hits.length + r.hits.length;
   const pf = isPublicFigure(occupations);
 
   let pfFallbackApplied = false;
@@ -83,18 +107,18 @@ export function scoreFromTextAndOcc(extract, occupations, cfg, viewsText = "") {
   const scores = { establishment, justice, tradition, conflict, rigidity };
 
   const signals = {
-    establishment: e.hits,
+    establishment: eMerged.hits,
     justice: j.hits,
     tradition: t.hits,
-    conflict: c.hits,
+    conflict: cMerged.hits,
     rigidity: r.hits
   };
 
   const evidence = {
-    establishment: e.excerpts,
+    establishment: eMerged.excerpts,
     justice: j.excerpts,
     tradition: t.excerpts,
-    conflict: c.excerpts,
+    conflict: cMerged.excerpts,
     rigidity: r.excerpts
   };
 
