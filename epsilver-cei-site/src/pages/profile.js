@@ -185,11 +185,8 @@ export async function ProfilePage(root, { slug }) {
 
   const modelSummary = p.computedSummary
     ? escapeHtml(cleanAscii(p.computedSummary))
-    : escapeHtml(
-        "Epsilver CEI model ingest: public-source summary normalized into a five-axis signal wheel. " +
-        "Inputs observed: Wikipedia lead + infobox fields. Confidence " +
-        Math.round((p.confidence || 0) * 100) + "%."
-      );
+    : `<a href="https://www.npmjs.com/package/cei-cli" target="_blank" rel="noopener">cei-cli</a> ingest: public-source summary normalized into a five-axis signal wheel. ` +
+      `Inputs observed: Wikipedia lead + infobox fields. Confidence ${Math.round((p.confidence || 0) * 100)}%.`;
 
   left.innerHTML = `
     <div class="row">
