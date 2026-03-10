@@ -79,11 +79,12 @@ export async function HomePage(root) {
       const pill = (ceiVal != null && tier) ? `CEI ${ceiVal} | ${tier}` : (p?.status || "PROFILE");
 
       const lean = p?.primaryLean || "N/A";
+      const leanClass = lean === "Woke" ? "lean-woke" : lean === "Chud" ? "lean-chud" : "lean-normie";
 
       item.innerHTML = `
         <div class="left">
           <div><b>${p.name}</b></div>
-          <div class="meta">Primary Lean: ${lean}</div>
+          <span class="lean ${leanClass}">${lean}</span>
         </div>
         <div class="pill">${pill}</div>
       `;

@@ -200,10 +200,24 @@ a:hover{ text-decoration:underline; }
   letter-spacing:1.8px;
   text-transform:uppercase;
   font-size:12px;
-  padding:8px 10px;
-  border:1px solid var(--rule);
+  padding:5px 10px;
   border-radius:999px;
-  background:#fff;
+  display:inline-block;
+}
+.lean-woke{
+  background:#e8f4fd;
+  color:#1a6fa8;
+  border:1px solid #b3d9f2;
+}
+.lean-chud{
+  background:#f3eafd;
+  color:#7b2fa8;
+  border:1px solid #d4b3f2;
+}
+.lean-normie{
+  background:#f0f0f0;
+  color:#555;
+  border:1px solid #d0d0d0;
 }
 
 .cei{
