@@ -201,8 +201,9 @@ a:hover{ text-decoration:underline; }
   text-transform:uppercase;
   font-size:12px;
   padding:5px 10px;
-  border-radius:999px;
+  border-radius:0;
   display:inline-block;
+  width:fit-content;
 }
 .lean-woke{
   background:#e8f4fd;
