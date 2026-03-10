@@ -106,7 +106,7 @@ export function radarSVG({ scores, scores2 = null, nameA = "", nameB = "", size 
       const tip = scores2
         ? `${label}: ${val} / ${scores2?.[key] ?? 50}`
         : `${label}: ${val}`;
-      onHover({ x: e.clientX, y: e.clientY, title: tip, sub: key });
+      onHover({ x: e.clientX, y: e.clientY, title: tip });
     });
     path.addEventListener("mouseleave", () => onHover && onHover(null));
     svg.appendChild(path);

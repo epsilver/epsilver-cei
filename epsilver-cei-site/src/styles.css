@@ -338,7 +338,7 @@ a:hover{ text-decoration:underline; }
   background:#fff;
   border:1px solid var(--rule);
   box-shadow:0 10px 24px var(--shadow);
-  border-radius:12px;
+  border-radius:0;
   padding:10px 10px;
   max-width:240px;
   font-size:12px;
