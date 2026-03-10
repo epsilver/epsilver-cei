@@ -103,7 +103,7 @@ export async function ComparePage(root, { a="", b="" }) {
     try { profiles = [JSON.parse(_qr), ...profiles]; } catch(e) {}
   }
 
-  const opts = profiles
+  const opts = `<option value="" disabled selected>Select a profile…</option>` + profiles
     .slice()
     .sort((x,y)=>String(x.name).localeCompare(String(y.name)))
     .map(p => `<option value="${p.slug}">${p.name}</option>`)

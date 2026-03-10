@@ -18,5 +18,4 @@ export function showCardInline(canvas, container) {
   wrap.appendChild(tip);
   wrap.appendChild(img);
   container.appendChild(wrap);
-  wrap.scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
