@@ -127,6 +127,11 @@ a:hover{ text-decoration:underline; }
   .grid{ grid-template-columns:1fr; }
 }
 
+.profile-name{ font-size:14px; }
+@media (max-width:600px){
+  .profile-name{ font-size:12px; }
+}
+
 .card{
   background:var(--panel);
   border:1px solid var(--rule);

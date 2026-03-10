@@ -83,7 +83,7 @@ export async function HomePage(root) {
 
       item.innerHTML = `
         <div class="left">
-          <div style="font-size:14px"><b>${p.name}</b></div>
+          <div class="profile-name"><b>${p.name}</b></div>
           <span class="lean ${leanClass}">${lean}</span>
         </div>
         <div class="pill">${pill}</div>
