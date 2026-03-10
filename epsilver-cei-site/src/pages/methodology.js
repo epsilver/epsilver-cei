@@ -110,6 +110,13 @@ export function MethodologyPage(root) {
             what they do. Ideological axes (Justice, Tradition, Rigidity) are also scored from
             any dedicated <b>Views, Positions, Ideology, or Political Philosophy</b> section when one exists,
             because those sections describe the subject's actual stated beliefs.
+            A third pass queries the <b>GDELT Project</b> — a free, open index of global news coverage —
+            for recent headlines and article descriptions mentioning the subject. GDELT results are
+            cached for 24 hours and run through the same keyword pipeline as the other sources,
+            subject to the same axis caps. GDELT covers mainstream journalism only; figures whose
+            public profile lives in gaming media, streaming platforms, or niche online spaces may
+            return no results, in which case scoring falls back to Wikipedia alone. The system
+            scores what public data actually says.
           </div>
         </div>
         <div class="item" style="flex-direction:column;gap:4px">
@@ -122,14 +129,16 @@ export function MethodologyPage(root) {
           </div>
         </div>
         <div class="item" style="flex-direction:column;gap:4px">
-          <div class="section-subtitle">Two-pass ideological scoring</div>
+          <div class="section-subtitle">Three-pass ideological scoring</div>
           <div class="meta">
-            When a views section is available, ideological axes use a two-pass approach.
-            Pass 1 scores the introduction with all clusters — including dampeners like
-            "pragmatic" or "centrist" that reduce the axis score.
+            Ideological axes use a three-pass approach.
+            Pass 1 scores the Wikipedia introduction with all clusters — including dampeners like
+            "pragmatic", "centrist", "free speech", "heterodox", or "contrarian" that reduce the axis score.
             Pass 2 scores the views section with <b>positive clusters only</b>, skipping any cluster
             that already fired in pass 1. This prevents a views section from canceling signals
             already established in the introduction while still adding new ideological evidence.
+            Pass 3 scores GDELT news text with positive clusters only, skipping all clusters
+            already fired in passes 1 and 2.
           </div>
         </div>
         <div class="item" style="flex-direction:column;gap:4px">
@@ -205,21 +214,47 @@ export function MethodologyPage(root) {
         Rigidity's deviation above 50, with small adjustments for Establishment and Conflict.
         A <b>reactionary signal</b> mirrors this: Tradition minus Justice, plus half of
         Rigidity's deviation above 50, with the same adjustments inverted.
-        If the difference between the two signals is less than 15 points and at least one signal
-        exceeds 8 in absolute value, the profile is classified as <b>Normie</b>.
+        If the difference between the two signals is less than 20 points and at least one signal
+        exceeds 7 in absolute value, the profile is classified as <b>Normie</b>.
         Otherwise, whichever signal is larger determines the lean.
       </div>
       <div class="meta" style="margin-top:10px">
         <b>Normie does not mean low extremity.</b> A profile can score High or Extreme on the CEI
         and still be Normie — for example, someone who is highly confrontational and rigid but whose
         Justice and Tradition signals cancel each other out. Normie means the ideological direction
-        is genuinely ambiguous, not that the person is moderate.
+        is genuinely ambiguous, not that the person is moderate. A Normie can be dangerous, loud,
+        and highly scored. What they cannot be is legible — the system cannot determine which side
+        of the ideological fault line they belong to, because the evidence points both ways or
+        refuses to point at all.
+      </div>
+      <div class="meta" style="margin-top:10px">
+        The archetypal Normie operates at the fault lines of ideological culture. They may criticize
+        progressive excesses and reactionary capture in equal measure, draw audience from both left
+        and right, and resist clean categorization precisely because they engage with ideas across
+        the spectrum without committing to a side. This is not centrism in the political sense —
+        it is ideological non-capture. The Normie is not someone who believes in nothing; they are
+        someone whose documented public profile does not resolve into a dominant direction.
+        Bill Maher is a textbook case: decades of liberal-coded commentary balanced by documented
+        anti-woke positioning, heterodox provocation, and centrist dampeners that nearly cancel
+        his progressive signal. The signals exist — they just refuse to settle.
+      </div>
+      <div class="meta" style="margin-top:10px">
+        <b>Occupation-based classification.</b> Content creators — YouTubers, streamers, podcasters —
+        with zero ideological signals are classified Normie rather than receiving a forced lean.
+        Their Wikipedia coverage describes output and audience, not ideology. A zero signal for a
+        streamer is a data gap, not a verdict. Political figures with zero signals do not receive
+        this treatment: they made decisions, cast votes, and held positions — the system simply
+        did not catch them. They receive a forced lean. Profiles with low confidence scores
+        (insufficient Wikipedia coverage) and zero signals also default to Normie.
       </div>
       <div class="meta" style="margin-top:10px">
         Profiles with very low signal density — where both progressive and reactionary signals are
-        near zero — do not qualify for Normie. They receive a forced lean based on whichever signal
-        is fractionally larger. This reflects the principle that apathy and low engagement are
-        themselves a signal, not an absence of one.
+        near zero and the subject is not a content creator or low-confidence profile — do not qualify
+        for Normie. They receive a forced lean based on whichever signal is fractionally larger.
+        This reflects the principle that apathy and low engagement from a documented public figure
+        are themselves a signal, not an absence of one. Taylor Swift scores Chud not because she
+        is reactionary but because her near-zero signal density tilts fractionally in that direction
+        under the formula — and she does not qualify for the creator exemption.
       </div>
       <div class="meta" style="margin-top:10px">
         Rigidity is included in the lean calculation because extreme Rigidity — Holocaust denial,
@@ -235,7 +270,7 @@ export function MethodologyPage(root) {
       <!-- EXAMPLES -->
       <div class="h1" style="font-size:26px;letter-spacing:.6px;text-transform:uppercase;margin-bottom:12px">Worked Examples</div>
       <div class="small" style="margin-bottom:16px">
-        Three profiles illustrating how the algorithm produces different outcomes from different signal patterns.
+        Four profiles illustrating how the algorithm produces different outcomes from different signal patterns.
       </div>
 
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
@@ -268,8 +303,8 @@ export function MethodologyPage(root) {
           <div style="font-size:11px;text-transform:uppercase;letter-spacing:1.4px;color:var(--muted);margin-bottom:4px">Example B</div>
           <div style="font-size:16px;font-weight:700;margin-bottom:2px">Bernie Sanders</div>
           <div style="display:flex;gap:8px;align-items:baseline;margin-bottom:10px">
-            <span style="font-size:28px;font-weight:900">56</span>
-            <span style="font-size:11px;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted)">Elevated · Woke</span>
+            <span style="font-size:28px;font-weight:900">37</span>
+            <span style="font-size:11px;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted)">Moderate · Woke</span>
           </div>
           <div class="small">
             Multiple Justice clusters fire: explicit self-identification as a democratic socialist,
@@ -289,7 +324,7 @@ export function MethodologyPage(root) {
           <div style="font-size:11px;text-transform:uppercase;letter-spacing:1.4px;color:var(--muted);margin-bottom:4px">Example C</div>
           <div style="font-size:16px;font-weight:700;margin-bottom:2px">Alex Jones</div>
           <div style="display:flex;gap:8px;align-items:baseline;margin-bottom:10px">
-            <span style="font-size:28px;font-weight:900">77</span>
+            <span style="font-size:28px;font-weight:900">72</span>
             <span style="font-size:11px;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted)">High · Chud</span>
           </div>
           <div class="small">
@@ -301,6 +336,28 @@ export function MethodologyPage(root) {
             has an outsized effect on the final score. Despite Justice scoring above 50 from
             anti-establishment and anti-globalist populist vocabulary, Tradition and Rigidity
             combined outweigh Justice in the lean formula, correctly classifying him as Chud.
+          </div>
+        </div>
+
+        <!-- Bill Maher -->
+        <div style="border-top:2px solid var(--ink);padding-top:12px">
+          <div style="font-size:11px;text-transform:uppercase;letter-spacing:1.4px;color:var(--muted);margin-bottom:4px">Example D</div>
+          <div style="font-size:16px;font-weight:700;margin-bottom:2px">Bill Maher</div>
+          <div style="display:flex;gap:8px;align-items:baseline;margin-bottom:10px">
+            <span style="font-size:28px;font-weight:900">41</span>
+            <span style="font-size:11px;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted)">Elevated · Normie</span>
+          </div>
+          <div class="small">
+            A moderate number of signals fire across both directions without either dominating.
+            Tradition scores below baseline from T6 dampeners — progressive and left-wing vocabulary
+            in his older Wikipedia text pulls the axis down. Conflict scores below baseline from
+            CD1 centrist dampeners firing. Justice sits at exactly 50 — no rights or equity clusters
+            fire, but none pull it below baseline either. The progressive and reactionary signals
+            compute to approximately +4.5 and −7.5 respectively — a difference of 12 points, below
+            the 20-point Normie threshold, with a maximum signal of 7.5, just above the 7-point
+            minimum. The classifier cannot determine a dominant direction. Maher is Normie —
+            not because he has no opinions, but because his documented profile refuses to resolve.
+            His CEI of 41 reflects real ideological deviation, just without a discernible lean.
           </div>
         </div>
 
