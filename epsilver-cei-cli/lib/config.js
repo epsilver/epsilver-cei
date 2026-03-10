@@ -24,7 +24,7 @@
     conflictWeight: 0.15,
     rigidityWeight: 0.5,
     normieThreshold: 20,
-    normieMinSignal: 8
+    normieMinSignal: 7
   },
 
   caps: {

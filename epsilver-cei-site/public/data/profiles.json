@@ -14,7 +14,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 10,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-10T04:10:54.303Z"
+        "lastImportedAt": "2026-03-10T05:03:03.216Z"
       },
       "scores": {
         "establishment": 50,
@@ -211,7 +211,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 0,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-10T04:11:05.470Z"
+        "lastImportedAt": "2026-03-10T05:03:03.229Z"
       },
       "scores": {
         "establishment": 53,
@@ -222,7 +222,7 @@
       },
       "adjustments": [
         {
-          "at": "2026-03-10T04:11:05.470Z",
+          "at": "2026-03-10T05:03:03.229Z",
           "type": "auto",
           "note": "Automatic normalization applied due to low signal density: public-figure fallback bump (low signal density) + salience-term bump"
         }
@@ -405,7 +405,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 7,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-10T04:11:21.001Z"
+        "lastImportedAt": "2026-03-10T05:03:03.243Z"
       },
       "scores": {
         "establishment": 60,
@@ -575,7 +575,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 8,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-10T04:11:21.241Z"
+        "lastImportedAt": "2026-03-10T05:03:05.293Z"
       },
       "scores": {
         "establishment": 52,
@@ -747,7 +747,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 8,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-10T04:11:21.456Z"
+        "lastImportedAt": "2026-03-10T05:03:06.024Z"
       },
       "scores": {
         "establishment": 50,
@@ -878,7 +878,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 5,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-10T04:11:21.663Z"
+        "lastImportedAt": "2026-03-10T05:03:06.582Z"
       },
       "scores": {
         "establishment": 50,
@@ -1037,7 +1037,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 6,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-10T04:11:21.893Z"
+        "lastImportedAt": "2026-03-10T05:03:07.324Z"
       },
       "scores": {
         "establishment": 44,
@@ -1142,7 +1142,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 2,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-10T04:11:28.523Z"
+        "lastImportedAt": "2026-03-10T05:03:07.336Z"
       },
       "occupations": [
         "lawyer",
@@ -1161,7 +1161,7 @@
       },
       "adjustments": [
         {
-          "at": "2026-03-10T04:11:28.523Z",
+          "at": "2026-03-10T05:03:07.336Z",
           "type": "auto",
           "note": "Automatic normalization applied due to low signal density: public-figure fallback bump (low signal density) + salience-term bump"
         }
@@ -1179,6 +1179,838 @@
       "cei": {
         "value": 38,
         "tier": "Moderate"
+      },
+      "primaryLean": "Woke"
+    },
+    {
+      "slug": "vaush",
+      "name": "Vaush",
+      "aliases": [],
+      "portraitPath": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Vaush_%28cropped%29.jpg",
+      "portraitIsRemote": true,
+      "sources": [
+        "https://en.wikipedia.org/wiki/Vaush"
+      ],
+      "researchSummary": "Ian Anthony Kochinski (born February 14, 1994), better known as Vaush ( VAWSH), is an American left-wing YouTuber and former Twitch streamer. Kochinski started his online career as a member of streamer Destiny's community, before creating his Twitch channel and YouTube account in 2019.",
+      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 4 signal cluster(s). Confidence 75%.",
+      "modelReadout": {
+        "instrument": "Wikipedia lead + infobox metadata -> heuristic clusters -> five-axis signal wheel",
+        "observed": {
+          "sourceCount": 1,
+          "occupationsCount": 0,
+          "hasImage": true,
+          "signalCount": 4
+        },
+        "confidencePct": 75,
+        "evidence": {
+          "establishment": [],
+          "justice": [
+            {
+              "clusterId": "J9",
+              "term": "left-wing",
+              "sentence": "Ian Anthony Kochinski (born February 14, 1994), better known as Vaush ( VAWSH), is an American left-wing YouTuber and former Twitch streamer.",
+              "weight": 8
+            }
+          ],
+          "tradition": [
+            {
+              "clusterId": "T1",
+              "term": "right-wing",
+              "sentence": "Noted for his confrontational style, use of memes, and mimicry from right-wing YouTubers, he is regarded as part of the BreadTube community.",
+              "weight": 14
+            },
+            {
+              "clusterId": "T6",
+              "term": "progressive",
+              "sentence": "Described as a progressive and libertarian socialist, Kochinski is considered a controversial figure online.",
+              "weight": -14
+            }
+          ],
+          "conflict": [
+            {
+              "clusterId": "C1",
+              "term": "controversial",
+              "sentence": "Described as a progressive and libertarian socialist, Kochinski is considered a controversial figure online.",
+              "weight": 10
+            }
+          ],
+          "rigidity": []
+        },
+        "signals": {
+          "establishment": [],
+          "justice": [
+            {
+              "clusterId": "J9",
+              "term": "left-wing",
+              "weight": 8
+            }
+          ],
+          "tradition": [
+            {
+              "clusterId": "T1",
+              "term": "right-wing",
+              "weight": 14
+            },
+            {
+              "clusterId": "T6",
+              "term": "progressive",
+              "weight": -14
+            }
+          ],
+          "conflict": [
+            {
+              "clusterId": "C1",
+              "term": "controversial",
+              "weight": 10
+            }
+          ],
+          "rigidity": []
+        },
+        "pfFallbackApplied": false,
+        "salienceApplied": false
+      },
+      "modelInputs": {
+        "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
+        "signalsFired": 4,
+        "confidence": 0.75,
+        "lastImportedAt": "2026-03-10T05:03:08.925Z"
+      },
+      "occupations": [
+        "online streamer",
+        "YouTuber",
+        "Twitch streamer",
+        "debater"
+      ],
+      "scores": {
+        "establishment": 50,
+        "justice": 58,
+        "tradition": 50,
+        "conflict": 60,
+        "rigidity": 50
+      },
+      "adjustments": [],
+      "status": "active",
+      "reviewNote": "",
+      "confidence": 0.75,
+      "reviewFlags": [],
+      "imageCredit": {
+        "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Vaush_%28cropped%29.jpg",
+        "author": "Brianna Wu",
+        "license": "Public domain",
+        "attributionText": null
+      },
+      "cei": {
+        "value": 36,
+        "tier": "Moderate"
+      },
+      "primaryLean": "Normie"
+    },
+    {
+      "slug": "kyle-kulinski",
+      "name": "Kyle Kulinski",
+      "aliases": [],
+      "portraitPath": "https://upload.wikimedia.org/wikipedia/commons/3/30/Kulinski_at_Politicon_2018_%2831729043058%29_%28cropped%29.jpg",
+      "portraitIsRemote": true,
+      "sources": [
+        "https://en.wikipedia.org/wiki/Kyle_Kulinski"
+      ],
+      "researchSummary": "Kyle Edward Kulinski (born January 31, 1988) is an American left-wing political commentator and media host. He is the host and producer of The Kyle Kulinski Show on his YouTube channel Secular Talk, co-host on Kyle & Corin on the YouTube channel Corin's WORLD, and co-host with his wife Krystal Ball on the progressive p",
+      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 3 signal cluster(s). Confidence 75%.",
+      "modelReadout": {
+        "instrument": "Wikipedia lead + infobox metadata -> heuristic clusters -> five-axis signal wheel",
+        "observed": {
+          "sourceCount": 1,
+          "occupationsCount": 0,
+          "hasImage": true,
+          "signalCount": 3
+        },
+        "confidencePct": 75,
+        "evidence": {
+          "establishment": [],
+          "justice": [
+            {
+              "clusterId": "J9",
+              "term": "left-wing",
+              "sentence": "Kyle Edward Kulinski (born January 31, 1988) is an American left-wing political commentator and media host.",
+              "weight": 8
+            }
+          ],
+          "tradition": [
+            {
+              "clusterId": "T6",
+              "term": "progressive",
+              "sentence": "He is the host and producer of The Kyle Kulinski Show on his YouTube channel Secular Talk, co-host on Kyle & Corin on the YouTube channel Corin's WORLD, and co-host with his wife Krystal Ball on the progressive podcast Krystal Kyle & Friends.",
+              "weight": -14
+            },
+            {
+              "clusterId": "T1",
+              "term": "right-wing",
+              "sentence": "In Bridgewater State University's journal The Graduate Review, Kulinski has been described as one of the \"new organic intellectuals of YouTube.\" Brock University's student paper The Brock Press states that Kulinksi's shows proved \"to be excellent pipelines for...",
+              "weight": 14
+            }
+          ],
+          "conflict": [],
+          "rigidity": []
+        },
+        "signals": {
+          "establishment": [],
+          "justice": [
+            {
+              "clusterId": "J9",
+              "term": "left-wing",
+              "weight": 8
+            }
+          ],
+          "tradition": [
+            {
+              "clusterId": "T6",
+              "term": "progressive",
+              "weight": -14
+            },
+            {
+              "clusterId": "T1",
+              "term": "right-wing",
+              "weight": 14
+            }
+          ],
+          "conflict": [],
+          "rigidity": []
+        },
+        "pfFallbackApplied": true,
+        "salienceApplied": false
+      },
+      "modelInputs": {
+        "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
+        "signalsFired": 3,
+        "confidence": 0.75,
+        "lastImportedAt": "2026-03-10T05:03:12.939Z"
+      },
+      "occupations": [
+        "journalist",
+        "YouTuber",
+        "podcaster",
+        "peace activist"
+      ],
+      "scores": {
+        "establishment": 52,
+        "justice": 58,
+        "tradition": 50,
+        "conflict": 51,
+        "rigidity": 50
+      },
+      "adjustments": [
+        {
+          "at": "2026-03-10T05:03:12.939Z",
+          "type": "auto",
+          "note": "Automatic normalization applied due to low signal density: public-figure fallback bump (low signal density)"
+        }
+      ],
+      "status": "active",
+      "reviewNote": "",
+      "confidence": 0.75,
+      "reviewFlags": [],
+      "imageCredit": {
+        "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/3/30/Kulinski_at_Politicon_2018_%2831729043058%29_%28cropped%29.jpg",
+        "author": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/142899282@N03\">Luke Harold</a>",
+        "license": "CC0",
+        "attributionText": null
+      },
+      "cei": {
+        "value": 13,
+        "tier": "Minimal"
+      },
+      "primaryLean": "Normie"
+    },
+    {
+      "slug": "tucker-carlson",
+      "name": "Tucker Carlson",
+      "aliases": [],
+      "portraitPath": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Tucker_Carlson_2025.jpg",
+      "portraitIsRemote": true,
+      "sources": [
+        "https://en.wikipedia.org/wiki/Tucker_Carlson"
+      ],
+      "researchSummary": "Tucker Swanson McNear Carlson (born May 16, 1969) is an American conservative political activist and commentator who hosts Tucker on X and The Tucker Carlson Show since 2023. He previously hosted the nightly political talk show Tucker Carlson Tonight on Fox News from 2016 to 2023, when his contract with Fox News was te",
+      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 6 signal cluster(s). Confidence 90%.",
+      "modelReadout": {
+        "instrument": "Wikipedia lead + infobox metadata -> heuristic clusters -> five-axis signal wheel",
+        "observed": {
+          "sourceCount": 1,
+          "occupationsCount": 0,
+          "hasImage": true,
+          "signalCount": 6
+        },
+        "confidencePct": 90,
+        "evidence": {
+          "establishment": [
+            {
+              "clusterId": "E1",
+              "term": "served as",
+              "sentence": "In 2010, Carlson co-founded and served as the initial editor-in-chief of the right-wing news and opinion website The Daily Caller, until selling his ownership stake and leaving in 2020.",
+              "weight": 10
+            }
+          ],
+          "justice": [],
+          "tradition": [
+            {
+              "clusterId": "T1",
+              "term": "conservative",
+              "sentence": "Tucker Swanson McNear Carlson (born May 16, 1969) is an American conservative political activist and commentator who hosts Tucker on X and The Tucker Carlson Show since 2023.",
+              "weight": 14
+            },
+            {
+              "clusterId": "T2",
+              "term": "demographic replacement",
+              "sentence": "He has been noted for false and misleading statements on some topics and for promoting conspiracy theories on demographic replacement, COVID-19, the 2021 United States Capitol attack, and Ukrainian bioweapons.",
+              "weight": 16
+            }
+          ],
+          "conflict": [
+            {
+              "clusterId": "C2",
+              "term": "lawsuit",
+              "sentence": "Fox News Network defamation lawsuit, Carlson was among the hosts named for broadcasting false statements about the plaintiff company's voting machines.",
+              "weight": 10
+            }
+          ],
+          "rigidity": [
+            {
+              "clusterId": "R4",
+              "term": "conspiracy theories",
+              "sentence": "He has been noted for false and misleading statements on some topics and for promoting conspiracy theories on demographic replacement, COVID-19, the 2021 United States Capitol attack, and Ukrainian bioweapons.",
+              "weight": 6
+            },
+            {
+              "clusterId": "R1",
+              "term": "unwavering",
+              "sentence": "Thriving families make market economies possible.\" In January 2019, Carlson used a The Washington Post op-ed by Romney to criticize what he described as the \"mainstream Republican\" worldview, consisting of \"unwavering support for a finance-based economy.",
+              "weight": 12
+            }
+          ]
+        },
+        "signals": {
+          "establishment": [
+            {
+              "clusterId": "E1",
+              "term": "served as",
+              "weight": 10
+            }
+          ],
+          "justice": [],
+          "tradition": [
+            {
+              "clusterId": "T1",
+              "term": "conservative",
+              "weight": 14
+            },
+            {
+              "clusterId": "T2",
+              "term": "demographic replacement",
+              "weight": 16
+            }
+          ],
+          "conflict": [
+            {
+              "clusterId": "C2",
+              "term": "lawsuit",
+              "weight": 10
+            }
+          ],
+          "rigidity": [
+            {
+              "clusterId": "R4",
+              "term": "conspiracy theories",
+              "weight": 6
+            },
+            {
+              "clusterId": "R1",
+              "term": "unwavering",
+              "weight": 12
+            }
+          ]
+        },
+        "pfFallbackApplied": false,
+        "salienceApplied": false
+      },
+      "modelInputs": {
+        "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
+        "signalsFired": 6,
+        "confidence": 0.9,
+        "lastImportedAt": "2026-03-10T05:03:21.718Z"
+      },
+      "occupations": [
+        "pundit",
+        "columnist",
+        "television presenter",
+        "journalist",
+        "writer",
+        "television journalist",
+        "podcaster",
+        "editor-in-chief"
+      ],
+      "scores": {
+        "establishment": 60,
+        "justice": 50,
+        "tradition": 80,
+        "conflict": 60,
+        "rigidity": 68
+      },
+      "adjustments": [],
+      "status": "active",
+      "reviewNote": "",
+      "confidence": 0.9,
+      "reviewFlags": [],
+      "imageCredit": {
+        "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Tucker_Carlson_2025.jpg",
+        "author": "Gage Skidmore",
+        "license": "CC BY-SA 4.0",
+        "attributionText": null
+      },
+      "cei": {
+        "value": 79,
+        "tier": "High"
+      },
+      "primaryLean": "Chud"
+    },
+    {
+      "slug": "bill-maher",
+      "name": "Bill Maher",
+      "aliases": [],
+      "portraitPath": "https://upload.wikimedia.org/wikipedia/commons/4/44/BillMaherSept10.jpg",
+      "portraitIsRemote": true,
+      "sources": [
+        "https://en.wikipedia.org/wiki/Bill_Maher"
+      ],
+      "researchSummary": "William Maher (born January 20, 1956) is an American television host, comedian, actor and political commentator. Known for his political satire, he is the host of the HBO political talk show Real Time with Bill Maher (2003-present) and podcast Club Random (2022-present).",
+      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 5 signal cluster(s). Confidence 75%.",
+      "modelReadout": {
+        "instrument": "Wikipedia lead + infobox metadata -> heuristic clusters -> five-axis signal wheel",
+        "observed": {
+          "sourceCount": 1,
+          "occupationsCount": 0,
+          "hasImage": true,
+          "signalCount": 5
+        },
+        "confidencePct": 75,
+        "evidence": {
+          "establishment": [
+            {
+              "clusterId": "E3",
+              "term": "executive",
+              "sentence": "Maher has earned 41 Primetime Emmy Award nominations and a win for his work as executive producer for Vice in 2014.",
+              "weight": 8
+            }
+          ],
+          "justice": [
+            {
+              "clusterId": "JD1",
+              "term": "moderate",
+              "sentence": "Often described as a moderate liberal, Maher targets many topics including religion, political correctness, and the mass media.",
+              "weight": -8
+            },
+            {
+              "clusterId": "J9",
+              "term": "progressive",
+              "sentence": "people protect feelings.\" In the past, he has also described himself as a libertarian, and has also referred to himself \"as a progressive, as a sane person\".",
+              "weight": 8
+            }
+          ],
+          "tradition": [
+            {
+              "clusterId": "TD1",
+              "term": "moderate",
+              "sentence": "Often described as a moderate liberal, Maher targets many topics including religion, political correctness, and the mass media.",
+              "weight": -8
+            }
+          ],
+          "conflict": [
+            {
+              "clusterId": "CD1",
+              "term": "moderate",
+              "sentence": "Often described as a moderate liberal, Maher targets many topics including religion, political correctness, and the mass media.",
+              "weight": -10
+            }
+          ],
+          "rigidity": []
+        },
+        "signals": {
+          "establishment": [
+            {
+              "clusterId": "E3",
+              "term": "executive",
+              "weight": 8
+            }
+          ],
+          "justice": [
+            {
+              "clusterId": "JD1",
+              "term": "moderate",
+              "weight": -8
+            },
+            {
+              "clusterId": "J9",
+              "term": "progressive",
+              "weight": 8
+            }
+          ],
+          "tradition": [
+            {
+              "clusterId": "TD1",
+              "term": "moderate",
+              "weight": -8
+            }
+          ],
+          "conflict": [
+            {
+              "clusterId": "CD1",
+              "term": "moderate",
+              "weight": -10
+            }
+          ],
+          "rigidity": []
+        },
+        "pfFallbackApplied": false,
+        "salienceApplied": false
+      },
+      "modelInputs": {
+        "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
+        "signalsFired": 5,
+        "confidence": 0.75,
+        "lastImportedAt": "2026-03-10T05:03:21.730Z"
+      },
+      "occupations": [
+        "comedian",
+        "television presenter",
+        "screenwriter",
+        "actor",
+        "journalist",
+        "film producer",
+        "television producer"
+      ],
+      "scores": {
+        "establishment": 58,
+        "justice": 50,
+        "tradition": 42,
+        "conflict": 40,
+        "rigidity": 50
+      },
+      "adjustments": [],
+      "status": "active",
+      "reviewNote": "",
+      "confidence": 0.75,
+      "reviewFlags": [],
+      "imageCredit": {
+        "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/4/44/BillMaherSept10.jpg",
+        "author": "Angela George at <a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/sharongraphics/\">https://www.flickr.com/photos/sharongraphics/</a>",
+        "license": "CC BY 3.0",
+        "attributionText": "Angela George"
+      },
+      "cei": {
+        "value": 41,
+        "tier": "Elevated"
+      },
+      "primaryLean": "Normie"
+    },
+    {
+      "slug": "xi-jinping",
+      "name": "Xi Jinping",
+      "aliases": [],
+      "portraitPath": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Xi_Jinping_meets_Keir_Starmer_Jan_2026.jpg",
+      "portraitIsRemote": true,
+      "sources": [
+        "https://en.wikipedia.org/wiki/Xi_Jinping"
+      ],
+      "researchSummary": "Xi Jinping (born 15 June 1953) is a Chinese statesman and politician who has served as the general secretary of the Chinese Communist Party (CCP) and chairman of the Central Military Commission (CMC) since 2012, and the president of China since 2013. Xi has been the leader of the fifth generation of Chinese leadership ",
+      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 9 signal cluster(s). Confidence 90%.",
+      "modelReadout": {
+        "instrument": "Wikipedia lead + infobox metadata -> heuristic clusters -> five-axis signal wheel",
+        "observed": {
+          "sourceCount": 1,
+          "occupationsCount": 0,
+          "hasImage": true,
+          "signalCount": 9
+        },
+        "confidencePct": 90,
+        "evidence": {
+          "establishment": [
+            {
+              "clusterId": "E1",
+              "term": "appointed",
+              "sentence": "Towards this end, Xi was appointed the vice president and vice chairman of the CMC.",
+              "weight": 10
+            },
+            {
+              "clusterId": "E3",
+              "term": "chairman",
+              "sentence": "Xi Jinping (born 15 June 1953) is a Chinese statesman and politician who has served as the general secretary of the Chinese Communist Party (CCP) and chairman of the Central Military Commission (CMC) since 2012, and the president of China since 2013.",
+              "weight": 8
+            },
+            {
+              "clusterId": "E5",
+              "term": "exiled",
+              "sentence": "The elder son of Chinese Red Army veteran Xi Zhongxun's second marriage to Qi Xin, Xi was born in Beijing and was exiled to rural Liangjiahe Village, Yanchuan County, Shaanxi Province, as a teenager following his father's purge during the Cultural Revolution.",
+              "weight": -8
+            }
+          ],
+          "justice": [
+            {
+              "clusterId": "J1",
+              "term": "human rights",
+              "sentence": "Since coming to power, Xi's tenure has witnessed a significant increase in censorship and mass surveillance, a deterioration in human rights (including the persecution of Uyghurs), the removal of term limits for the presidency in 2018, as well as an increased...",
+              "weight": 14
+            },
+            {
+              "clusterId": "J7",
+              "term": "marxist",
+              "sentence": "At the 19th Party Congress, Xi stated, \"We will fully implement the Party's basic policy on religious affairs, uphold the principle that religions in China must be Chinese in orientation and provide active guidance to religions so that they can adapt themselve...",
+              "weight": 12
+            },
+            {
+              "clusterId": "J9",
+              "term": "socialist",
+              "sentence": "Xi supports a socialist artistic revival, including the promotion of patriotic art and red classics.",
+              "weight": 8
+            }
+          ],
+          "tradition": [
+            {
+              "clusterId": "T6",
+              "term": "communist",
+              "sentence": "Xi Jinping (born 15 June 1953) is a Chinese statesman and politician who has served as the general secretary of the Chinese Communist Party (CCP) and chairman of the Central Military Commission (CMC) since 2012, and the president of China since 2013.",
+              "weight": -14
+            }
+          ],
+          "conflict": [],
+          "rigidity": [
+            {
+              "clusterId": "R1",
+              "term": "hardline",
+              "sentence": "Xi has pursued a more hardline foreign policy particularly with regard to China's relations with the United States, the nine-dash line in the South China Sea, and the Sino-Indian border dispute.",
+              "weight": 12
+            },
+            {
+              "clusterId": "R2",
+              "term": "ideologue",
+              "sentence": "| source = - Xi Jinping during a speech in 2017 | align = right | width = 25em }} thumb|According to [[Qiushi, the Chinese Dream is about Chinese prosperity, collective effort, socialism, and national glory.]] Xi and CCP ideologues coined the phrase \"Chinese D...",
+              "weight": 10
+            }
+          ]
+        },
+        "signals": {
+          "establishment": [
+            {
+              "clusterId": "E1",
+              "term": "appointed",
+              "weight": 10
+            },
+            {
+              "clusterId": "E3",
+              "term": "chairman",
+              "weight": 8
+            },
+            {
+              "clusterId": "E5",
+              "term": "exiled",
+              "weight": -8
+            }
+          ],
+          "justice": [
+            {
+              "clusterId": "J1",
+              "term": "human rights",
+              "weight": 14
+            },
+            {
+              "clusterId": "J7",
+              "term": "marxist",
+              "weight": 12
+            },
+            {
+              "clusterId": "J9",
+              "term": "socialist",
+              "weight": 8
+            }
+          ],
+          "tradition": [
+            {
+              "clusterId": "T6",
+              "term": "communist",
+              "weight": -14
+            }
+          ],
+          "conflict": [],
+          "rigidity": [
+            {
+              "clusterId": "R1",
+              "term": "hardline",
+              "weight": 12
+            },
+            {
+              "clusterId": "R2",
+              "term": "ideologue",
+              "weight": 10
+            }
+          ]
+        },
+        "pfFallbackApplied": false,
+        "salienceApplied": false
+      },
+      "modelInputs": {
+        "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
+        "signalsFired": 9,
+        "confidence": 0.9,
+        "lastImportedAt": "2026-03-10T05:03:23.143Z"
+      },
+      "occupations": [
+        "statesperson",
+        "politician"
+      ],
+      "scores": {
+        "establishment": 60,
+        "justice": 75,
+        "tradition": 36,
+        "conflict": 50,
+        "rigidity": 72
+      },
+      "adjustments": [],
+      "status": "active",
+      "reviewNote": "",
+      "confidence": 0.9,
+      "reviewFlags": [],
+      "imageCredit": {
+        "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Xi_Jinping_meets_Keir_Starmer_Jan_2026.jpg",
+        "author": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/49707497@N06\">Simon Dawson / No 10 Downing Street</a>",
+        "license": "CC BY 4.0",
+        "attributionText": null
+      },
+      "cei": {
+        "value": 80,
+        "tier": "High"
+      },
+      "primaryLean": "Woke"
+    },
+    {
+      "slug": "vladimir-putin",
+      "name": "Vladimir Putin",
+      "aliases": [],
+      "portraitPath": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Vladimir_Putin_in_KGB_uniform.jpg",
+      "portraitIsRemote": true,
+      "sources": [
+        "https://en.wikipedia.org/wiki/Vladimir_Putin"
+      ],
+      "researchSummary": "Vladimir Vladimirovich Putin (born 7 October 1952) is a Russian politician and former intelligence officer who has served as President of Russia since 2012, having previously served from 2000 to 2008. Putin also served as Prime Minister of Russia from 1999 to 2000 and again from 2008 to 2012.",
+      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 4 signal cluster(s). Confidence 75%.",
+      "modelReadout": {
+        "instrument": "Wikipedia lead + infobox metadata -> heuristic clusters -> five-axis signal wheel",
+        "observed": {
+          "sourceCount": 1,
+          "occupationsCount": 0,
+          "hasImage": true,
+          "signalCount": 4
+        },
+        "confidencePct": 75,
+        "evidence": {
+          "establishment": [
+            {
+              "clusterId": "E1",
+              "term": "appointed",
+              "sentence": "He briefly served as the director of the Federal Security Service (FSB) and then as secretary of the Security Council of Russia before being appointed prime minister in August 1999.",
+              "weight": 10
+            }
+          ],
+          "justice": [
+            {
+              "clusterId": "J1",
+              "term": "human rights",
+              "sentence": "His rule has been marked by endemic corruption and widespread human rights violations, including the imprisonment and suppression of political opponents (e.g.",
+              "weight": 14
+            }
+          ],
+          "tradition": [],
+          "conflict": [
+            {
+              "clusterId": "C2",
+              "term": "allegations of",
+              "sentence": "He returned to the presidency in 2012, following an election marked by allegations of fraud and protests, and was reelected in 2018.",
+              "weight": 10
+            },
+            {
+              "clusterId": "C5",
+              "term": "authoritarian",
+              "sentence": "Under Putin's rule, the Russian political system has been transformed into an authoritarian dictatorship with a personality cult.",
+              "weight": 12
+            }
+          ],
+          "rigidity": []
+        },
+        "signals": {
+          "establishment": [
+            {
+              "clusterId": "E1",
+              "term": "appointed",
+              "weight": 10
+            }
+          ],
+          "justice": [
+            {
+              "clusterId": "J1",
+              "term": "human rights",
+              "weight": 14
+            }
+          ],
+          "tradition": [],
+          "conflict": [
+            {
+              "clusterId": "C2",
+              "term": "allegations of",
+              "weight": 10
+            },
+            {
+              "clusterId": "C5",
+              "term": "authoritarian",
+              "weight": 12
+            }
+          ],
+          "rigidity": []
+        },
+        "pfFallbackApplied": false,
+        "salienceApplied": false
+      },
+      "modelInputs": {
+        "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
+        "signalsFired": 4,
+        "confidence": 0.75,
+        "lastImportedAt": "2026-03-10T05:03:24.498Z"
+      },
+      "occupations": [
+        "judoka",
+        "intelligence agent",
+        "spy",
+        "stunt performer",
+        "politician",
+        "President of the Republic"
+      ],
+      "scores": {
+        "establishment": 60,
+        "justice": 64,
+        "tradition": 50,
+        "conflict": 72,
+        "rigidity": 50
+      },
+      "adjustments": [],
+      "status": "active",
+      "reviewNote": "",
+      "confidence": 0.75,
+      "reviewFlags": [],
+      "imageCredit": {
+        "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Vladimir_Putin_in_KGB_uniform.jpg",
+        "author": "Unknown author<span style=\"display: none;\">Unknown author</span>",
+        "license": "CC BY 4.0",
+        "attributionText": "<a rel=\"nofollow\" class=\"external text\" href=\"http://www.kremlin.ru\">Kremlin.ru</a>"
+      },
+      "cei": {
+        "value": 75,
+        "tier": "High"
       },
       "primaryLean": "Woke"
     }
