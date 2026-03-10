@@ -263,8 +263,8 @@ export async function ProfilePage(root, { slug }) {
     <div class="item"><div class="left"><div class="section-title">Establishment</div><div class="meta">Alignment with institutional legitimacy and mainstream systems.</div></div></div>
     <div class="item"><div class="left"><div class="section-title">Justice</div><div class="meta">Rights/inequality framing; emphasis on fairness enforcement.</div></div></div>
     <div class="item"><div class="left"><div class="section-title">Tradition</div><div class="meta">Preference for continuity, norms, and heritage narratives.</div></div></div>
-    <div class=”item”><div class=”left”><div class=”section-title”>Conflict</div><div class=”meta”>Tolerance for confrontation and culture-war engagement.</div></div></div>
-    <div class=”item”><div class=”left”><div class=”section-title”>Rigidity</div><div class=”meta”>Tendency toward “us vs. them” framing, purity politics, and rejection of compromise.</div></div></div>
+    <div class="item"><div class="left"><div class="section-title">Conflict</div><div class="meta">Tolerance for confrontation and culture-war engagement.</div></div></div>
+    <div class="item"><div class="left"><div class="section-title">Rigidity</div><div class="meta">Tendency toward absolutism, purity politics, and rejection of compromise.</div></div></div>
   `;
   right.appendChild(glossary);
 
