@@ -101,15 +101,18 @@ export function radarSVG({ scores, scores2 = null, nameA = "", nameB = "", size 
     const key = AXES[i].key;
     const label = AXES[i].label;
     const tipLabel = AXES[i].fullLabel || label;
-    path.addEventListener("mousemove", (e) => {
-      if (!onHover) return;
+    path.addEventListener("pointermove", (e) => {
+      if (!onHover || e.pointerType !== "mouse") return;
       const val = scores?.[key] ?? 50;
       const tip = scores2
         ? `${tipLabel}: ${val} / ${scores2?.[key] ?? 50}`
         : `${tipLabel}: ${val}`;
       onHover({ x: e.clientX, y: e.clientY, title: tip });
     });
-    path.addEventListener("mouseleave", () => onHover && onHover(null));
+    path.addEventListener("pointerleave", (e) => {
+      if (e.pointerType !== "mouse") return;
+      onHover && onHover(null);
+    });
     svg.appendChild(path);
   }
 
