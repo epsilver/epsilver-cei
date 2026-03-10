@@ -205,20 +205,12 @@ a:hover{ text-decoration:underline; }
   display:inline-block;
   width:fit-content;
 }
-.lean-woke{
-  background:#e8f4fd;
-  color:#1a6fa8;
-  border:1px solid #b3d9f2;
-}
-.lean-chud{
-  background:#fdeaea;
-  color:#a81f1f;
-  border:1px solid #f2b3b3;
-}
+.lean-woke,
+.lean-chud,
 .lean-normie{
   background:#f0f0f0;
-  color:#555;
-  border:1px solid #d0d0d0;
+  color:#222;
+  border:1px solid #bbb;
 }
 
 .cei{
