@@ -12,7 +12,7 @@ export const ESTABLISHMENT = [
 ];
 
 export const JUSTICE = [
-  { id:"J1", weight:+14, terms:["civil rights","human rights","rights advocate","rights activist","anti-discrimination","equal rights","racial justice","social justice"]},
+  { id:"J1", weight:+14, terms:["civil rights","human rights","rights advocate","rights activist","anti-discrimination","equal rights","racial justice","social justice","voting rights","voter rights","voting access","voter suppression","voter participation"]},
   { id:"J2", weight:+12, terms:["anti-racism","anti-racist","racial equality","equity","diversity","inclusion","dei","systemic racism","racial discrimination"]},
   { id:"J3", weight:+12, terms:["feminist","women's rights","womens rights","gender equality","gender justice"]},
   { id:"J4", weight:+12, terms:["lgbt","lgbtq","gay rights","transgender rights","queer rights","same-sex marriage"]},

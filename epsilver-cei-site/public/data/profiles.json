@@ -14,7 +14,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 10,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-10T00:04:06.377Z"
+        "lastImportedAt": "2026-03-10T00:18:47.905Z"
       },
       "scores": {
         "establishment": 50,
@@ -211,7 +211,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 0,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-10T00:04:06.391Z"
+        "lastImportedAt": "2026-03-10T00:18:47.915Z"
       },
       "scores": {
         "establishment": 53,
@@ -222,7 +222,7 @@
       },
       "adjustments": [
         {
-          "at": "2026-03-10T00:04:06.390Z",
+          "at": "2026-03-10T00:18:47.915Z",
           "type": "auto",
           "note": "Automatic normalization applied due to low signal density: public-figure fallback bump (low signal density) + salience-term bump"
         }
@@ -405,7 +405,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 7,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-10T00:04:06.405Z"
+        "lastImportedAt": "2026-03-10T00:18:47.926Z"
       },
       "scores": {
         "establishment": 60,
@@ -575,7 +575,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 8,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-10T00:04:06.418Z"
+        "lastImportedAt": "2026-03-10T00:18:47.937Z"
       },
       "scores": {
         "establishment": 52,
@@ -747,7 +747,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 8,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-10T00:04:06.424Z"
+        "lastImportedAt": "2026-03-10T00:18:47.943Z"
       },
       "scores": {
         "establishment": 50,
@@ -878,7 +878,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 5,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-10T00:04:06.432Z"
+        "lastImportedAt": "2026-03-10T00:18:47.948Z"
       },
       "scores": {
         "establishment": 50,
@@ -1037,7 +1037,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 6,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-10T00:04:07.741Z"
+        "lastImportedAt": "2026-03-10T00:18:47.957Z"
       },
       "scores": {
         "establishment": 44,
@@ -1085,14 +1085,14 @@
         "https://en.wikipedia.org/wiki/Michelle_Obama"
       ],
       "researchSummary": "Michelle LaVaughn Robinson Obama (née Robinson; born January 17, 1964) is an American attorney and author who served as First Lady of the United States from 2009 to 2017 as the wife of Barack Obama, the 44th president of the United States. Born in Chicago and raised on the South Side of the city, Obama is a graduate of",
-      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 1 signal cluster(s). Confidence 75%.",
+      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 2 signal cluster(s). Confidence 75%.",
       "modelReadout": {
         "instrument": "Wikipedia lead + infobox metadata -> heuristic clusters -> five-axis signal wheel",
         "observed": {
           "sourceCount": 1,
           "occupationsCount": 0,
           "hasImage": true,
-          "signalCount": 1
+          "signalCount": 2
         },
         "confidencePct": 75,
         "evidence": {
@@ -1104,7 +1104,14 @@
               "weight": 10
             }
           ],
-          "justice": [],
+          "justice": [
+            {
+              "clusterId": "J1",
+              "term": "voter participation",
+              "sentence": "She holds significant cultural influence and continues to advocate for voter participation in elections.",
+              "weight": 14
+            }
+          ],
           "tradition": [],
           "conflict": [],
           "rigidity": []
@@ -1117,7 +1124,13 @@
               "weight": 10
             }
           ],
-          "justice": [],
+          "justice": [
+            {
+              "clusterId": "J1",
+              "term": "voter participation",
+              "weight": 14
+            }
+          ],
           "tradition": [],
           "conflict": [],
           "rigidity": []
@@ -1127,9 +1140,9 @@
       },
       "modelInputs": {
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
-        "signalsFired": 1,
+        "signalsFired": 2,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-10T00:04:07.748Z"
+        "lastImportedAt": "2026-03-10T00:18:47.963Z"
       },
       "occupations": [
         "lawyer",
@@ -1141,14 +1154,14 @@
       ],
       "scores": {
         "establishment": 63,
-        "justice": 50,
+        "justice": 64,
         "tradition": 50,
         "conflict": 51,
         "rigidity": 50
       },
       "adjustments": [
         {
-          "at": "2026-03-10T00:04:07.748Z",
+          "at": "2026-03-10T00:18:47.963Z",
           "type": "auto",
           "note": "Automatic normalization applied due to low signal density: public-figure fallback bump (low signal density) + salience-term bump"
         }
@@ -1164,10 +1177,10 @@
         "attributionText": null
       },
       "cei": {
-        "value": 31,
+        "value": 38,
         "tier": "Moderate"
       },
-      "primaryLean": "Chud"
+      "primaryLean": "Woke"
     }
   ]
 }
