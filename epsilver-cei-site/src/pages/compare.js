@@ -192,15 +192,6 @@ export async function ComparePage(root, { a="", b="" }) {
       <div id="combinedWheel" style="max-width:380px;margin:0 auto"></div>
 
       <div class="hr"></div>
-      <div class="cei">
-        <div class="cei-score" style="font-size:28px">${escapeHtml(winner)}</div>
-        <div class="cei-right">
-          <div class="cei-tier">Result</div>
-          <div class="cei-lean">Higher CEI wins</div>
-        </div>
-      </div>
-
-      <div class="hr"></div>
       <div class="h1">Axis Deltas (A - B)</div>
       <div class="list">
         ${axisRows(pa, pb)}
