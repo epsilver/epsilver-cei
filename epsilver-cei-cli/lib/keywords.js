@@ -16,7 +16,7 @@ export const JUSTICE = [
   { id:"J2", weight:+12, terms:["anti-racism","anti-racist","racial equality","equity","diversity","inclusion","dei","systemic racism","racial discrimination"]},
   { id:"J3", weight:+12, terms:["feminist","women's rights","womens rights","gender equality","gender justice"]},
   { id:"J4", weight:+12, terms:["lgbt","lgbtq","gay rights","transgender rights","queer rights","same-sex marriage"]},
-  { id:"J5", weight:+8,  terms:["disability rights","accessibility","ada","inclusive design","neurodiversity"]},
+  { id:"J5", weight:+8,  terms:["disability rights","accessibility","americans with disabilities act","inclusive design","neurodiversity"]},
   { id:"J6", weight:-14, terms:["anti-woke","critic of social justice","opponent of dei","anti-dei","anti-critical race theory","anti-crt"]},
   { id:"J7", weight:+12, terms:["anti-capitalist","anti-capitalism","abolish capitalism","class struggle","class warfare","class war","marxist","marxism","socialist revolution","revolutionary socialist","means of production","worker control","proletariat","bourgeois","bourgeoisie"]},
   { id:"J8", weight:+10, terms:["anti-imperialist","anti-imperialism","american imperialism","imperialist","colonialism","decolonize","decolonization","settler colonialism"]},

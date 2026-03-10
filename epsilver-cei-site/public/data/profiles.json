@@ -9,17 +9,17 @@
         "https://en.wikipedia.org/wiki/Alex_Jones"
       ],
       "researchSummary": "Alexander Emerick Jones (born February 11, 1974) is an American far-right radio show host and prominent conspiracy theorist. He hosts The Alex Jones Show from Austin, Texas.",
-      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 9 signal cluster(s). Confidence 90%.",
+      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 10 signal cluster(s). Confidence 90%.",
       "modelInputs": {
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
-        "signalsFired": 9,
+        "signalsFired": 10,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-07T21:41:06.883Z"
+        "lastImportedAt": "2026-03-10T00:04:06.377Z"
       },
       "scores": {
         "establishment": 50,
-        "justice": 75,
-        "tradition": 70,
+        "justice": 68,
+        "tradition": 62,
         "conflict": 58,
         "rigidity": 68
       },
@@ -35,7 +35,7 @@
         "attributionText": null
       },
       "cei": {
-        "value": 77,
+        "value": 72,
         "tier": "High"
       },
       "primaryLean": "Chud",
@@ -46,12 +46,18 @@
           "sourceCount": 1,
           "occupationsCount": 0,
           "hasImage": true,
-          "signalCount": 9
+          "signalCount": 10
         },
         "confidencePct": 90,
         "evidence": {
           "establishment": [],
           "justice": [
+            {
+              "clusterId": "JD1",
+              "term": "bipartisan",
+              "sentence": "A longtime critic of Republican and Democratic foreign and security policy, Jones supported Donald Trump's 2016 presidential bid and continued to support him as a savior from an alleged criminal bipartisan cabal controlling the federal government, despite also...",
+              "weight": -8
+            },
             {
               "clusterId": "J1",
               "term": "rights advocate",
@@ -63,12 +69,6 @@
               "term": "lgbt",
               "sentence": "Jones has repeatedly made hateful comments towards the LGBT community and has associated the community with pedophilia.",
               "weight": 12
-            },
-            {
-              "clusterId": "J5",
-              "term": "ada",
-              "sentence": "He was later allowed to enter Canada legally.",
-              "weight": 8
             }
           ],
           "tradition": [
@@ -89,6 +89,12 @@
               "term": "globalist",
               "sentence": "He has also claimed that several governments and large businesses have colluded to create a globalist \"New World Order\" through \"manufactured economic crises, sophisticated surveillance tech and-above all-inside-job terror attacks that fuel exploitable hysteri...",
               "weight": -10
+            },
+            {
+              "clusterId": "TD1",
+              "term": "bipartisan",
+              "sentence": "A longtime critic of Republican and Democratic foreign and security policy, Jones supported Donald Trump's 2016 presidential bid and continued to support him as a savior from an alleged criminal bipartisan cabal controlling the federal government, despite also...",
+              "weight": -8
             }
           ],
           "conflict": [
@@ -118,6 +124,11 @@
           "establishment": [],
           "justice": [
             {
+              "clusterId": "JD1",
+              "term": "bipartisan",
+              "weight": -8
+            },
+            {
               "clusterId": "J1",
               "term": "rights advocate",
               "weight": 14
@@ -126,11 +137,6 @@
               "clusterId": "J4",
               "term": "lgbt",
               "weight": 12
-            },
-            {
-              "clusterId": "J5",
-              "term": "ada",
-              "weight": 8
             }
           ],
           "tradition": [
@@ -148,6 +154,11 @@
               "clusterId": "T7",
               "term": "globalist",
               "weight": -10
+            },
+            {
+              "clusterId": "TD1",
+              "term": "bipartisan",
+              "weight": -8
             }
           ],
           "conflict": [
@@ -200,7 +211,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 0,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-07T21:41:01.966Z"
+        "lastImportedAt": "2026-03-10T00:04:06.391Z"
       },
       "scores": {
         "establishment": 53,
@@ -211,7 +222,7 @@
       },
       "adjustments": [
         {
-          "at": "2026-03-07T21:41:01.965Z",
+          "at": "2026-03-10T00:04:06.390Z",
           "type": "auto",
           "note": "Automatic normalization applied due to low signal density: public-figure fallback bump (low signal density) + salience-term bump"
         }
@@ -280,14 +291,14 @@
         "https://en.wikipedia.org/wiki/Adolf_Hitler"
       ],
       "researchSummary": "Adolf Hitler (20 April 1889 - 30 April 1945) was an Austrian-born German politician who was the dictator of Germany during the Nazi era, which lasted from 1933 until his suicide in 1945. He rose to power as the leader of the Nazi Party, becoming the chancellor of Germany in 1933 and then taking the title of Führer und ",
-      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 8 signal cluster(s). Confidence 90%.",
+      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 7 signal cluster(s). Confidence 90%.",
       "modelReadout": {
         "instrument": "Wikipedia lead + infobox metadata -> heuristic clusters -> five-axis signal wheel",
         "observed": {
           "sourceCount": 1,
           "occupationsCount": 0,
           "hasImage": true,
-          "signalCount": 8
+          "signalCount": 7
         },
         "confidencePct": 90,
         "evidence": {
@@ -340,14 +351,7 @@
               "weight": 14
             }
           ],
-          "rigidity": [
-            {
-              "clusterId": "R1",
-              "term": "strict",
-              "sentence": "His first six years in power resulted in rapid economic recovery from the Great Depression, the abrogation of restrictions imposed on Germany after the First World War, and the annexation of territories inhabited by millions of ethnic Germans, which initially...",
-              "weight": 12
-            }
-          ]
+          "rigidity": []
         },
         "signals": {
           "establishment": [
@@ -392,29 +396,23 @@
               "weight": 14
             }
           ],
-          "rigidity": [
-            {
-              "clusterId": "R1",
-              "term": "strict",
-              "weight": 12
-            }
-          ]
+          "rigidity": []
         },
         "pfFallbackApplied": false,
         "salienceApplied": false
       },
       "modelInputs": {
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
-        "signalsFired": 8,
+        "signalsFired": 7,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-07T21:41:10.819Z"
+        "lastImportedAt": "2026-03-10T00:04:06.405Z"
       },
       "scores": {
         "establishment": 60,
         "justice": 50,
         "tradition": 80,
         "conflict": 85,
-        "rigidity": 62
+        "rigidity": 50
       },
       "adjustments": [],
       "status": "active",
@@ -428,7 +426,7 @@
         "attributionText": "Bundesarchiv, Bild 183-S33882 / CC BY-SA 3.0 DE"
       },
       "cei": {
-        "value": 94,
+        "value": 92,
         "tier": "Extreme"
       },
       "primaryLean": "Chud",
@@ -452,14 +450,14 @@
         "https://en.wikipedia.org/wiki/Bernie_Sanders"
       ],
       "researchSummary": "Bernard Sanders (born September 8, 1941) is an American politician and activist serving as the senior United States senator from Vermont, a seat he has held since 2007. He is the longest-serving independent in U.S.",
-      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 9 signal cluster(s). Confidence 90%.",
+      "computedSummary": "Epsilver CEI model ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 8 signal cluster(s). Confidence 90%.",
       "modelReadout": {
         "instrument": "Wikipedia lead + infobox metadata -> heuristic clusters -> five-axis signal wheel",
         "observed": {
           "sourceCount": 1,
           "occupationsCount": 0,
           "hasImage": true,
-          "signalCount": 9
+          "signalCount": 8
         },
         "confidencePct": 90,
         "evidence": {
@@ -518,14 +516,7 @@
             }
           ],
           "conflict": [],
-          "rigidity": [
-            {
-              "clusterId": "R1",
-              "term": "strict",
-              "sentence": "House of Representatives in 1990, representing Vermont's at-large congressional district.",
-              "weight": 12
-            }
-          ]
+          "rigidity": []
         },
         "signals": {
           "establishment": [
@@ -575,29 +566,23 @@
             }
           ],
           "conflict": [],
-          "rigidity": [
-            {
-              "clusterId": "R1",
-              "term": "strict",
-              "weight": 12
-            }
-          ]
+          "rigidity": []
         },
         "pfFallbackApplied": false,
         "salienceApplied": false
       },
       "modelInputs": {
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
-        "signalsFired": 9,
+        "signalsFired": 8,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-07T21:41:06.151Z"
+        "lastImportedAt": "2026-03-10T00:04:06.418Z"
       },
       "scores": {
         "establishment": 52,
         "justice": 75,
         "tradition": 50,
         "conflict": 50,
-        "rigidity": 62
+        "rigidity": 50
       },
       "adjustments": [],
       "status": "active",
@@ -611,8 +596,8 @@
         "attributionText": null
       },
       "cei": {
-        "value": 56,
-        "tier": "Elevated"
+        "value": 37,
+        "tier": "Moderate"
       },
       "primaryLean": "Woke",
       "portraitIsRemote": true,
@@ -650,7 +635,7 @@
           "justice": [
             {
               "clusterId": "J4",
-              "term": "lgbt",
+              "term": "lgbtq",
               "sentence": "He hosts America First, a livestream that has promoted white nationalism and supremacy, Christian nationalism, the incel movement, misogyny, anti-LGBTQ views and antisemitism including Holocaust denial.",
               "weight": 12
             },
@@ -709,7 +694,7 @@
           "justice": [
             {
               "clusterId": "J4",
-              "term": "lgbt",
+              "term": "lgbtq",
               "weight": 12
             },
             {
@@ -762,7 +747,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 8,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-07T21:41:10.380Z"
+        "lastImportedAt": "2026-03-10T00:04:06.424Z"
       },
       "scores": {
         "establishment": 50,
@@ -824,7 +809,7 @@
             },
             {
               "clusterId": "J4",
-              "term": "lgbt",
+              "term": "lgbtq",
               "sentence": "He has advocated in favor of workplace democracy, universal health care, LGBTQ+ rights, Andrew Marantz of The New Yorker described Piker as anti-Trump but \"hardly a loyal Democrat\".",
               "weight": 12
             },
@@ -862,7 +847,7 @@
             },
             {
               "clusterId": "J4",
-              "term": "lgbt",
+              "term": "lgbtq",
               "weight": 12
             },
             {
@@ -893,7 +878,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 5,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-07T21:41:14.971Z"
+        "lastImportedAt": "2026-03-10T00:04:06.432Z"
       },
       "scores": {
         "establishment": 50,
@@ -1052,7 +1037,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 6,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-07T21:41:14.344Z"
+        "lastImportedAt": "2026-03-10T00:04:07.741Z"
       },
       "scores": {
         "establishment": 44,
@@ -1144,7 +1129,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 1,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-09T09:28:51.386Z"
+        "lastImportedAt": "2026-03-10T00:04:07.748Z"
       },
       "occupations": [
         "lawyer",
@@ -1163,7 +1148,7 @@
       },
       "adjustments": [
         {
-          "at": "2026-03-09T09:28:51.385Z",
+          "at": "2026-03-10T00:04:07.748Z",
           "type": "auto",
           "note": "Automatic normalization applied due to low signal density: public-figure fallback bump (low signal density) + salience-term bump"
         }

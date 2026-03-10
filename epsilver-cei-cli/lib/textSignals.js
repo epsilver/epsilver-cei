@@ -61,7 +61,13 @@ export function matchClusters(text, clusters, opts = {}) {
       const needle = term.toLowerCase();
       if (needle.length < 3) continue;
 
-      if (tnorm.includes(needle)) {
+      const escaped = needle.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const useWordBoundary = needle.length <= 8 && /^[\w\s]+$/.test(needle);
+      const matched = useWordBoundary
+        ? new RegExp("\\b" + escaped + "\\b").test(tnorm)
+        : tnorm.includes(needle);
+
+      if (matched) {
         const sent = pickBestSentence(sentences, needle);
 
         // Skip positive-weight signals that appear in opposition/negation context
