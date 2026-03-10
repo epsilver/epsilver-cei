@@ -65,9 +65,6 @@ export async function runPipeline(title, cfg) {
   bundle.pfFallbackApplied = Boolean(scored.pfFallbackApplied);
   bundle.salienceApplied = Boolean(scored.salienceApplied);
 
-  const ceiOut = computeCEI(scores, cfg);
-  const leanOut = computeLean(scores, cfg);
-
   const imageInfo = await resolveImageInfo(bundle, wd.imageName, cfg);
   const hasImage = Boolean(imageInfo?.url);
 
@@ -81,6 +78,9 @@ export async function runPipeline(title, cfg) {
     summaryWordCount,
     contradictions
   });
+
+  const ceiOut = computeCEI(scores, cfg);
+  const leanOut = computeLean(scores, cfg, { signalCount, confidence, occupations });
 
   const { status, reviewFlags } = deriveStatus(scores, confidence, signalCount, summaryWordCount, hasImage, occupations.length > 0);
 

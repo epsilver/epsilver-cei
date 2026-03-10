@@ -42,7 +42,28 @@ export function computeCEI(scores, cfg) {
   return { raw, cei, tier: ceiTier(cei) };
 }
 
-export function computeLean(scores, cfg) {
+const POLITICAL_OCCUPATIONS = new Set([
+  "politician","diplomat","activist","government official","civil servant",
+  "senator","member of parliament","president","prime minister","minister",
+  "judge","justice","legislator","governor","mayor","councillor",
+  "member of congress","representative","secretary of state"
+]);
+
+const ENTERTAINMENT_OCCUPATIONS = new Set([
+  "youtuber","streamer","online streamer","podcaster","content creator",
+  "internet personality","social media personality","twitch streamer",
+  "kick streamer","video blogger"
+]);
+
+function classifyOccupation(occupations) {
+  const lower = (occupations || []).map(o => o.toLowerCase());
+  if (lower.some(o => POLITICAL_OCCUPATIONS.has(o))) return "political";
+  if (lower.some(o => ENTERTAINMENT_OCCUPATIONS.has(o))) return "entertainment";
+  return "other";
+}
+
+export function computeLean(scores, cfg, meta = {}) {
+  const { signalCount = null, confidence = null, occupations = [] } = meta;
   const b = cfg.baseline;
   const ew = cfg.lean.establishmentWeight;
   const cw = cfg.lean.conflictWeight;
@@ -61,9 +82,21 @@ export function computeLean(scores, cfg) {
     + cw * (scores.conflict - b)
     + rigidityBias;
 
+  // Zero-signal special cases
+  if (signalCount === 0) {
+    const occType = classifyOccupation(occupations);
+    if (occType === "political") {
+      // Political figures with no signals get forced lean — fall through
+    } else if (occType === "entertainment") {
+      return { code: "N", progressive, reactionary };
+    } else if (confidence !== null && confidence < 0.70) {
+      return { code: "N", progressive, reactionary };
+    }
+  }
+
   const diff = Math.abs(progressive - reactionary);
   const maxSig = Math.max(Math.abs(progressive), Math.abs(reactionary));
-  const threshold = cfg?.lean?.normieThreshold ?? 15;
+  const threshold = cfg?.lean?.normieThreshold ?? 20;
   const minSignal = cfg?.lean?.normieMinSignal ?? 8;
 
   let code;

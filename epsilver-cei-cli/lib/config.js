@@ -23,7 +23,7 @@
     establishmentWeight: 0.25,
     conflictWeight: 0.15,
     rigidityWeight: 0.5,
-    normieThreshold: 15,
+    normieThreshold: 20,
     normieMinSignal: 8
   },
 
