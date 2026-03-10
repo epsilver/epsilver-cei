@@ -1,7 +1,7 @@
 const AXES = [
-  { key: "establishment", label: "Estab." },
+  { key: "establishment", label: "Estab.",   fullLabel: "Establishment" },
   { key: "justice",       label: "Justice" },
-  { key: "tradition",     label: "Trad." },
+  { key: "tradition",     label: "Trad.",    fullLabel: "Tradition" },
   { key: "conflict",      label: "Conflict" },
   { key: "rigidity",      label: "Rigid" }
 ];
@@ -100,12 +100,13 @@ export function radarSVG({ scores, scores2 = null, nameA = "", nameB = "", size 
 
     const key = AXES[i].key;
     const label = AXES[i].label;
+    const tipLabel = AXES[i].fullLabel || label;
     path.addEventListener("mousemove", (e) => {
       if (!onHover) return;
       const val = scores?.[key] ?? 50;
       const tip = scores2
-        ? `${label}: ${val} / ${scores2?.[key] ?? 50}`
-        : `${label}: ${val}`;
+        ? `${tipLabel}: ${val} / ${scores2?.[key] ?? 50}`
+        : `${tipLabel}: ${val}`;
       onHover({ x: e.clientX, y: e.clientY, title: tip });
     });
     path.addEventListener("mouseleave", () => onHover && onHover(null));
