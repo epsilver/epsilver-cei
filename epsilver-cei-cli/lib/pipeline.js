@@ -4,6 +4,7 @@ import { gdeltNewsText } from "./gdelt.js";
 import { scoreFromTextAndOcc } from "./heuristic.js";
 import { computeCEI, computeLean } from "./scoring.js";
 import { computeConfidence } from "./confidence.js";
+import { govtrackData, govtrackSignals } from "./govtrack.js";
 
 export function deriveStatus(scores, confidence, signalCount, summaryWordCount, hasImage, hasOccupations) {
   const reviewFlags = [];
@@ -67,7 +68,32 @@ export async function runPipeline(title, cfg) {
   bundle.pfFallbackApplied = Boolean(scored.pfFallbackApplied);
   bundle.salienceApplied = Boolean(scored.salienceApplied);
 
-  const imageInfo = await resolveImageInfo(bundle, wd.imageName, cfg);
+  const POLITICAL_OCC = new Set([
+    "politician","diplomat","senator","member of parliament","president","prime minister",
+    "minister","legislator","governor","mayor","councillor","member of congress",
+    "representative","secretary of state","government official","civil servant",
+    "judge","justice","activist"
+  ]);
+  const isPolitical = (occupations || []).some(o => POLITICAL_OCC.has(String(o).toLowerCase()));
+
+  const [imageInfo, gtData] = await Promise.all([
+    resolveImageInfo(bundle, wd.imageName, cfg),
+    isPolitical ? govtrackData(bundle.title, cfg) : Promise.resolve(null)
+  ]);
+
+  const gtSignals = govtrackSignals(gtData);
+  if (gtSignals) {
+    for (const axis of ["establishment","justice","tradition","conflict","rigidity"]) {
+      const hits = gtSignals[axis] || [];
+      if (hits.length) {
+        evidence[axis] = [...(evidence[axis] || []), ...hits];
+        const delta = hits.reduce((s, h) => s + (h.weight || 0), 0);
+        scores[axis] = Math.max(0, Math.min(100, (scores[axis] ?? 50) + delta));
+      }
+    }
+    bundle.govtrackApplied = true;
+  }
+
   const hasImage = Boolean(imageInfo?.url);
 
   const summaryWordCount = (bundle.extract || "").trim().split(/\s+/).filter(Boolean).length;

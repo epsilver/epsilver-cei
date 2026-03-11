@@ -104,7 +104,8 @@ export function buildProfile({ bundle, imageInfo, scores, confidence, reviewFlag
     evidence: bundle.evidence || null,
     signals: bundle.signals || null,
     pfFallbackApplied: !!bundle.pfFallbackApplied,
-    salienceApplied: !!bundle.salienceApplied
+    salienceApplied: !!bundle.salienceApplied,
+    govtrackApplied: !!bundle.govtrackApplied
   };
 
   const profile = {
