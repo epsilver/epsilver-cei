@@ -14,7 +14,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 10,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-10T16:05:49.192Z"
+        "lastImportedAt": "2026-03-12T05:52:05.122Z"
       },
       "scores": {
         "establishment": 50,
@@ -182,7 +182,8 @@
           ]
         },
         "pfFallbackApplied": false,
-        "salienceApplied": false
+        "salienceApplied": false,
+        "govtrackApplied": false
       },
       "occupations": [
         "radio personality",
@@ -211,7 +212,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 0,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-10T16:05:49.206Z"
+        "lastImportedAt": "2026-03-12T05:52:07.360Z"
       },
       "scores": {
         "establishment": 53,
@@ -222,7 +223,7 @@
       },
       "adjustments": [
         {
-          "at": "2026-03-10T16:05:49.206Z",
+          "at": "2026-03-12T05:52:07.360Z",
           "type": "auto",
           "note": "Automatic normalization applied due to low signal density: public-figure fallback bump (low signal density) + salience-term bump"
         }
@@ -267,7 +268,8 @@
           "rigidity": []
         },
         "pfFallbackApplied": true,
-        "salienceApplied": true
+        "salienceApplied": true,
+        "govtrackApplied": false
       },
       "occupations": [
         "actor",
@@ -399,13 +401,14 @@
           "rigidity": []
         },
         "pfFallbackApplied": false,
-        "salienceApplied": false
+        "salienceApplied": false,
+        "govtrackApplied": false
       },
       "modelInputs": {
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 7,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-10T16:05:49.220Z"
+        "lastImportedAt": "2026-03-12T05:52:07.685Z"
       },
       "scores": {
         "establishment": 60,
@@ -499,6 +502,11 @@
               "term": "socialist",
               "sentence": "Ideologically a democratic socialist, Sanders is regarded as one of the main leaders of the modern American progressive movement.",
               "weight": 8
+            },
+            {
+              "term": "GovTrack ideology score",
+              "sentence": "GovTrack legislative ideology score: -1.00 (strongly liberal, raw 0.000); derived from roll-call vote analysis.",
+              "weight": 14
             }
           ],
           "tradition": [
@@ -515,8 +523,20 @@
               "weight": -14
             }
           ],
-          "conflict": [],
-          "rigidity": []
+          "conflict": [
+            {
+              "term": "GovTrack: strong ideological positioning",
+              "sentence": "GovTrack ideology score -1.00 reflects strong ideological positioning away from the legislative center.",
+              "weight": 8
+            }
+          ],
+          "rigidity": [
+            {
+              "term": "GovTrack: extreme ideological positioning",
+              "sentence": "GovTrack ideology score -1.00 reflects extreme, consistent outlier positioning in roll-call votes.",
+              "weight": 6
+            }
+          ]
         },
         "signals": {
           "establishment": [
@@ -569,20 +589,21 @@
           "rigidity": []
         },
         "pfFallbackApplied": false,
-        "salienceApplied": false
+        "salienceApplied": false,
+        "govtrackApplied": true
       },
       "modelInputs": {
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 8,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-10T16:05:55.270Z"
+        "lastImportedAt": "2026-03-12T05:52:08.196Z"
       },
       "scores": {
         "establishment": 52,
-        "justice": 75,
+        "justice": 89,
         "tradition": 50,
-        "conflict": 50,
-        "rigidity": 50
+        "conflict": 58,
+        "rigidity": 56
       },
       "adjustments": [],
       "status": "active",
@@ -596,8 +617,8 @@
         "attributionText": null
       },
       "cei": {
-        "value": 37,
-        "tier": "Moderate"
+        "value": 66,
+        "tier": "High"
       },
       "primaryLean": "Woke",
       "portraitIsRemote": true,
@@ -741,13 +762,14 @@
           ]
         },
         "pfFallbackApplied": false,
-        "salienceApplied": false
+        "salienceApplied": false,
+        "govtrackApplied": false
       },
       "modelInputs": {
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 8,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-10T16:05:59.969Z"
+        "lastImportedAt": "2026-03-12T05:52:08.203Z"
       },
       "scores": {
         "establishment": 50,
@@ -872,13 +894,14 @@
           "rigidity": []
         },
         "pfFallbackApplied": false,
-        "salienceApplied": false
+        "salienceApplied": false,
+        "govtrackApplied": false
       },
       "modelInputs": {
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 5,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-10T16:06:02.620Z"
+        "lastImportedAt": "2026-03-12T05:52:08.210Z"
       },
       "scores": {
         "establishment": 50,
@@ -1031,13 +1054,14 @@
           ]
         },
         "pfFallbackApplied": false,
-        "salienceApplied": false
+        "salienceApplied": false,
+        "govtrackApplied": false
       },
       "modelInputs": {
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 6,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-10T16:06:03.942Z"
+        "lastImportedAt": "2026-03-12T05:52:08.288Z"
       },
       "scores": {
         "establishment": 44,
@@ -1136,13 +1160,14 @@
           "rigidity": []
         },
         "pfFallbackApplied": true,
-        "salienceApplied": true
+        "salienceApplied": true,
+        "govtrackApplied": false
       },
       "modelInputs": {
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 2,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-10T16:06:03.950Z"
+        "lastImportedAt": "2026-03-12T05:52:08.363Z"
       },
       "occupations": [
         "lawyer",
@@ -1161,7 +1186,7 @@
       },
       "adjustments": [
         {
-          "at": "2026-03-10T16:06:03.950Z",
+          "at": "2026-03-12T05:52:08.363Z",
           "type": "auto",
           "note": "Automatic normalization applied due to low signal density: public-figure fallback bump (low signal density) + salience-term bump"
         }
@@ -1267,13 +1292,14 @@
           "rigidity": []
         },
         "pfFallbackApplied": false,
-        "salienceApplied": false
+        "salienceApplied": false,
+        "govtrackApplied": false
       },
       "modelInputs": {
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 4,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-10T16:06:05.184Z"
+        "lastImportedAt": "2026-03-12T05:52:08.613Z"
       },
       "occupations": [
         "online streamer",
@@ -1377,13 +1403,14 @@
           "rigidity": []
         },
         "pfFallbackApplied": true,
-        "salienceApplied": false
+        "salienceApplied": false,
+        "govtrackApplied": false
       },
       "modelInputs": {
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 3,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-10T16:06:05.191Z"
+        "lastImportedAt": "2026-03-12T05:52:08.856Z"
       },
       "occupations": [
         "journalist",
@@ -1400,7 +1427,7 @@
       },
       "adjustments": [
         {
-          "at": "2026-03-10T16:06:05.191Z",
+          "at": "2026-03-12T05:52:08.856Z",
           "type": "auto",
           "note": "Automatic normalization applied due to low signal density: public-figure fallback bump (low signal density)"
         }
@@ -1530,13 +1557,14 @@
           ]
         },
         "pfFallbackApplied": false,
-        "salienceApplied": false
+        "salienceApplied": false,
+        "govtrackApplied": false
       },
       "modelInputs": {
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 6,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-10T16:06:05.202Z"
+        "lastImportedAt": "2026-03-12T05:52:09.103Z"
       },
       "occupations": [
         "pundit",
@@ -1670,13 +1698,14 @@
           "rigidity": []
         },
         "pfFallbackApplied": false,
-        "salienceApplied": false
+        "salienceApplied": false,
+        "govtrackApplied": false
       },
       "modelInputs": {
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 5,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-10T16:06:05.210Z"
+        "lastImportedAt": "2026-03-12T05:52:09.331Z"
       },
       "occupations": [
         "comedian",
@@ -1853,13 +1882,14 @@
           ]
         },
         "pfFallbackApplied": false,
-        "salienceApplied": false
+        "salienceApplied": false,
+        "govtrackApplied": false
       },
       "modelInputs": {
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 9,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-10T16:06:06.074Z"
+        "lastImportedAt": "2026-03-12T05:52:09.617Z"
       },
       "occupations": [
         "statesperson",
@@ -1974,13 +2004,14 @@
           "rigidity": []
         },
         "pfFallbackApplied": false,
-        "salienceApplied": false
+        "salienceApplied": false,
+        "govtrackApplied": false
       },
       "modelInputs": {
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 4,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-10T16:06:06.587Z"
+        "lastImportedAt": "2026-03-12T05:52:10.055Z"
       },
       "occupations": [
         "judoka",

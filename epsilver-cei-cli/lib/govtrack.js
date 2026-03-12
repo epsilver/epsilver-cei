@@ -3,10 +3,24 @@ import { cachePath, readCache, writeCache } from "./cache.js";
 const GT_API = "https://www.govtrack.us/api/v2";
 const CACHE_TTL_MS = 24 * 60 * 60 * 1000;
 
-async function gtFetch(url, cfg) {
+async function gtFetchJson(url, cfg) {
   const res = await fetch(url, { headers: { "User-Agent": cfg.userAgent } });
   if (!res.ok) return null;
   try { return await res.json(); } catch { return null; }
+}
+
+async function gtFetchHtml(url, cfg) {
+  const res = await fetch(url, { headers: { "User-Agent": cfg.userAgent } });
+  if (!res.ok) return null;
+  return res.text();
+}
+
+function scrapeIdeologyLeadership(html) {
+  // The member page embeds ideology-leadership chart data as:
+  //   data: [{x: <ideology>, y: <leadership>, name: "..."}]
+  const m = html.match(/data:\s*\[\{x:\s*([\d.]+),\s*y:\s*([\d.]+),/);
+  if (!m) return { ideology: null, leadership: null };
+  return { ideology: parseFloat(m[1]), leadership: parseFloat(m[2]) };
 }
 
 export async function govtrackData(name, cfg) {
@@ -19,8 +33,8 @@ export async function govtrackData(name, cfg) {
   }
 
   try {
-    const search = await gtFetch(
-      `${GT_API}/person?name=${encodeURIComponent(name)}&limit=5&format=json`,
+    const search = await gtFetchJson(
+      `${GT_API}/person?q=${encodeURIComponent(name)}&limit=5&format=json`,
       cfg
     );
     if (!search?.objects?.length) {
@@ -28,34 +42,39 @@ export async function govtrackData(name, cfg) {
       return null;
     }
 
-    // Prefer person with a current congressional role, then first result
     const persons = search.objects;
-    const best = persons.find(p => p.current_role) ?? persons[0];
+    const best = persons[0];
+    // ID may be in .id, .pk, or embedded in the link URL
+    const personId = best.id ?? best.pk ?? best.link?.match(/\/(\d+)$/)?.[1];
 
-    // Fetch person detail for ideology/leadership analysis scores
-    const detail = await gtFetch(`${GT_API}/person/${best.id}/?format=json`, cfg);
-    const analysis = detail?.analysis ?? null;
+    // Fetch role (for party) and member page (for ideology/leadership) in parallel
+    const [roleRes, memberHtml] = await Promise.all([
+      gtFetchJson(`${GT_API}/role?person=${personId}&current=true&format=json`, cfg),
+      best.link ? gtFetchHtml(best.link, cfg) : Promise.resolve(null)
+    ]);
 
-    const ideologyPct = typeof analysis?.ideology_percentile === "number"
-      ? analysis.ideology_percentile : null;
-    const leadershipPct = typeof analysis?.leadership_percentile === "number"
-      ? analysis.leadership_percentile : null;
+    const role = roleRes?.objects?.[0] ?? null;
 
-    const role = best.current_role;
+    const { ideology, leadership } = memberHtml
+      ? scrapeIdeologyLeadership(memberHtml)
+      : { ideology: null, leadership: null };
+
+    // GovTrack ideology: 0.0 = most liberal, 1.0 = most conservative
+    // Convert to -1..+1 scale
+    const ideologyScore = ideology !== null ? (ideology * 2) - 1 : null;
 
     const data = {
       found: true,
-      personId: best.id,
+      personId,
       name: best.name,
       party: role?.party ?? null,
+      caucus: role?.caucus ?? null,
       roleType: role?.role_type ?? null,
       state: role?.state ?? null,
-      // GovTrack ideology percentile: 0 = most liberal, 1 = most conservative
-      // Convert to -1..+1 scale
-      ideologyScore: ideologyPct !== null ? (ideologyPct * 2) - 1 : null,
-      leadershipScore: leadershipPct,
-      ideologyPct,
-      leadershipPct
+      ideologyScore,
+      leadershipScore: leadership,
+      ideologyRaw: ideology,
+      leadershipRaw: leadership
     };
 
     writeCache(cpath, { timestamp: Date.now(), data });
@@ -64,10 +83,6 @@ export async function govtrackData(name, cfg) {
     writeCache(cpath, { timestamp: Date.now(), data: null });
     return null;
   }
-}
-
-function pctLabel(pct) {
-  return pct !== null && pct !== undefined ? `, ${Math.round(pct * 100)}th percentile` : "";
 }
 
 export function govtrackSignals(data) {
@@ -81,7 +96,7 @@ export function govtrackSignals(data) {
     rigidity: []
   };
 
-  const { ideologyScore, leadershipScore, ideologyPct, leadershipPct, party } = data;
+  const { ideologyScore, leadershipScore, ideologyRaw, leadershipRaw, party, caucus } = data;
 
   if (ideologyScore !== null) {
     const ideo = ideologyScore;
@@ -91,14 +106,14 @@ export function govtrackSignals(data) {
       const strong = ideo <= -0.6;
       axes.justice.push({
         term: "GovTrack ideology score",
-        sentence: `GovTrack legislative ideology score: ${ideoStr} (${strong ? "strongly liberal" : "liberal"}${pctLabel(ideologyPct)}); derived from roll-call vote analysis.`,
+        sentence: `GovTrack legislative ideology score: ${ideoStr} (${strong ? "strongly liberal" : "liberal"}, raw ${ideologyRaw?.toFixed(3) ?? "?"}); derived from roll-call vote analysis.`,
         weight: strong ? 14 : 8
       });
     } else if (ideo >= 0.3) {
       const strong = ideo >= 0.6;
       axes.tradition.push({
         term: "GovTrack ideology score",
-        sentence: `GovTrack legislative ideology score: ${ideoStr} (${strong ? "strongly conservative" : "conservative"}${pctLabel(ideologyPct)}); derived from roll-call vote analysis.`,
+        sentence: `GovTrack legislative ideology score: ${ideoStr} (${strong ? "strongly conservative" : "conservative"}, raw ${ideologyRaw?.toFixed(3) ?? "?"}); derived from roll-call vote analysis.`,
         weight: strong ? 14 : 8
       });
     }
@@ -123,23 +138,24 @@ export function govtrackSignals(data) {
   if (leadershipScore !== null && leadershipScore >= 0.7) {
     axes.establishment.push({
       term: "GovTrack leadership score",
-      sentence: `GovTrack leadership score: ${leadershipScore.toFixed(2)}${pctLabel(leadershipPct)}; indicates high bill sponsorship and institutional legislative engagement.`,
+      sentence: `GovTrack leadership score: ${leadershipScore.toFixed(3)}; indicates high bill sponsorship and institutional legislative engagement.`,
       weight: 10
     });
   }
 
-  // Party fallback if no roll-call ideology score available
-  if (ideologyScore === null && party) {
-    if (/democrat/i.test(party)) {
+  // Party/caucus fallback if no roll-call ideology score available
+  if (ideologyScore === null) {
+    const partySignal = party || caucus;
+    if (partySignal && /democrat/i.test(partySignal)) {
       axes.justice.push({
         term: "GovTrack: party affiliation",
-        sentence: `GovTrack party affiliation: ${party}. Used as fallback ideological signal (no roll-call ideology score available).`,
+        sentence: `GovTrack party/caucus: ${partySignal}. Used as fallback ideological signal (no roll-call ideology score available).`,
         weight: 5
       });
-    } else if (/republican/i.test(party)) {
+    } else if (partySignal && /republican/i.test(partySignal)) {
       axes.tradition.push({
         term: "GovTrack: party affiliation",
-        sentence: `GovTrack party affiliation: ${party}. Used as fallback ideological signal (no roll-call ideology score available).`,
+        sentence: `GovTrack party/caucus: ${partySignal}. Used as fallback ideological signal (no roll-call ideology score available).`,
         weight: 5
       });
     }
