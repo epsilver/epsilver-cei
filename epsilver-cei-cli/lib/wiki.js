@@ -67,7 +67,10 @@ export async function wikiPageBundle(title, cfg) {
 
 const TARGET_KEYWORDS = [
   "views", "positions", "ideology", "beliefs", "stances",
-  "political philosophy", "philosophy", "political thought"
+  "political philosophy", "philosophy", "political thought",
+  "controversies", "controversy", "criticism", "reception",
+  "public image", "political and social commentary", "commentary",
+  "legal issues", "public statements"
 ];
 
 function isTargetSection(title) {
@@ -85,22 +88,26 @@ export async function wikiViewsSection(title, cfg) {
   }, cfg);
 
   const list = sections?.parse?.sections || [];
-  const match = list.find(s => isTargetSection(s.line || ""));
-  if (!match) return "";
+  const matches = list.filter(s => isTargetSection(s.line || ""));
+  if (!matches.length) return "";
 
-  // Step 2: fetch that section's wikitext (parse API reliably isolates sections)
-  const data = await getJson(WIKI_API, {
-    action: "parse",
-    page: title,
-    prop: "wikitext",
-    section: match.index,
-    format: "json"
-  }, cfg);
+  // Step 2: fetch all matching sections' wikitext
+  const parts = [];
+  for (const match of matches) {
+    const data = await getJson(WIKI_API, {
+      action: "parse",
+      page: title,
+      prop: "wikitext",
+      section: match.index,
+      format: "json"
+    }, cfg);
 
-  const raw = data?.parse?.wikitext?.["*"] || "";
+    const raw = data?.parse?.wikitext?.["*"] || "";
+    if (raw.trim()) parts.push(raw);
+  }
 
   // Strip wikitext markup to plain text
-  return raw
+  return parts.join("\n\n")
     .replace(/\{\{[^}]*\}\}/g, "")           // remove {{templates}}
     .replace(/\[\[(?:[^|\]]*\|)?([^\]]+)\]\]/g, "$1") // [[link|text]] -> text
     .replace(/\[https?:\/\/\S+\s([^\]]+)\]/g, "$1")   // [url text] -> text
@@ -109,7 +116,7 @@ export async function wikiViewsSection(title, cfg) {
     .replace(/'''?/g, "")                    // remove bold/italic markers
     .replace(/^={1,6}.+=$/gm, "")           // remove === headings ===
     .replace(/\n{3,}/g, "\n\n")             // collapse excess blank lines
-    .slice(0, 10000)
+    .slice(0, 20000)
     .trim();
 }
 

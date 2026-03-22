@@ -22,16 +22,22 @@ export function computeCEI(scores, cfg, meta = {}) {
   const weights = cfg.cei.axisWeights;
 
   // Signal density: total weight per 1000 chars of source text
-  const { totalWeight = 0, textLength = 0 } = meta;
-  const density = textLength > 0 ? (totalWeight / textLength) * 1000 : 0;
+  // Consequence ratio: what fraction of signal weight comes from actual backlash
+  // (banned, racist, deplatformed) vs just holding positions (conservative, anti-DEI)
+  // High consequence ratio = genuinely extreme; low = just opinionated
+  const { totalWeight = 0, consequenceWeight = 0, textLength = 0 } = meta;
+  const conseqRatio = totalWeight > 0 ? consequenceWeight / totalWeight : 0;
+  // Scale: 0% consequence = 0.35x, 50% = 1.0x, 100% = 1.65x
+  const conseqMul = 0.35 + (conseqRatio * 1.3);
+  const density = textLength > 0 ? (totalWeight * conseqMul / textLength) * 1000 : 0;
 
-  // Count axes with strong deviation from baseline (>= 15 points)
+  // Count axes with strong deviation from baseline (>= 20 points)
   const axes = ["establishment", "justice", "tradition", "conflict", "rigidity"];
-  const hotAxes = axes.filter(a => Math.abs((scores[a] ?? b) - b) >= 15).length;
+  const hotAxes = axes.filter(a => Math.abs((scores[a] ?? b) - b) >= 20).length;
 
   // Axis spread multiplier: more hot axes = more extreme
-  // 0 hot axes = 0.2x, 5 hot axes = 2.2x
-  const spreadMul = 0.20 + (hotAxes * 0.40);
+  // 0 hot axes = 0.18x, 5 hot axes = 1.83x
+  const spreadMul = 0.18 + (hotAxes * 0.33);
 
   // Blend: density scaled by axis spread + minimal RMS for shape
   const rmsRaw = rmsDeviation(scores, b, weights);

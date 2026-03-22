@@ -116,6 +116,8 @@ async function refresh(cfg) {
       failed.push(name);
       print("  ✗ " + (e?.message || e));
     }
+    // Pause between profiles to avoid rate limiting
+    if (i < names.length - 1) await new Promise(r => setTimeout(r, cfg.sleepMs));
   }
 
   print("");

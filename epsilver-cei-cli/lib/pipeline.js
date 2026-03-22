@@ -61,7 +61,7 @@ export async function runPipeline(title, cfg) {
   const newsText  = await gdeltNewsText(bundle.title, cfg);
 
   const scored = scoreFromTextAndOcc(bundle.extract, occupations, cfg, viewsText, newsText);
-  const { scores, signals, evidence, signalCount, totalWeight, totalWeightSq } = scored;
+  const { scores, signals, evidence, signalCount, totalWeight, totalWeightSq, consequenceWeight } = scored;
   bundle.signals = signals;
   bundle.evidence = evidence;
   bundle.signalCount = signalCount;
@@ -108,7 +108,7 @@ export async function runPipeline(title, cfg) {
   });
 
   const textLength = (bundle.extract || "").length + (viewsText || "").length + (newsText || "").length;
-  const ceiOut = computeCEI(scores, cfg, { totalWeight, totalWeightSq, textLength, signalCount });
+  const ceiOut = computeCEI(scores, cfg, { totalWeight, totalWeightSq, textLength, signalCount, consequenceWeight });
   const leanOut = computeLean(scores, cfg, { signalCount, confidence, occupations });
 
   const { status, reviewFlags } = deriveStatus(scores, confidence, signalCount, summaryWordCount, hasImage, occupations.length > 0);

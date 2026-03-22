@@ -26,27 +26,11 @@ export function scoreFromTextAndOcc(extract, occupations, cfg, viewsText = "", n
     maxSentenceChars: cfg?.evidence?.maxSentenceChars ?? 260
   };
 
-  // Behavioral axes: intro + news (positives only for news)
-  const e = matchClusters(extract, ESTABLISHMENT, evidenceOpts);
-  const eNews = newsText ? matchClusters(newsText, ESTABLISHMENT, {
-    ...evidenceOpts, positivesOnly: true,
-    skipIds: new Set(e.hits.map(h => h.clusterId))
-  }) : { hits: [], excerpts: [] };
-
-  const c = matchClusters(extract, CONFLICT, evidenceOpts);
-  const cNews = newsText ? matchClusters(newsText, CONFLICT, {
-    ...evidenceOpts, positivesOnly: true,
-    skipIds: new Set(c.hits.map(h => h.clusterId))
-  }) : { hits: [], excerpts: [] };
-
-  const eMerged = { hits: [...e.hits, ...eNews.hits], excerpts: [...e.excerpts, ...eNews.excerpts] };
-  const cMerged = { hits: [...c.hits, ...cNews.hits], excerpts: [...c.excerpts, ...cNews.excerpts] };
-
-  // Ideological axes: three-pass
+  // Three-pass for all axes:
   // Pass 1: intro with all clusters (positives + dampeners)
-  // Pass 2: views text with positives only, skipping already-fired IDs
+  // Pass 2: views/controversies text with positives only, skipping already-fired IDs
   // Pass 3: news text with positives only, skipping all already-fired IDs
-  function twoPass(axis) {
+  function threePass(axis) {
     const pass1 = matchClusters(extract, axis, evidenceOpts);
     const firedIds = new Set(pass1.hits.map(h => h.clusterId));
     const allHits = [...pass1.hits];
@@ -72,9 +56,11 @@ export function scoreFromTextAndOcc(extract, occupations, cfg, viewsText = "", n
     return { hits: allHits, excerpts: allExcerpts };
   }
 
-  const j = twoPass(JUSTICE);
-  const t = twoPass(TRADITION);
-  const r = twoPass(RIGIDITY);
+  const eMerged = threePass(ESTABLISHMENT);
+  const cMerged = threePass(CONFLICT);
+  const j = threePass(JUSTICE);
+  const t = threePass(TRADITION);
+  const r = threePass(RIGIDITY);
 
   let establishment = clamp(b + cap(sumWeights(eMerged.hits), cfg.caps.establishmentText), 0, 100);
   let justice       = clamp(b + cap(sumWeights(j.hits), cfg.caps.justiceText), 0, 100);
@@ -122,9 +108,19 @@ export function scoreFromTextAndOcc(extract, occupations, cfg, viewsText = "", n
     rigidity: r.excerpts
   };
 
+  // Consequence clusters: signals that indicate cultural backlash/reception,
+  // not just holding a political position
+  const CONSEQUENCE_IDS = new Set([
+    "C1","C2","C3","C4","C5","C6","C7","C8","C9", // conflict: banned, racist, controversial...
+    "R5",                                           // rigidity: Holocaust denial, dehumanizing...
+  ]);
+
   const allHits = [...eMerged.hits, ...j.hits, ...t.hits, ...cMerged.hits, ...r.hits];
   const totalWeight = allHits.reduce((a, h) => a + Math.abs(h.weight || 0), 0);
   const totalWeightSq = allHits.reduce((a, h) => a + (h.weight || 0) ** 2, 0);
+  const consequenceWeight = allHits
+    .filter(h => CONSEQUENCE_IDS.has(h.clusterId))
+    .reduce((a, h) => a + Math.abs(h.weight || 0), 0);
 
   return {
     scores,
@@ -133,6 +129,7 @@ export function scoreFromTextAndOcc(extract, occupations, cfg, viewsText = "", n
     signalCount: fired,
     totalWeight,
     totalWeightSq,
+    consequenceWeight,
     publicFigure: pf,
     salienceHit,
     pfFallbackApplied,

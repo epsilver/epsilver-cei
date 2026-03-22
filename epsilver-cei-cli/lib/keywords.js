@@ -36,10 +36,11 @@ export const TRADITION = [
 ];
 
 export const CONFLICT = [
-  { id:"C1",  weight:+10, terms:["controversial","widely criticized","sparked backlash","provoked outrage","condemned","denounced"]},
+  { id:"C1",  weight:+10, terms:["controversial","widely criticized","sparked backlash","provoked outrage","condemned","denounced","sparked controversy","drew criticism","faced backlash","drew backlash"]},
   { id:"C2",  weight:+10, terms:["accused of","allegations of","investigated","under investigation","charged with","convicted","lawsuit","settlement"]},
-  { id:"C3",  weight:+8,  terms:["banned","deplatformed","suspended","removed from","expelled","censored"]},
-  { id:"C4",  weight:+8,  terms:["outspoken","firebrand","provocateur","polarizing figure","culture warrior","shock jock","inflammatory"]},
+  { id:"C3",  weight:+8,  terms:["banned","deplatformed","suspended","removed from","expelled","censored","account was banned","was banned"]},
+  { id:"C4",  weight:+8,  terms:["outspoken","firebrand","provocateur","polarizing figure","culture warrior","shock jock","inflammatory","hateful conduct","hate speech"]},
+  { id:"C9",  weight:+12, terms:["racist","racism","racist tirade","xenophobic","xenophobia","islamophobic","islamophobia","homophobic","homophobia","transphobic","transphobia","misogynist","misogyny","bigotry","bigoted","slur","racial slur","called racist"]},
   { id:"C5",  weight:+12, terms:["extremist","militia","paramilitary","insurrection","coup","terrorist","dictator","authoritarian","totalitarian","autocrat","despot","tyrant"]},
   { id:"C6",  weight:+14, terms:["genocide","ethnic cleansing","war criminal","crimes against humanity","Holocaust","mass murder","massacre","atrocity","extermination","pogrom","death squad","concentration camp"]},
   { id:"C7",  weight:+10, terms:["inflammatory statement","incendiary","called for revolution","revolutionary rhetoric","rage bait","agitprop"]},
@@ -52,7 +53,7 @@ export const RIGIDITY = [
   { id:"R2",  weight:+10, terms:["ideologue","dogmatic","purist","doctrinaire","absolutist"]},
   { id:"R3",  weight:+8,  terms:["total ban","complete ban","no exceptions","must be eliminated","eradicate","criminalize","mandatory","blanket ban"]},
   { id:"R4",  weight:+6,  terms:["conspiracy theorist","conspiracy theories","promoted conspiracy","qanon"]},
-  { id:"R5",  weight:+14, terms:["Holocaust denier","Holocaust denial","denies the Holocaust","historical revisionist","historical revisionism","race science","eugenics","eugenicist","genocide denier","genocide denial"]},
+  { id:"R5",  weight:+14, terms:["Holocaust denier","Holocaust denial","denies the Holocaust","historical revisionist","historical revisionism","race science","eugenics","eugenicist","genocide denier","genocide denial","inferior culture","inferior people","subhuman","dehumanizing"]},
   { id:"R6",  weight:+10, terms:["hunger strike","went on hunger strike","hunger striker","self-immolation","fasting in protest","chained himself","chained herself","chained themselves"]},
   { id:"RD1", weight:-12, terms:["pragmatic","technocrat","incremental","compromise","worked across the aisle"]}
 ];
