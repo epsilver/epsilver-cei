@@ -14,7 +14,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 15,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-22T08:04:25.995Z"
+        "lastImportedAt": "2026-03-22T08:26:03.669Z"
       },
       "scores": {
         "establishment": 50,
@@ -267,7 +267,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 1,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-22T08:04:31.027Z"
+        "lastImportedAt": "2026-03-22T08:26:08.702Z"
       },
       "scores": {
         "establishment": 53,
@@ -278,7 +278,7 @@
       },
       "adjustments": [
         {
-          "at": "2026-03-22T08:04:31.027Z",
+          "at": "2026-03-22T08:26:08.702Z",
           "type": "auto",
           "note": "Automatic normalization applied due to low signal density: public-figure fallback bump (low signal density) + salience-term bump"
         }
@@ -487,7 +487,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 8,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-22T08:04:36.063Z"
+        "lastImportedAt": "2026-03-22T08:26:13.738Z"
       },
       "scores": {
         "establishment": 60,
@@ -753,7 +753,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 15,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-22T08:04:41.095Z"
+        "lastImportedAt": "2026-03-22T08:26:18.769Z"
       },
       "scores": {
         "establishment": 62,
@@ -970,7 +970,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 12,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-22T08:04:46.472Z"
+        "lastImportedAt": "2026-03-22T08:26:24.159Z"
       },
       "scores": {
         "establishment": 50,
@@ -1115,7 +1115,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 6,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-22T08:04:51.497Z"
+        "lastImportedAt": "2026-03-22T08:26:29.188Z"
       },
       "scores": {
         "establishment": 58,
@@ -1330,7 +1330,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 11,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-22T08:04:56.529Z"
+        "lastImportedAt": "2026-03-22T08:26:34.222Z"
       },
       "scores": {
         "establishment": 44,
@@ -1436,7 +1436,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 2,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-22T08:05:07.976Z"
+        "lastImportedAt": "2026-03-22T08:26:39.256Z"
       },
       "occupations": [
         "lawyer",
@@ -1455,7 +1455,7 @@
       },
       "adjustments": [
         {
-          "at": "2026-03-22T08:05:07.976Z",
+          "at": "2026-03-22T08:26:39.256Z",
           "type": "auto",
           "note": "Automatic normalization applied due to low signal density: public-figure fallback bump (low signal density) + salience-term bump"
         }
@@ -1590,7 +1590,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 6,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-22T08:05:18.673Z"
+        "lastImportedAt": "2026-03-22T08:26:44.287Z"
       },
       "occupations": [
         "online streamer",
@@ -1714,7 +1714,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 4,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-22T08:05:24.106Z"
+        "lastImportedAt": "2026-03-22T08:26:49.580Z"
       },
       "occupations": [
         "journalist",
@@ -1925,7 +1925,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 11,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-22T08:05:29.142Z"
+        "lastImportedAt": "2026-03-22T08:26:54.615Z"
       },
       "occupations": [
         "pundit",
@@ -2143,7 +2143,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 12,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-22T08:05:37.578Z"
+        "lastImportedAt": "2026-03-22T08:26:59.642Z"
       },
       "occupations": [
         "comedian",
@@ -2351,7 +2351,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 11,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-22T08:05:46.323Z"
+        "lastImportedAt": "2026-03-22T08:27:04.680Z"
       },
       "occupations": [
         "statesperson",
@@ -2484,7 +2484,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 5,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-22T08:05:51.672Z"
+        "lastImportedAt": "2026-03-22T08:27:13.951Z"
       },
       "occupations": [
         "judoka",
@@ -2683,7 +2683,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 10,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-22T08:05:56.710Z"
+        "lastImportedAt": "2026-03-22T08:27:18.988Z"
       },
       "occupations": [
         "business magnate",
@@ -2827,7 +2827,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 5,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-22T08:06:01.730Z"
+        "lastImportedAt": "2026-03-22T08:27:24.023Z"
       },
       "occupations": [
         "politician",
@@ -2991,7 +2991,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 6,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-22T08:06:07.362Z"
+        "lastImportedAt": "2026-03-22T08:27:29.311Z"
       },
       "occupations": [
         "politician",
@@ -3141,7 +3141,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 6,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-22T08:06:12.398Z"
+        "lastImportedAt": "2026-03-22T08:27:34.342Z"
       },
       "occupations": [
         "economist",
@@ -3278,7 +3278,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 4,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-22T08:06:17.416Z"
+        "lastImportedAt": "2026-03-22T08:27:39.375Z"
       },
       "occupations": [
         "politician",
@@ -3484,7 +3484,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 11,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-22T08:06:27.231Z"
+        "lastImportedAt": "2026-03-22T08:27:44.400Z"
       },
       "occupations": [
         "politician",
@@ -3654,7 +3654,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 8,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-22T08:06:32.529Z"
+        "lastImportedAt": "2026-03-22T08:27:49.660Z"
       },
       "occupations": [
         "politician",
@@ -3677,7 +3677,7 @@
       },
       "adjustments": [
         {
-          "at": "2026-03-22T08:06:32.529Z",
+          "at": "2026-03-22T08:27:49.660Z",
           "type": "auto",
           "note": "Automatic normalization applied due to low signal density: salience-term bump"
         }
@@ -3847,7 +3847,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 9,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-22T08:06:37.810Z"
+        "lastImportedAt": "2026-03-22T08:27:55.007Z"
       },
       "occupations": [
         "podcaster",
@@ -4019,7 +4019,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 8,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-22T08:06:43.885Z"
+        "lastImportedAt": "2026-03-22T08:28:00.416Z"
       },
       "occupations": [
         "journalist",
@@ -4153,7 +4153,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 5,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-22T08:06:48.915Z"
+        "lastImportedAt": "2026-03-22T08:28:05.442Z"
       },
       "occupations": [
         "journalist",
@@ -4276,7 +4276,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 3,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-22T08:06:53.934Z"
+        "lastImportedAt": "2026-03-22T08:28:10.465Z"
       },
       "occupations": [
         "actor",
@@ -4298,7 +4298,7 @@
       },
       "adjustments": [
         {
-          "at": "2026-03-22T08:06:53.934Z",
+          "at": "2026-03-22T08:28:10.465Z",
           "type": "auto",
           "note": "Automatic normalization applied due to low signal density: public-figure fallback bump (low signal density)"
         }
@@ -4422,7 +4422,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 5,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-22T08:07:07.788Z"
+        "lastImportedAt": "2026-03-22T08:28:15.493Z"
       },
       "occupations": [
         "actor",
@@ -4544,7 +4544,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 2,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-22T08:07:12.818Z"
+        "lastImportedAt": "2026-03-22T08:28:20.516Z"
       },
       "occupations": [
         "environmentalist",
@@ -4561,7 +4561,7 @@
       },
       "adjustments": [
         {
-          "at": "2026-03-22T08:07:12.818Z",
+          "at": "2026-03-22T08:28:20.516Z",
           "type": "auto",
           "note": "Automatic normalization applied due to low signal density: public-figure fallback bump (low signal density)"
         }
@@ -4764,7 +4764,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 12,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-22T08:07:19.394Z"
+        "lastImportedAt": "2026-03-22T08:28:25.558Z"
       },
       "occupations": [
         "philosopher",
@@ -4977,7 +4977,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 11,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-22T08:07:24.419Z"
+        "lastImportedAt": "2026-03-22T08:28:30.602Z"
       },
       "occupations": [
         "mixed martial arts fighter",
@@ -5083,7 +5083,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 2,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-22T08:07:29.444Z"
+        "lastImportedAt": "2026-03-22T08:28:35.624Z"
       },
       "occupations": [
         "comedian",
@@ -5106,7 +5106,7 @@
       },
       "adjustments": [
         {
-          "at": "2026-03-22T08:07:29.444Z",
+          "at": "2026-03-22T08:28:35.624Z",
           "type": "auto",
           "note": "Automatic normalization applied due to low signal density: public-figure fallback bump (low signal density)"
         }
@@ -5195,7 +5195,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 2,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-22T08:07:34.463Z"
+        "lastImportedAt": "2026-03-22T08:28:40.653Z"
       },
       "occupations": [
         "Twitch streamer",
@@ -5213,7 +5213,7 @@
       },
       "adjustments": [
         {
-          "at": "2026-03-22T08:07:34.463Z",
+          "at": "2026-03-22T08:28:40.653Z",
           "type": "auto",
           "note": "Automatic normalization applied due to low signal density: public-figure fallback bump (low signal density)"
         }
@@ -5276,7 +5276,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 0,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-22T08:07:39.489Z"
+        "lastImportedAt": "2026-03-22T08:28:45.684Z"
       },
       "occupations": [
         "press secretary",
@@ -5295,7 +5295,7 @@
       },
       "adjustments": [
         {
-          "at": "2026-03-22T08:07:39.489Z",
+          "at": "2026-03-22T08:28:45.684Z",
           "type": "auto",
           "note": "Automatic normalization applied due to low signal density: public-figure fallback bump (low signal density)"
         }
@@ -5445,7 +5445,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 6,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-22T08:07:44.528Z"
+        "lastImportedAt": "2026-03-22T08:28:50.730Z"
       },
       "occupations": [
         "politician",
@@ -5703,7 +5703,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 14,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-22T08:07:49.569Z"
+        "lastImportedAt": "2026-03-22T08:28:55.767Z"
       },
       "occupations": [
         "politician",
@@ -5922,7 +5922,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 12,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-22T08:07:54.597Z"
+        "lastImportedAt": "2026-03-22T08:29:00.797Z"
       },
       "occupations": [
         "entrepreneur",
@@ -6149,7 +6149,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 13,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-22T08:07:59.628Z"
+        "lastImportedAt": "2026-03-22T08:29:05.828Z"
       },
       "occupations": [
         "politician",
@@ -6308,7 +6308,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 7,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-22T08:08:07.419Z"
+        "lastImportedAt": "2026-03-22T08:29:10.848Z"
       },
       "occupations": [
         "radio personality",
@@ -6554,7 +6554,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 14,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-22T08:08:12.456Z"
+        "lastImportedAt": "2026-03-22T08:29:15.882Z"
       },
       "occupations": [
         "political activist",
@@ -6633,7 +6633,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 0,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-22T08:08:17.488Z"
+        "lastImportedAt": "2026-03-22T08:29:20.898Z"
       },
       "occupations": [
         "actor",
@@ -6661,7 +6661,7 @@
       },
       "adjustments": [
         {
-          "at": "2026-03-22T08:08:17.488Z",
+          "at": "2026-03-22T08:29:20.898Z",
           "type": "auto",
           "note": "Automatic normalization applied due to low signal density: public-figure fallback bump (low signal density)"
         }
@@ -6864,7 +6864,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 12,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-22T08:08:22.520Z"
+        "lastImportedAt": "2026-03-22T08:29:25.926Z"
       },
       "occupations": [
         "programmer",
@@ -7061,7 +7061,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 10,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-22T08:08:27.542Z"
+        "lastImportedAt": "2026-03-22T08:29:30.951Z"
       },
       "occupations": [
         "writer",
@@ -7296,7 +7296,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 12,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-22T08:08:32.576Z"
+        "lastImportedAt": "2026-03-22T08:29:35.983Z"
       },
       "occupations": [
         "politician",
@@ -7525,7 +7525,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 11,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-22T08:08:37.613Z"
+        "lastImportedAt": "2026-03-22T08:29:41.011Z"
       },
       "occupations": [
         "politician",
@@ -7727,7 +7727,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 11,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-22T08:08:42.646Z"
+        "lastImportedAt": "2026-03-22T08:29:46.045Z"
       },
       "occupations": [
         "statesperson",
@@ -7800,7 +7800,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 0,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-22T08:08:47.673Z"
+        "lastImportedAt": "2026-03-22T08:29:51.061Z"
       },
       "occupations": [
         "journalist",
@@ -7822,7 +7822,7 @@
       },
       "adjustments": [
         {
-          "at": "2026-03-22T08:08:47.673Z",
+          "at": "2026-03-22T08:29:51.060Z",
           "type": "auto",
           "note": "Automatic normalization applied due to low signal density: public-figure fallback bump (low signal density)"
         }
@@ -7898,7 +7898,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 1,
         "confidence": 0.65,
-        "lastImportedAt": "2026-03-22T08:08:52.690Z"
+        "lastImportedAt": "2026-03-22T08:29:56.076Z"
       },
       "occupations": [
         "writer",
@@ -7913,7 +7913,7 @@
       },
       "adjustments": [
         {
-          "at": "2026-03-22T08:08:52.690Z",
+          "at": "2026-03-22T08:29:56.076Z",
           "type": "auto",
           "note": "Automatic normalization applied due to low signal density: public-figure fallback bump (low signal density)"
         }
@@ -8000,7 +8000,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 2,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-22T08:08:57.714Z"
+        "lastImportedAt": "2026-03-22T08:30:01.117Z"
       },
       "occupations": [
         "comedian",
@@ -8021,7 +8021,7 @@
       },
       "adjustments": [
         {
-          "at": "2026-03-22T08:08:57.714Z",
+          "at": "2026-03-22T08:30:01.117Z",
           "type": "auto",
           "note": "Automatic normalization applied due to low signal density: public-figure fallback bump (low signal density)"
         }
@@ -8270,7 +8270,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 16,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-22T08:09:02.740Z"
+        "lastImportedAt": "2026-03-22T08:30:06.155Z"
       },
       "occupations": [
         "politician",
@@ -8541,7 +8541,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 17,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-22T08:09:07.776Z"
+        "lastImportedAt": "2026-03-22T08:30:11.189Z"
       },
       "occupations": [
         "politician",
@@ -8792,7 +8792,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 15,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-22T08:09:12.813Z"
+        "lastImportedAt": "2026-03-22T08:30:16.214Z"
       },
       "occupations": [
         "actor",
@@ -9014,7 +9014,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 12,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-22T08:09:18.075Z"
+        "lastImportedAt": "2026-03-22T08:30:23.902Z"
       },
       "occupations": [
         "film producer",
@@ -9034,7 +9034,7 @@
       },
       "adjustments": [
         {
-          "at": "2026-03-22T08:09:18.075Z",
+          "at": "2026-03-22T08:30:23.902Z",
           "type": "auto",
           "note": "Automatic normalization applied due to low signal density: salience-term bump"
         }
@@ -9173,7 +9173,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 6,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-22T08:09:23.103Z"
+        "lastImportedAt": "2026-03-22T08:30:28.937Z"
       },
       "occupations": [
         "politician",
@@ -9282,7 +9282,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 1,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-22T08:09:28.128Z"
+        "lastImportedAt": "2026-03-22T08:30:33.956Z"
       },
       "occupations": [
         "politician",
@@ -9299,7 +9299,7 @@
       },
       "adjustments": [
         {
-          "at": "2026-03-22T08:09:28.128Z",
+          "at": "2026-03-22T08:30:33.956Z",
           "type": "auto",
           "note": "Automatic normalization applied due to low signal density: public-figure fallback bump (low signal density)"
         }
@@ -9460,7 +9460,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 8,
         "confidence": 0.75,
-        "lastImportedAt": "2026-03-22T08:09:33.145Z"
+        "lastImportedAt": "2026-03-22T08:30:38.978Z"
       },
       "occupations": [
         "politician",
@@ -9665,7 +9665,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 11,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-22T08:09:38.166Z"
+        "lastImportedAt": "2026-03-22T08:30:43.996Z"
       },
       "occupations": [
         "clinical psychologist",
@@ -9826,7 +9826,7 @@
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
         "signalsFired": 7,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-22T08:09:43.194Z"
+        "lastImportedAt": "2026-03-22T08:30:49.017Z"
       },
       "occupations": [
         "rapper",
@@ -9844,7 +9844,7 @@
       },
       "adjustments": [
         {
-          "at": "2026-03-22T08:09:43.194Z",
+          "at": "2026-03-22T08:30:49.017Z",
           "type": "auto",
           "note": "Automatic normalization applied due to low signal density: salience-term bump"
         }
@@ -9862,6 +9862,167 @@
       "cei": {
         "value": 27,
         "tier": "Moderate"
+      },
+      "primaryLean": "Normie"
+    },
+    {
+      "slug": "asmongold",
+      "name": "Asmongold",
+      "aliases": [],
+      "portraitPath": "https://upload.wikimedia.org/wikipedia/commons/7/75/Asmongold_in_2022.jpg",
+      "portraitIsRemote": true,
+      "sources": [
+        "https://en.wikipedia.org/wiki/Asmongold"
+      ],
+      "researchSummary": "Zachariah \"Zack\" Hoyt (born 1990), also known as Asmongold, is an American YouTuber, content creator, online streamer, and political commentator. His content was primarily focused on World of Warcraft, but he now covers politics as well as video games and topics related to gaming culture.",
+      "computedSummary": "cei-cli ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 7 signal cluster(s). Confidence 90%.",
+      "modelReadout": {
+        "instrument": "Wikipedia lead + infobox metadata -> heuristic clusters -> five-axis signal wheel",
+        "observed": {
+          "sourceCount": 1,
+          "occupationsCount": 0,
+          "hasImage": true,
+          "signalCount": 7
+        },
+        "confidencePct": 90,
+        "evidence": {
+          "establishment": [],
+          "justice": [
+            {
+              "clusterId": "J2",
+              "term": "equity",
+              "sentence": "In early 2024, Hoyt, alongside other prominent YouTubers, aided in spreading \"anti-woke\" conspiracism around Sweet Baby Inc.'s work in promoting diversity, equity, and inclusion.",
+              "weight": 12
+            }
+          ],
+          "tradition": [
+            {
+              "clusterId": "T1",
+              "term": "far-right",
+              "sentence": "In 2026, Hoyt endorsed far-right candidate James Fishback's campaign for Governor of Florida, describing Fishback as \"based\" and urging his followers to \"vote for people like this.\" Scholar Adam Ruch cited Hoyt as an example of a video game critic who believed...",
+              "weight": 14
+            }
+          ],
+          "conflict": [
+            {
+              "clusterId": "C3",
+              "term": "banned",
+              "sentence": "His zackrawrr account on Twitch was banned for 14 days due to violating the platform's hateful conduct policy.",
+              "weight": 8
+            },
+            {
+              "clusterId": "C4",
+              "term": "hateful conduct",
+              "sentence": "His zackrawrr account on Twitch was banned for 14 days due to violating the platform's hateful conduct policy.",
+              "weight": 8
+            },
+            {
+              "clusterId": "C9",
+              "term": "racist",
+              "sentence": "This statement was later called a \"racist tirade\".",
+              "weight": 12
+            },
+            {
+              "clusterId": "C6",
+              "term": "genocide",
+              "sentence": "In a Twitch stream on October 14, 2024, Hoyt called Palestinians \"terrible people\" from \"an inferior culture\" that \"kills people for their identity\" and \"is directly antithetical to everything Western values stand for.\" He also said that they \"have genocide bu...",
+              "weight": 14
+            }
+          ],
+          "rigidity": [
+            {
+              "clusterId": "R5",
+              "term": "inferior culture",
+              "sentence": "In a Twitch stream on October 14, 2024, Hoyt called Palestinians \"terrible people\" from \"an inferior culture\" that \"kills people for their identity\" and \"is directly antithetical to everything Western values stand for.\" He also said that they \"have genocide bu...",
+              "weight": 14
+            }
+          ]
+        },
+        "signals": {
+          "establishment": [],
+          "justice": [
+            {
+              "clusterId": "J2",
+              "term": "equity",
+              "weight": 12
+            }
+          ],
+          "tradition": [
+            {
+              "clusterId": "T1",
+              "term": "far-right",
+              "weight": 14
+            }
+          ],
+          "conflict": [
+            {
+              "clusterId": "C3",
+              "term": "banned",
+              "weight": 8
+            },
+            {
+              "clusterId": "C4",
+              "term": "hateful conduct",
+              "weight": 8
+            },
+            {
+              "clusterId": "C9",
+              "term": "racist",
+              "weight": 12
+            },
+            {
+              "clusterId": "C6",
+              "term": "genocide",
+              "weight": 14
+            }
+          ],
+          "rigidity": [
+            {
+              "clusterId": "R5",
+              "term": "inferior culture",
+              "weight": 14
+            }
+          ]
+        },
+        "pfFallbackApplied": false,
+        "salienceApplied": false,
+        "govtrackApplied": false
+      },
+      "modelInputs": {
+        "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
+        "signalsFired": 7,
+        "confidence": 0.9,
+        "lastImportedAt": "2026-03-22T08:30:54.042Z"
+      },
+      "occupations": [
+        "online streamer",
+        "Twitch streamer",
+        "YouTuber",
+        "Kick streamer",
+        "proprietor",
+        "television actor"
+      ],
+      "scores": {
+        "establishment": 50,
+        "justice": 62,
+        "tradition": 64,
+        "conflict": 85,
+        "rigidity": 64
+      },
+      "adjustments": [],
+      "status": "active",
+      "reviewNote": "",
+      "confidence": 0.9,
+      "reviewFlags": [],
+      "imageCredit": {
+        "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/7/75/Asmongold_in_2022.jpg",
+        "author": "Esfand",
+        "license": "CC BY 3.0",
+        "attributionText": "Esfand"
+      },
+      "cei": {
+        "value": 85,
+        "tier": "Extreme"
       },
       "primaryLean": "Normie"
     }
