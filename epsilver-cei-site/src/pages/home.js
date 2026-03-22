@@ -25,7 +25,7 @@ export async function HomePage(root) {
       <input id="q" placeholder="Search profiles..." />
       <button class="btn" id="goCompare">Compare</button>
     </div>
-    <div class="list" id="list"></div>
+    <div class="list list-scroll" id="list"></div>
   `;
 
   const right = document.createElement("div");

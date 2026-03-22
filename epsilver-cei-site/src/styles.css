@@ -290,6 +290,10 @@ a:hover{ text-decoration:underline; }
   gap:10px;
   margin-top:12px;
 }
+.list-scroll{
+  max-height:65vh;
+  overflow-y:auto;
+}
 .item{
   border:1px solid var(--rule);
   border-radius:14px;
