@@ -122,11 +122,17 @@ export function scoreFromTextAndOcc(extract, occupations, cfg, viewsText = "", n
     rigidity: r.excerpts
   };
 
+  const allHits = [...eMerged.hits, ...j.hits, ...t.hits, ...cMerged.hits, ...r.hits];
+  const totalWeight = allHits.reduce((a, h) => a + Math.abs(h.weight || 0), 0);
+  const totalWeightSq = allHits.reduce((a, h) => a + (h.weight || 0) ** 2, 0);
+
   return {
     scores,
     signals,
     evidence,
     signalCount: fired,
+    totalWeight,
+    totalWeightSq,
     publicFigure: pf,
     salienceHit,
     pfFallbackApplied,

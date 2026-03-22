@@ -17,15 +17,30 @@ export function ceiTier(cei) {
   return "Extreme";
 }
 
-export function computeCEI(scores, cfg) {
+export function computeCEI(scores, cfg, meta = {}) {
   const b = cfg.baseline;
   const weights = cfg.cei.axisWeights;
-  const rawDist = rmsDeviation(scores, b, weights);
+
+  // Signal density: total weight per 1000 chars of source text
+  const { totalWeight = 0, textLength = 0 } = meta;
+  const density = textLength > 0 ? (totalWeight / textLength) * 1000 : 0;
+
+  // Count axes with strong deviation from baseline (>= 15 points)
+  const axes = ["establishment", "justice", "tradition", "conflict", "rigidity"];
+  const hotAxes = axes.filter(a => Math.abs((scores[a] ?? b) - b) >= 15).length;
+
+  // Axis spread multiplier: more hot axes = more extreme
+  // 0 hot axes = 0.2x, 5 hot axes = 2.2x
+  const spreadMul = 0.20 + (hotAxes * 0.40);
+
+  // Blend: density scaled by axis spread + minimal RMS for shape
+  const rmsRaw = rmsDeviation(scores, b, weights);
+  let raw = density > 0 ? (density * spreadMul) + (rmsRaw * 0.05) : rmsRaw * 0.5;
 
   const confOver = Math.max(0, (scores.conflict - b) / 50);
   const rigOver  = Math.max(0, (scores.rigidity - b) / 50);
 
-  let raw = rawDist * (1 + cfg.cei.conflictAmp * confOver + cfg.cei.rigidityAmp * rigOver);
+  raw = raw * (1 + cfg.cei.conflictAmp * confOver + cfg.cei.rigidityAmp * rigOver);
 
   if (scores.establishment >= cfg.cei.establishmentDampenThreshold) {
     const over = (scores.establishment - cfg.cei.establishmentDampenThreshold) / (100 - cfg.cei.establishmentDampenThreshold);
