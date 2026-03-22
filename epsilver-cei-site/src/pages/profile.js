@@ -219,8 +219,6 @@ export async function ProfilePage(root, { slug }) {
 
     <div class="hr"></div>
 
-    <div id="profileCardDisplay"></div>
-
     <div class="small">
 
       <b>Sources</b><br>
@@ -234,11 +232,19 @@ export async function ProfilePage(root, { slug }) {
 
   const right = document.createElement("div");
   right.className = "card";
-  right.innerHTML = `
+
+  const cardSlot = document.createElement("div");
+  cardSlot.id = "profileCardDisplay";
+  right.appendChild(cardSlot);
+
+  const wheelHeader = document.createElement("div");
+  wheelHeader.innerHTML = `
+    <div class="hr"></div>
     <div class="h1">Signal Wheel</div>
     <div class="small">Hover sectors for axis detail.</div>
     <div class="hr"></div>
   `;
+  right.appendChild(wheelHeader);
 
   const wheelWrap = document.createElement("div");
   wheelWrap.style.maxWidth = "420px";
@@ -268,8 +274,6 @@ export async function ProfilePage(root, { slug }) {
   `;
   right.appendChild(glossary);
 
-
-
   const wrap = document.createElement("div");
   wrap.style.cssText = "max-width:740px;margin:24px auto;";
   grid.appendChild(left);
@@ -279,6 +283,6 @@ export async function ProfilePage(root, { slug }) {
   root.appendChild(wrap);
 
   generateProfileCard(p).then(canvas => {
-    showCardInline(canvas, left.querySelector("#profileCardDisplay"));
+    showCardInline(canvas, right.querySelector("#profileCardDisplay"));
   });
 }
