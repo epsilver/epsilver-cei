@@ -71,9 +71,8 @@ a:hover{ text-decoration:underline; }
     gap:12px;
   }
   .nav{
-    font-size:13px;
-    gap:16px;
-    flex-wrap:wrap;
+    font-size:11px;
+    gap:12px;
   }
 }
 

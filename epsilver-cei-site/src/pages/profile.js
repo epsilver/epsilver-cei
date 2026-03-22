@@ -233,13 +233,8 @@ export async function ProfilePage(root, { slug }) {
   const right = document.createElement("div");
   right.className = "card";
 
-  const cardSlot = document.createElement("div");
-  cardSlot.id = "profileCardDisplay";
-  right.appendChild(cardSlot);
-
   const wheelHeader = document.createElement("div");
   wheelHeader.innerHTML = `
-    <div class="hr"></div>
     <div class="h1">Signal Wheel</div>
     <div class="small">Hover sectors for axis detail.</div>
     <div class="hr"></div>
@@ -273,6 +268,12 @@ export async function ProfilePage(root, { slug }) {
     <div class="item"><div class="left"><div class="section-title">Rigidity</div><div class="meta">Tendency toward absolutism, purity politics, and rejection of compromise.</div></div></div>
   `;
   right.appendChild(glossary);
+
+  right.appendChild(Object.assign(document.createElement("div"), { className: "hr" }));
+
+  const cardSlot = document.createElement("div");
+  cardSlot.id = "profileCardDisplay";
+  right.appendChild(cardSlot);
 
   const wrap = document.createElement("div");
   wrap.style.cssText = "max-width:740px;margin:24px auto;";
