@@ -9,7 +9,9 @@ const OPPOSITION_PATTERNS = [
   "condemns ", "condemnation of",
   "resists ", "resistance to",
   "does not support", "doesn't support",
-  "never supported", "never been"
+  "never supported", "never been",
+  "anti-woke", "against woke", "anti-dei",
+  "spreading", "conspiracism"
 ];
 
 function isOppositionContext(sentence) {

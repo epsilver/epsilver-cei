@@ -9875,26 +9875,19 @@
         "https://en.wikipedia.org/wiki/Asmongold"
       ],
       "researchSummary": "Zachariah \"Zack\" Hoyt (born 1990), also known as Asmongold, is an American YouTuber, content creator, online streamer, and political commentator. His content was primarily focused on World of Warcraft, but he now covers politics as well as video games and topics related to gaming culture.",
-      "computedSummary": "cei-cli ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 7 signal cluster(s). Confidence 90%.",
+      "computedSummary": "cei-cli ingest: Wikipedia lead + infobox metadata; normalized into a five-axis signal wheel. Inputs observed: 1 primary source link(s), occupation tags, portrait present, 6 signal cluster(s). Confidence 90%.",
       "modelReadout": {
         "instrument": "Wikipedia lead + infobox metadata -> heuristic clusters -> five-axis signal wheel",
         "observed": {
           "sourceCount": 1,
           "occupationsCount": 0,
           "hasImage": true,
-          "signalCount": 7
+          "signalCount": 6
         },
         "confidencePct": 90,
         "evidence": {
           "establishment": [],
-          "justice": [
-            {
-              "clusterId": "J2",
-              "term": "equity",
-              "sentence": "In early 2024, Hoyt, alongside other prominent YouTubers, aided in spreading \"anti-woke\" conspiracism around Sweet Baby Inc.'s work in promoting diversity, equity, and inclusion.",
-              "weight": 12
-            }
-          ],
+          "justice": [],
           "tradition": [
             {
               "clusterId": "T1",
@@ -9940,13 +9933,7 @@
         },
         "signals": {
           "establishment": [],
-          "justice": [
-            {
-              "clusterId": "J2",
-              "term": "equity",
-              "weight": 12
-            }
-          ],
+          "justice": [],
           "tradition": [
             {
               "clusterId": "T1",
@@ -9990,9 +9977,9 @@
       },
       "modelInputs": {
         "source": "Wikipedia lead + infobox fields + heuristic keyword clusters",
-        "signalsFired": 7,
+        "signalsFired": 6,
         "confidence": 0.9,
-        "lastImportedAt": "2026-03-22T08:30:54.042Z"
+        "lastImportedAt": "2026-03-22T09:03:33.835Z"
       },
       "occupations": [
         "online streamer",
@@ -10004,7 +9991,7 @@
       ],
       "scores": {
         "establishment": 50,
-        "justice": 62,
+        "justice": 50,
         "tradition": 64,
         "conflict": 85,
         "rigidity": 64
@@ -10021,10 +10008,10 @@
         "attributionText": "Esfand"
       },
       "cei": {
-        "value": 85,
+        "value": 84,
         "tier": "Extreme"
       },
-      "primaryLean": "Normie"
+      "primaryLean": "Chud"
     }
   ]
 }
