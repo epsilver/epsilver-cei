@@ -267,13 +267,13 @@ export async function ProfilePage(root, { slug }) {
     <div class="item"><div class="left"><div class="section-title">Conflict</div><div class="meta">Tolerance for confrontation and culture-war engagement.</div></div></div>
     <div class="item"><div class="left"><div class="section-title">Rigidity</div><div class="meta">Tendency toward absolutism, purity politics, and rejection of compromise.</div></div></div>
   `;
-  right.appendChild(glossary);
-
-  right.appendChild(Object.assign(document.createElement("div"), { className: "hr" }));
-
   const cardSlot = document.createElement("div");
   cardSlot.id = "profileCardDisplay";
   right.appendChild(cardSlot);
+
+  right.appendChild(Object.assign(document.createElement("div"), { className: "hr" }));
+
+  right.appendChild(glossary);
 
   const wrap = document.createElement("div");
   wrap.style.cssText = "max-width:740px;margin:24px auto;";
